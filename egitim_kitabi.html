@@ -806,12 +806,7 @@
                 <div class="arka">
                     <h2>WEB TAPU SİSTEMİ</h2>
                     <div class="overflow-y-auto pr-2" style="max-height: 90%;">
-                        <div class="bilgi-karti mb-4">
-                            <h4><i class="fa-solid fa-user-shield text-green-500"></i> Vatandaş Portalı Hizmetleri</h4>
-                            <p class="text-[0.7rem] text-justify">Vatandaşların müdürlüğe gitmeden tapu işlemlerini
-                                başlatabildiği, taşınmazlarını yönetebildiği ve yetki verebildiği kapsamlı e-devlet
-                                entegrasyonlu sistemdir.</p>
-                        </div>
+
                         <a href="https://webtapu.tkgm.gov.tr/" target="_blank" onclick="event.stopPropagation();"
                             class="bg-purple-50 hover:bg-purple-100 border border-purple-200 p-3 rounded-xl flex flex-col items-center gap-2 transition-all text-purple-900 no-underline shadow-sm active:scale-95 group">
                             <i
@@ -819,107 +814,205 @@
                             <span class="text-[9px] font-bold text-center uppercase">
                                 WebTapu Resmi İnternet Sitesi</span>
                         </a>
+                        <div class="bilgi-karti mb-4">
+                            <h4><i class="fa-solid fa-user-shield text-green-500"></i>
+                                WebTapu</h4>
+                            <p class="text-[0.7rem] text-justify">
+                                Web Tapu; taşınmaz sahiplerinin taşınmazlarını internet üzerinden takip edebildiği,
+                                yetki yönetimi yapabildiği ve tapu müdürlüklerine gitmeden işlem başvurusu (satış,
+                                ipotek vb.) gerçekleştirebildiği güvenli bir dijital platformdur.
 
+                                1. Sisteme Giriş Modülleri ve Yetki Alanları
+                                Web Tapu, kullanıcı profillerine göre üç ana giriş kapısı sunar:
 
+                                1.1. Kurumsal Giriş Modülü
+                                Kamu kurumları, tüzel kişiler ve meslek gruplarının tapu verilerine kontrollü erişimi
+                                için tasarlanmıştır.
 
-                        <!-- VİDEO LİSTESİ -->
-                        <div class="space-y-6 pb-4">
-                            <!-- Video 1 -->
-                            <div class="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm">
-                                <div class="p-3 bg-gray-50 border-b border-gray-100">
-                                    <h4 class="text-[9px] font-bold text-gray-800 uppercase tracking-tight">1. WebTapu
-                                        Hizmetleri ve Kullanımı</h4>
+                                1.1.1. Kurum Girişi: Kamu kurumlarının (Belediyeler, Bakanlıklar vb.) protokol
+                                çerçevesinde veri paylaşımı yaptığı, haciz tesisi ve terkin işlemlerini yönettiği
+                                bölümdür.
+
+                                1.1.2. Şirket / Vakıf Girişi: Ticari şirket veya vakıf temsilcilerinin, e-Devlet
+                                üzerinden "Şirketlerim" sekmesiyle tüzel kişilik adına ön başvuru ve mülkiyet takibi
+                                yaptığı alandır.
+
+                                1.1.3. Emlakçı Girişi: Taşınmaz Ticareti Yetki Belgesi olan işletmelerin, vatandaşın
+                                verdiği "İnceleme Yetkisi" dahilinde tapu detaylarını (şerh, beyan, ipotek)
+                                görüntülediği bölümdür.
+
+                                1.1.4. Taşınmaz Değerleme (SPK) / LİHKAB Girişi: SPK lisanslı değerleme uzmanlarının
+                                mimari projelere erişimi ve LİHKAB bürolarının teknik (aplikasyon, yer gösterme)
+                                işlemleri için kullandığı kapıdır.
+
+                                1.2. Bireysel Giriş Modülü
+                                Vatandaşların kendi mülkiyetlerini yönettikleri ana kapıdır.
+
+                                1.2.1. e-Devlet Girişi: Tüm T.C. vatandaşlarının standart erişim yöntemidir. T.C. Kimlik
+                                numarası ve e-Devlet şifresi ile giriş yapılır. Taşınmaz listeleme, belge alma ve
+                                başvuru süreçleri bu kanal üzerinden yürütülür.
+
+                                1.3. For Foreigner (Yabancılar İçin) Girişi
+                                Türkiye’de taşınmazı olan veya edinmek isteyen yabancı uyruklu kişilere özel tasarlanmış
+                                portaldır.
+
+                                1.3.1. Yabancı Kimlik No'suz Giriş (Foreigner Login): Henüz 99 ile başlayan yabancı
+                                kimlik numarası veya e-Devlet şifresi olmayan kişiler içindir. Pasaport bilgileri ve
+                                sistemde kayıtlı iletişim kanalları (SMS/E-posta) ile doğrulama yapılır. Değerleme
+                                raporu ve vatandaşlık süreci takibi için kullanılır.
+
+                                2. Temel İşlem Modülleri
+                                Sisteme giriş yaptıktan sonra kullanıcılar aşağıdaki ana fonksiyonları kullanabilir:
+
+                                A. Taşınmaz Listesi: Üzerinize kayıtlı tüm taşınmazların ada, parsel, hisse payı ve
+                                konum bilgilerini görüntüleme.
+
+                                B. Başvuru İşlemleri: Satış, intikal, bağış veya ipotek gibi taleplerin oluşturulması ve
+                                gerekli belgelerin (belediye rayici vb.) PDF olarak sisteme yüklenmesi.
+
+                                C. Yetki İşlemleri: Alıcıya veya emlak danışmanına taşınmaz bilgilerini görmesi için
+                                süreli yetki tanımlama veya tanımlı yetkiyi anında kaldırma.
+
+                                D. Belge Erişimi: Dijital imzalı tapu senedi, ipotek belgesi ve tapu kayıt örneğine
+                                anında ulaşım.
+
+                                3. Güvenlik ve Operasyonel Süreçler
+                                3.1. Güvenlik: Beyan Tesis Etme
+                                Sistemdeki "İşlem Yapılamaz Beyanı" özelliği, dolandırıcılık risklerine karşı en güçlü
+                                araçtır. Bu seçenek aktif edildiğinde, taşınmaz sahibi bizzat müdürlüğe gidip
+                                kaldırmadığı sürece taşınmaz üzerinde hiçbir işlem yapılamaz.
+                                </h4>
+                                <img src="/Users/erdem/.gemini/antigravity/brain/8d533756-9e1b-44c7-8f46-82766103fdd2/webtapu_security_shield_1773094360074.png"
+                                    alt="Web Tapu Güvenlik"
+                                    class="w-full rounded-2xl shadow-xl mb-4 border border-red-50">
+
+                            <div class="p-4 bg-red-50 rounded-xl border border-red-100 mb-4">
+                                <h5 class="text-[9px] font-bold text-red-800 flex items-center gap-2 mb-2">
+                                    <i class="fa-solid fa-shield-halved text-[12px]"></i> GÜVENLİK: BEYAN TESİS ETME
+                                </h5>
+                                <p class="text-[8px] text-gray-700 leading-relaxed text-justify">
+                                    "İşlem Yapılamaz Beyanı" dolandırıcılık riskine karşı en güçlü silahtır. Bu seçenek
+                                    aktif edildiğinde, taşınmaz sahibi bizzat müdürlüğe gitmedikçe taşınmaz üzerinde
+                                    hiçbir işlem gerçekleştirilemez.
+                                </p>
+                            </div>
+
+                            <div class="space-y-3">
+                                <div class="flex items-start gap-3">
+                                    <div
+                                        class="bg-blue-100 text-blue-700 w-5 h-5 rounded-full flex items-center justify-center font-bold text-[8px] flex-shrink-0">
+                                        1</div>
+                                    <p class="text-[8px] text-gray-600"><strong>Profil Güncelleme:</strong> SMS ve
+                                        E-posta kanallarını aktif edin.</p>
                                 </div>
-                                <div class="p-2">
-                                    <video controls class="w-full rounded-lg bg-black aspect-video mb-3">
+                                <div class="flex items-start gap-3">
+                                    <div
+                                        class="bg-blue-100 text-blue-700 w-5 h-5 rounded-full flex items-center justify-center font-bold text-[8px] flex-shrink-0">
+                                        2</div>
+                                    <p class="text-[8px] text-gray-600"><strong>SMS Bildirimi:</strong> Tahakkuk
+                                        numarası ile ödeme emrini alın.</p>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div
+                                        class="bg-blue-100 text-blue-700 w-5 h-5 rounded-full flex items-center justify-center font-bold text-[8px] flex-shrink-0">
+                                        3</div>
+                                    <p class="text-[8px] text-gray-600"><strong>Online Ödeme:</strong> Harç ve döner
+                                        sermaye bedellerini e-Devlet üzerinden yatırın.</p>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div
+                                        class="bg-green-100 text-green-700 w-5 h-5 rounded-full flex items-center justify-center font-bold text-[8px] flex-shrink-0">
+                                        4</div>
+                                    <p class="text-[8px] text-gray-600"><strong>İmza Süreci:</strong> Randevu saatinde
+                                        müdürlüğe gidip işlemi tamamlayın.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. EĞİTİM VİDEOLARI (YENİDEN DÜZENLENMİŞ) -->
+                        <div class="mt-12">
+                            <h4
+                                class="text-[12px] font-bold text-gray-900 border-b-2 border-green-500 pb-2 mb-6 flex items-center gap-3">
+                                <i class="fa-solid fa-video text-green-600"></i> WEB TAPU EĞİTİM VİDEOLARI
+                            </h4>
+                            <div class="space-y-6 pb-4">
+                                <!-- Video Listesi Başlıyor -->
+                                <div class="bg-gray-50 border border-gray-200 rounded-xl p-3 shadow-inner">
+                                    <h4
+                                        class="text-[9px] font-bold text-gray-800 uppercase mb-3 px-1 border-l-2 border-blue-500">
+                                        1. WebTapu Hizmetleri ve Kullanımı</h4>
+                                    <video controls class="w-full rounded-lg bg-black aspect-video mb-3 shadow-lg">
                                         <source
                                             src="https://www.tkgm.gov.tr/sites/default/files/2023-04/WEBTAPU%20HI%CC%87ZMETLERI%CC%87%20NELERD%C4%B0R%20WEBTAPU%20%C4%B0LE%20NELER%20YAPAB%C4%B0L%C4%B0RS%C4%B0N%C4%B0Z%20TAPU%20VE%20KADASTRO%20GENEL%20M%C3%9CD%C3%9CRL%C3%9C%C4%9E%C3%9C.mp4"
                                             type="video/mp4">
-                                        Tarayıcınız video oynatmayı desteklemiyor.
                                     </video>
                                     <a href="https://www.tkgm.gov.tr/sites/default/files/2023-04/WEBTAPU%20HI%CC%87ZMETLERI%CC%87%20NELERD%C4%B0R%20WEBTAPU%20%C4%B0LE%20NELER%20YAPAB%C4%B0L%C4%B0RS%C4%B0N%C4%B0Z%20TAPU%20VE%20KADASTRO%20GENEL%20M%C3%9CD%C3%9CRL%C3%9C%C4%9E%C3%9C.mp4"
                                         download onclick="event.stopPropagation();"
-                                        class="w-full bg-green-600 hover:bg-green-700 text-white text-[8px] font-bold py-2 rounded-lg flex items-center justify-center gap-2 transition-all no-underline">
-                                        <i class="fa-solid fa-download"></i> VİDEOYU İNDİR
+                                        class="w-full bg-blue-600 hover:bg-blue-700 text-white text-[8px] font-bold py-2 rounded-lg flex items-center justify-center gap-2 transition-all no-underline">
+                                        <i class="fa-solid fa-cloud-arrow-down"></i> VİDEOYU CİHAZA İNDİR
                                     </a>
                                 </div>
-                            </div>
 
-                            <!-- Video 2 -->
-                            <div class="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm">
-                                <div class="p-3 bg-gray-50 border-b border-gray-100">
-                                    <h4 class="text-[9px] font-bold text-gray-800 uppercase tracking-tight">2. Web Tapu
-                                        Tanıtım Filmi</h4>
-                                </div>
-                                <div class="p-2">
-                                    <video controls class="w-full rounded-lg bg-black aspect-video mb-3">
+                                <div class="bg-gray-50 border border-gray-200 rounded-xl p-3 shadow-inner">
+                                    <h4
+                                        class="text-[9px] font-bold text-gray-800 uppercase mb-3 px-1 border-l-2 border-blue-500">
+                                        2. Web Tapu Tanıtım Filmi</h4>
+                                    <video controls class="w-full rounded-lg bg-black aspect-video mb-3 shadow-lg">
                                         <source
                                             src="https://www.tkgm.gov.tr/sites/default/files/2022-10/TKGM%20WebTapu%20Tan%C4%B1t%C4%B1m%20Final.mp4"
                                             type="video/mp4">
                                     </video>
                                     <a href="https://www.tkgm.gov.tr/sites/default/files/2022-10/TKGM%20WebTapu%20Tan%C4%B1t%C4%B1m%20Final.mp4"
                                         download onclick="event.stopPropagation();"
-                                        class="w-full bg-green-600 hover:bg-green-700 text-white text-[8px] font-bold py-2 rounded-lg flex items-center justify-center gap-2 transition-all no-underline">
-                                        <i class="fa-solid fa-download"></i> VİDEOYU İNDİR
+                                        class="w-full bg-blue-600 hover:bg-blue-700 text-white text-[8px] font-bold py-2 rounded-lg flex items-center justify-center gap-2 transition-all no-underline">
+                                        <i class="fa-solid fa-cloud-arrow-down"></i> VİDEOYU CİHAZA İNDİR
                                     </a>
                                 </div>
-                            </div>
 
-                            <!-- Video 3 -->
-                            <div class="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm">
-                                <div class="p-3 bg-gray-50 border-b border-gray-100">
-                                    <h4 class="text-[9px] font-bold text-gray-800 uppercase tracking-tight">3. Resmi
-                                        Belge Alım İşlemleri</h4>
-                                </div>
-                                <div class="p-2">
-                                    <video controls class="w-full rounded-lg bg-black aspect-video mb-3">
+                                <div class="bg-gray-50 border border-gray-200 rounded-xl p-3 shadow-inner">
+                                    <h4
+                                        class="text-[9px] font-bold text-gray-800 uppercase mb-3 px-1 border-l-2 border-blue-500">
+                                        3. Resmi Belge Alım İşlemleri</h4>
+                                    <video controls class="w-full rounded-lg bg-black aspect-video mb-3 shadow-lg">
                                         <source
                                             src="https://www.tkgm.gov.tr/sites/default/files/2021-01/web_tapuda_resmi_belgelerin_alinmasi.mp4"
                                             type="video/mp4">
                                     </video>
                                     <a href="https://www.tkgm.gov.tr/sites/default/files/2021-01/web_tapuda_resmi_belgelerin_alinmasi.mp4"
                                         download onclick="event.stopPropagation();"
-                                        class="w-full bg-green-600 hover:bg-green-700 text-white text-[8px] font-bold py-2 rounded-lg flex items-center justify-center gap-2 transition-all no-underline">
-                                        <i class="fa-solid fa-download"></i> VİDEOYU İNDİR
+                                        class="w-full bg-blue-600 hover:bg-blue-700 text-white text-[8px] font-bold py-2 rounded-lg flex items-center justify-center gap-2 transition-all no-underline">
+                                        <i class="fa-solid fa-cloud-arrow-down"></i> VİDEOYU CİHAZA İNDİR
                                     </a>
                                 </div>
-                            </div>
 
-                            <!-- Video 4 -->
-                            <div class="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm">
-                                <div class="p-3 bg-gray-50 border-b border-gray-100">
-                                    <h4 class="text-[9px] font-bold text-gray-800 uppercase tracking-tight">4. Şirket
-                                        Portalı Kullanım Kılavuzu</h4>
-                                </div>
-                                <div class="p-2">
-                                    <video controls class="w-full rounded-lg bg-black aspect-video mb-3">
+                                <div class="bg-gray-50 border border-gray-200 rounded-xl p-3 shadow-inner">
+                                    <h4
+                                        class="text-[9px] font-bold text-gray-800 uppercase mb-3 px-1 border-l-2 border-blue-500">
+                                        4. Şirket Portalı Kullanım Kılavuzu</h4>
+                                    <video controls class="w-full rounded-lg bg-black aspect-video mb-3 shadow-lg">
                                         <source src="https://www.tkgm.gov.tr/sites/default/files/2021-01/sirket_1_0.mp4"
                                             type="video/mp4">
                                     </video>
                                     <a href="https://www.tkgm.gov.tr/sites/default/files/2021-01/sirket_1_0.mp4"
                                         download onclick="event.stopPropagation();"
-                                        class="w-full bg-green-600 hover:bg-green-700 text-white text-[8px] font-bold py-2 rounded-lg flex items-center justify-center gap-2 transition-all no-underline">
-                                        <i class="fa-solid fa-download"></i> VİDEOYU İNDİR
+                                        class="w-full bg-blue-600 hover:bg-blue-700 text-white text-[8px] font-bold py-2 rounded-lg flex items-center justify-center gap-2 transition-all no-underline">
+                                        <i class="fa-solid fa-cloud-arrow-down"></i> VİDEOYU CİHAZA İNDİR
                                     </a>
                                 </div>
-                            </div>
 
-                            <!-- Video 5 -->
-                            <div class="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm">
-                                <div class="p-3 bg-gray-50 border-b border-gray-100">
-                                    <h4 class="text-[9px] font-bold text-gray-800 uppercase tracking-tight">5. Kadastro
-                                        İşlemleri Bireysel Başvuru</h4>
-                                </div>
-                                <div class="p-2">
-                                    <video controls class="w-full rounded-lg bg-black aspect-video mb-3">
+                                <div class="bg-gray-50 border border-gray-200 rounded-xl p-3 shadow-inner">
+                                    <h4
+                                        class="text-[9px] font-bold text-gray-800 uppercase mb-3 px-1 border-l-2 border-blue-500">
+                                        5. Kadastro İşlemleri Bireysel Başvuru</h4>
+                                    <video controls class="w-full rounded-lg bg-black aspect-video mb-3 shadow-lg">
                                         <source
                                             src="https://www.tkgm.gov.tr/sites/default/files/2021-01/web_kadastro_basvuru.mp4"
                                             type="video/mp4">
                                     </video>
                                     <a href="https://www.tkgm.gov.tr/sites/default/files/2021-01/web_kadastro_basvuru.mp4"
                                         download onclick="event.stopPropagation();"
-                                        class="w-full bg-green-600 hover:bg-green-700 text-white text-[8px] font-bold py-2 rounded-lg flex items-center justify-center gap-2 transition-all no-underline">
-                                        <i class="fa-solid fa-download"></i> VİDEOYU İNDİR
+                                        class="w-full bg-blue-600 hover:bg-blue-700 text-white text-[8px] font-bold py-2 rounded-lg flex items-center justify-center gap-2 transition-all no-underline">
+                                        <i class="fa-solid fa-cloud-arrow-down"></i> VİDEOYU CİHAZA İNDİR
                                     </a>
                                 </div>
                             </div>
