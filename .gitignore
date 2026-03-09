@@ -1,0 +1,7 @@
+# Büyük boyutlu dosyaları ve geçici dizinleri yoksay
+Tapu_ve_Kadastro_lemlerinde_Dijital_Uygulamalar.pptx
+Tapu_ve_Kadastro_Bilgi_Sistemi.docx
+pptx_content/
+.DS_Store
+*.tmp
+~$*

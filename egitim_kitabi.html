@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEGSİS ve CBS Eğitim Portalı</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Montserrat:wght@300;400;600;700&display=swap');
+
+        :root {
+            --kitap-lacivert: #002147;
+            --kitap-altin: #C5A059;
+            --kitap-kagit: #fdfbf7;
+            --tkgm-mavi: #0056b3;
+        }
+
+        body {
+            background-color: #2c3e50;
+            background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+            background-size: 40px 40px;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            perspective: 2500px;
+            overflow: hidden;
+            transition: background-color 0.5s ease;
+        }
+
+        body:fullscreen {
+            background-color: #000;
+        }
+
+        .kitap-sarmalayici {
+            position: relative;
+            width: calc(100vw - 20px);
+            height: calc(100vh - 20px);
+            margin: 10px;
+            transform-style: preserve-3d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.5s ease;
+            padding: 0;
+        }
+
+        .kitap-sarmalayici::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: white;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            transform: translateZ(-20px);
+        }
+
+        .kitap {
+            width: calc(100% - 60px);
+            /* Fihrist alanı için pay bırakıldı */
+            height: 98%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+        }
+
+        .sayfa {
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform-origin: left;
+            transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .on,
+        .on,
+        .arka {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            backface-visibility: hidden;
+            background-color: var(--kitap-kagit);
+            padding: 60px;
+            box-shadow: inset 0px 0px 60px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            border-radius: 0 10px 10px 0;
+            overflow: hidden;
+        }
+
+        .on::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30px;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 100%);
+        }
+
+        .arka::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px;
+            height: 100%;
+            background: linear-gradient(to left, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 100%);
+        }
+
+        .arka {
+            transform: rotateY(180deg);
+            border-radius: 10px 0 0 10px;
+        }
+
+        .sayfa.cevrilmis {
+            transform: rotateY(-180deg);
+        }
+
+        .kapak-on {
+            background: linear-gradient(135deg, var(--kitap-lacivert) 0%, #001a35 100%);
+            color: white;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-radius: 0 15px 15px 0;
+            border-left: 5px solid var(--kitap-altin);
+        }
+
+        .ayirici-sayfa {
+            background: linear-gradient(45deg, #f8f9fa 0%, #ffffff 100%);
+            border: 3px solid var(--kitap-altin);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .kapak-on h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            color: var(--kitap-lacivert);
+            font-weight: 700;
+            border-bottom: 2px solid var(--kitap-altin);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h3 {
+            color: var(--tkgm-mavi);
+            font-weight: 700;
+            margin-top: 10px;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .saat-rozeti {
+            background: var(--kitap-lacivert);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.7rem;
+            margin-right: 8px;
+        }
+
+        .sayfa-numarasi {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.8rem;
+            color: #888;
+            width: calc(100% - 80px);
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Kart Stilleri */
+        .bilgi-karti {
+            background: white;
+            border: 1px solid #e1e8ed;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s ease;
+        }
+
+        .bilgi-karti:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .bilgi-karti h4 {
+            font-weight: 700;
+            color: var(--kitap-lacivert);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .bilgi-karti p {
+            font-size: 0.8rem;
+            line-height: 1.6;
+            color: #4a5568;
+            margin: 0;
+        }
+
+        /* Harita Alanı */
+        #harita {
+            width: 100%;
+            height: 200px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+            z-index: 10;
+        }
+
+        .fihrist {
+            position: absolute;
+            right: 0px;
+            top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            z-index: 100;
+            width: 55px;
+            /* Tek sütun için daraltıldı */
+            height: calc(100vh - 40px);
+            overflow-y: auto;
+            /* Çok fazla konu varsa kaydırılabilir */
+            padding-bottom: 20px;
+        }
+
+        .sekme-grubu {
+            display: flex;
+            flex-direction: column;
+            /* Yan yana yerine alt alta */
+            gap: 1px;
+            width: 100%;
+            justify-content: flex-end;
+        }
+
+        .sekme {
+            width: 100%;
+            height: 28px;
+            background: var(--kitap-lacivert);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 7px;
+            /* Sabit yazı boyutu */
+            font-weight: 700;
+            border-radius: 5px 0 0 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-right: 3px solid var(--kitap-altin);
+            text-align: center;
+            padding: 2px;
+            line-height: 1.1;
+            word-break: break-all;
+        }
+
+        .sekme:hover {
+            transform: translateX(-5px);
+            background: var(--kitap-altin);
+            color: var(--kitap-lacivert);
+        }
+
+        .sekme.aktif {
+            background: var(--kitap-altin);
+            color: var(--kitap-lacivert);
+            width: 100%;
+        }
+
+        .tam-ekran-butonu {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--kitap-lacivert);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 3000;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            border: 2px solid var(--kitap-altin);
+            transition: all 0.3s ease;
+        }
+
+        .tam-ekran-butonu:hover {
+            transform: scale(1.1);
+            background: var(--kitap-altin);
+        }
+
+        .mesaj-kutusu {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 33, 71, 0.95);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            z-index: 4000;
+            display: none;
+            backdrop-filter: blur(5px);
+            border: 1px solid var(--kitap-altin);
+        }
+
+        /* İçindekiler */
+        .indeks-ogesi {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+        }
+
+        .indeks-metni {
+            font-weight: 600;
+            color: var(--kitap-lacivert);
+        }
+
+        .indeks-noktalari {
+            flex-grow: 1;
+            border-bottom: 1.5px dotted #cbd5e0;
+            margin: 0 10px;
+        }
+
+        .indeks-sayfasi {
+            font-weight: 800;
+            color: var(--kitap-altin);
+        }
+
+        /* Ders Kartları */
+        .ders-karti {
+            padding: 15px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .ders-karti:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            filter: brightness(1.02);
+        }
+
+        .ders-karti i {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 1050px) {
+            .kitap-sarmalayici {
+                height: 70vh;
+            }
+
+            .fihrist {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="mesaj-kutusu" id="mesajKutusu"></div>
+
+    <div class="tam-ekran-butonu" id="tamEkranButonu" title="Tam Ekran">
+        <i class="fa-solid fa-expand text-2xl" id="tamEkranIkonu"></i>
+    </div>
+
+    <div class="kitap-sarmalayici" id="kitapSarmalayici">
+        <div class="fihrist" id="fihrist"></div>
+
+        <div class="kitap" id="kitap">
+
+            <!-- YAPRAK 1 (KAPAK VE İÇİNDEKİLER) -->
+            <div class="sayfa" id="s1">
+                <div class="on kapak-on">
+                    <div class="mb-10 relative">
+                        <i
+                            class="fa-solid fa-earth-americas text-8xl text-white opacity-20 absolute -top-4 -left-4"></i>
+                        <i class="fa-solid fa-layer-group text-7xl relative" style="color: var(--kitap-altin);"></i>
+                    </div>
+                    <h1 class="px-10">TKGM<br>DİJİTAL EĞİTİM KİTABI</h1>
+                    <div class="w-24 h-1.5 mx-auto my-8" style="background-color: var(--kitap-altin);"></div>
+                    <p class="text-xl tracking-[0.3em] font-light">STRATEJİK REHBER</p>
+                    <div class="mt-12 text-xs uppercase opacity-80 tracking-widest leading-loose">
+                        TKGM<br>Bilgi Teknolojileri Dairesi Başkanlığı<br>Coğrafi Bilgisi
+                        Sistemleri Şube Müdürlüğü<br>Öğ.Gör.Erdem ALPAR<br>2026
+                    </div>
+                    <div class="sayfa-numarasi">KAPAK</div>
+                </div>
+                <div class="arka">
+                    <h2 class="text-center">İÇİNDEKİLER</h2>
+                    <div class="mt-8 space-y-2 overflow-y-auto max-h-[75%] pr-2">
+                        <div class="indeks-ogesi"><span class="indeks-metni">1. Dijitalleşme Vizyonu</span><span
+                                class="indeks-noktalari"></span><span class="indeks-sayfasi">3</span></div>
+                        <div class="indeks-ogesi"><span class="indeks-metni">2. TAKBİS Sistemi</span><span
+                                class="indeks-noktalari"></span><span class="indeks-sayfasi">4</span></div>
+                        <div class="indeks-ogesi"><span class="indeks-metni">3. 3B Kent Modelleri</span><span
+                                class="indeks-noktalari"></span><span class="indeks-sayfasi">5</span></div>
+                        <div class="indeks-ogesi"><span class="indeks-metni">4. MEGSİS (Harita)</span><span
+                                class="indeks-noktalari"></span><span class="indeks-sayfasi">6</span></div>
+                        <div class="indeks-ogesi"><span class="indeks-metni">5. TARBİS (Arşiv)</span><span
+                                class="indeks-noktalari"></span><span class="indeks-sayfasi">7</span></div>
+                        <div class="indeks-ogesi"><span class="indeks-metni">6. Harita Bilgi Bankası</span><span
+                                class="indeks-noktalari"></span><span class="indeks-sayfasi">8</span></div>
+                        <div class="indeks-ogesi"><span class="indeks-metni">7. Web Tapu</span><span
+                                class="indeks-noktalari"></span><span class="indeks-sayfasi">9</span></div>
+                        <div class="indeks-ogesi"><span class="indeks-metni">8. TUCBS</span><span
+                                class="indeks-noktalari"></span><span class="indeks-sayfasi">10</span></div>
+                        <div class="indeks-ogesi"><span class="indeks-metni">9. Askı İlanı</span><span
+                                class="indeks-noktalari"></span><span class="indeks-sayfasi">11</span></div>
+                        <div class="indeks-ogesi"><span class="indeks-metni">10. TK Modernizasyonu</span><span
+                                class="indeks-noktalari"></span><span class="indeks-sayfasi">12</span></div>
+                        <div class="indeks-ogesi"><span class="indeks-metni">11. TK Yazılımcılık</span><span
+                                class="indeks-noktalari"></span><span class="indeks-sayfasi">13</span></div>
+                        <div class="indeks-ogesi"><span class="indeks-metni">12. İHA ve Teknolojiler</span><span
+                                class="indeks-noktalari"></span><span class="indeks-sayfasi">14</span></div>
+                        <div class="indeks-ogesi"><span class="indeks-metni">13. Sertifikasyon</span><span
+                                class="indeks-noktalari"></span><span class="indeks-sayfasi">19</span></div>
+                    </div>
+                    <div class="sayfa-numarasi">1</div>
+                </div>
+            </div>
+
+            <!-- YAPRAK 2 (DERS KARTLARI VE DİJİTALLEŞME) -->
+            <div class="sayfa" id="s2">
+                <div class="on">
+                    <h2 class="text-center mb-6">DERS MODÜLLERİ VE NAVİGASYON</h2>
+                    <div class="grid grid-cols-3 gap-2 overflow-y-auto pr-2" style="max-height: 85%;">
+                        <div class="ders-karti" style="background: #ebf8ff; border-left: 3px solid #3182ce;"
+                            onclick="event.stopPropagation(); sayfaya_git(3)">
+                            <i class="fa-solid fa-microchip text-blue-600 text-sm mb-1"></i>
+                            <span class="text-[0.6rem] font-bold text-blue-900 leading-tight">Dijital Vizyon (S3)</span>
+                        </div>
+                        <div class="ders-karti" style="background: #fff5f5; border-left: 3px solid #e53e3e;"
+                            onclick="event.stopPropagation(); sayfaya_git(3)">
+                            <i class="fa-solid fa-server text-red-600 text-sm mb-1"></i>
+                            <span class="text-[0.6rem] font-bold text-red-900 leading-tight">TAKBİS (S4)</span>
+                        </div>
+                        <div class="ders-karti" style="background: #f5f3ff; border-left: 3px solid #805ad5;"
+                            onclick="event.stopPropagation(); sayfaya_git(4)">
+                            <i class="fa-solid fa-city text-purple-600 text-sm mb-1"></i>
+                            <span class="text-[0.6rem] font-bold text-purple-900 leading-tight">3B Modeller (S5)</span>
+                        </div>
+                        <div class="ders-karti" style="background: #f0fff4; border-left: 3px solid #38a169;"
+                            onclick="event.stopPropagation(); sayfaya_git(4)">
+                            <i class="fa-solid fa-layer-group text-green-600 text-sm mb-1"></i>
+                            <span class="text-[0.6rem] font-bold text-green-900 leading-tight">MEGSİS (S6)</span>
+                        </div>
+                        <div class="ders-karti" style="background: #fff5f7; border-left: 3px solid #d53f8c;"
+                            onclick="event.stopPropagation(); sayfaya_git(5)">
+                            <i class="fa-solid fa-box-archive text-pink-600 text-sm mb-1"></i>
+                            <span class="text-[0.6rem] font-bold text-pink-900 leading-tight">TARBİS (S7)</span>
+                        </div>
+                        <div class="ders-karti" style="background: #f0feff; border-left: 3px solid #00b5ad;"
+                            onclick="event.stopPropagation(); sayfaya_git(5)">
+                            <i class="fa-solid fa-map text-teal-600 text-sm mb-1"></i>
+                            <span class="text-[0.6rem] font-bold text-teal-900 leading-tight">Harita Bankası (S8)</span>
+                        </div>
+                        <div class="ders-karti" style="background: #feffef; border-left: 3px solid #b5cc18;"
+                            onclick="event.stopPropagation(); sayfaya_git(6)">
+                            <i class="fa-solid fa-globe text-lime-600 text-sm mb-1"></i>
+                            <span class="text-[0.6rem] font-bold text-lime-900 leading-tight">Web Tapu (S9)</span>
+                        </div>
+                        <div class="ders-karti" style="background: #fff0f0; border-left: 3px solid #db2828;"
+                            onclick="event.stopPropagation(); sayfaya_git(6)">
+                            <i class="fa-solid fa-network-wired text-red-600 text-sm mb-1"></i>
+                            <span class="text-[0.6rem] font-bold text-red-900 leading-tight">TUCBS (S10)</span>
+                        </div>
+                        <div class="ders-karti" style="background: #fafff0; border-left: 3px solid #b5cc18;"
+                            onclick="event.stopPropagation(); sayfaya_git(7)">
+                            <i class="fa-solid fa-magnifying-glass-location text-green-600 text-sm mb-1"></i>
+                            <span class="text-[0.6rem] font-bold text-green-900 leading-tight">Askı İlanı (S11)</span>
+                        </div>
+                        <div class="ders-karti" style="background: #f2f7ff; border-left: 3px solid #2185d0;"
+                            onclick="event.stopPropagation(); sayfaya_git(7)">
+                            <i class="fa-solid fa-id-card text-blue-600 text-sm mb-1"></i>
+                            <span class="text-[0.6rem] font-bold text-blue-900 leading-tight">Modernizasyon (S12)</span>
+                        </div>
+                        <div class="ders-karti" style="background: #f2fff2; border-left: 3px solid #21ba45;"
+                            onclick="event.stopPropagation(); sayfaya_git(8)">
+                            <i class="fa-solid fa-code text-green-600 text-sm mb-1"></i>
+                            <span class="text-[0.6rem] font-bold text-green-900 leading-tight">Yazılımcılık (S13)</span>
+                        </div>
+                        <div class="ders-karti" style="background: #fdf2ff; border-left: 3px solid #a333c8;"
+                            onclick="event.stopPropagation(); sayfaya_git(8)">
+                            <i class="fa-solid fa-wrench text-purple-600 text-sm mb-1"></i>
+                            <span class="text-[0.6rem] font-bold text-purple-900 leading-tight">İHA-Tekno (S14)</span>
+                        </div>
+                    </div>
+                    <div class="sayfa-numarasi">2</div>
+                </div>
+                <div class="arka">
+                    <h2 class="text-center">TAPU VE KADASTRODA DİJİTALLEŞME SÜRECİ</h2>
+                    <div class="overflow-y-auto pr-2" style="max-height: 90%;">
+                        <div class="bilgi-karti mb-4">
+                            <h4><i class="fa-solid fa-microchip text-blue-600"></i> Dijital Ekosistem Entegrasyonu</h4>
+                            <p class="text-justify leading-relaxed text-[0.75rem]">
+                                Tapu ve Kadastroda Dijitalleşme süreci, geleneksel mülkiyet kayıtlarının dijital
+                                ekosisteme entegrasyonuyla başlayan ve günümüzde ileri düzey yazılımcılık çözümleriyle
+                                şekillenen devasa bir modernizasyon hamlesidir. Mekânsal boyutta MEGSİS ile parsel
+                                verileri harita tabanlı bir yapıya kavuşmuş, Türkiye Ulusal Coğrafi Bilgi Sistemi
+                                (TUCBS) entegrasyonuyla ulusal düzeyde bir veri standardizasyonu sağlanmıştır.
+                            </p>
+                        </div>
+
+
+                        <div class="bg-blue-50 border-2 border-blue-100 rounded-xl p-6 text-center shadow-sm">
+                            <i class="fa-solid fa-file-powerpoint text-5xl text-blue-600 mb-4"></i>
+                            <h4 class="text-sm font-bold text-blue-900 mb-2 uppercase">Dijital Uygulamalar Sunumu</h4>
+                            <p class="text-[10px] text-blue-700 mb-5 leading-relaxed">Tapu ve Kadastro işlemlerindeki
+                                dijital dönüşümün tüm detaylarını içeren güncel sunum dosyasını aşağıdan
+                                indirebilirsiniz.</p>
+
+                            <a href="Tapu_ve_Kadastro_lemlerinde_Dijital_Uygulamalar.pptx" download
+                                onclick="event.stopPropagation();"
+                                class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full text-xs font-bold transition-all shadow-lg inline-flex items-center gap-3 active:scale-95 mb-4">
+                                <i class="fa-solid fa-download"></i>
+                                SUNUMU İNDİR (.PPTX)
+                            </a>
+
+
+                            <p class="text-[8px] text-gray-400 italic">En iyi deneyim için yukarıdaki <b>"SUNUMU
+                                    İNDİR"</b> butonunu kullanmanızı öneririz.</p>
+                            <img src="file:///Users/erdem/.gemini/antigravity/brain/8d533756-9e1b-44c7-8f46-82766103fdd2/tkgm_dijital_donusum_vizyonu_1773085445951.png"
+                                class="w-full h-auto rounded-lg shadow-md mb-6" alt="Dijital Vizyon">
+                        </div>
+                    </div>
+                    <div class="sayfa-numarasi">3</div>
+                </div>
+            </div>
+
+            <!-- YAPRAK 3 (TAKBİS VE 3B) -->
+            <div class="sayfa" id="s3">
+                <div class="on">
+                    <h2 class="text-center">TAPU VE KADASTRO BİLGİ SİSTEMİ (TAKBİS)</h2>
+                    <div class="overflow-y-auto pr-2" style="max-height: 90%;">
+                        <div class="bilgi-karti mb-4">
+                            <h4><i class="fa-solid fa-server text-red-600"></i> Merkezi Veri Yönetimi</h4>
+                            <p class="text-justify leading-relaxed text-[0.75rem]">
+                                TAKBİS (Tapu ve Kadastro Bilgi Sistemi), Türkiye’deki mülkiyet bilgilerinin elektronik
+                                ortamda tutulduğu ve yönetildiği temel veri tabanıdır.
+
+                                Taşınmazlara ait tapu kayıtlarının ve kadastro paftalarının dijitalleştirilmesini
+                                sağlayarak, işlemlerin hızlı, güvenilir ve şeffaf bir şekilde yürütülmesine olanak
+                                tanır.
+
+                                Kamu kurumları ve bankalarla entegre çalışan bu sistem, sorgulama ve işlem süreçlerini
+                                hızlandırarak bürokrasiyi azaltır ve mülkiyet güvenliğini artırır.
+
+                                Kısacası, tapu işlemlerinin kağıt ortamından dijital ortama aktarılmasıyla vatandaşların
+                                ve devletin mülkiyet verilerine anlık erişimini sağlayan bir e-devlet projesidir.
+                            </p>
+                        </div>
+                        <div class="mb-4">
+
+
+                            <div class="bg-red-50 border-2 border-red-100 rounded-xl p-6 text-center shadow-sm">
+                                <i class="fa-solid fa-file-word text-5xl text-red-600 mb-4"></i>
+                                <h4 class="text-sm font-bold text-red-900 mb-2 uppercase">TAKBİS Sistem Dokümanı</h4>
+                                <p class="text-[10px] text-red-700 mb-5 leading-relaxed">Sistemin detaylı teknik
+                                    mimarisi ve iş akış süreçlerini içeren orijinal Word dokümanını aşağıdan
+                                    indirebilirsiniz.</p>
+
+                                <a href="Tapu_ve_Kadastro_Bilgi_Sistemi.docx" download
+                                    onclick="event.stopPropagation();"
+                                    class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full text-xs font-bold transition-all shadow-lg inline-flex items-center gap-3 active:scale-95">
+                                    <i class="fa-solid fa-download"></i>
+                                    DOSYAYI İNDİR (.DOCX)
+                                </a>
+                                <div class="mt-4 text-[9px] text-red-400 font-mono">BOYUT: ~34 MB</div>
+
+                                <img src="file:///Users/erdem/.gemini/antigravity/brain/8d533756-9e1b-44c7-8f46-82766103fdd2/tkgm_takbis_server_system_1773085992598.png"
+                                    class="w-full h-auto rounded-lg shadow-md mb-6" alt="TAKBİS">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="sayfa-numarasi">4</div>
+                </div>
+                <div class="arka">
+                    <h2 class="text-center">3B KENT MODELLERİ VE BİLGİ SİSTEMLERİ</h2>
+                    <div class="overflow-y-auto pr-2" style="max-height: 90%;">
+
+
+
+
+
+                        <!-- BİREBİR EKLENEN TEKNİK NOTLAR -->
+                        <div class="space-y-4">
+                            <!-- 3B UYGULAMA PORTALLARI -->
+                            <div class="mt-6">
+                                <h4
+                                    class="text-[10px] font-bold text-purple-900 mb-3 uppercase tracking-widest border-b border-purple-100 pb-1">
+                                    <i class="fa-solid fa-up-right-from-square mr-2"></i>3B Uygulama Portalları
+                                </h4>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <a href="https://3dsurectakip.tkgm.gov.tr/login" target="_blank"
+                                        onclick="event.stopPropagation();"
+                                        class="bg-purple-50 hover:bg-purple-100 border border-purple-200 p-3 rounded-xl flex flex-col items-center gap-2 transition-all text-purple-900 no-underline shadow-sm active:scale-95 group">
+                                        <i
+                                            class="fa-solid fa-diagram-project text-lg text-purple-600 group-hover:scale-110 transition-transform"></i>
+                                        <span class="text-[9px] font-bold text-center uppercase">3D Süreç Takip</span>
+                                    </a>
+
+                                    <a href="https://cbs.tkgm.gov.tr/3d/html/Surdurulebilirlik.html" target="_blank"
+                                        onclick="event.stopPropagation();"
+                                        class="bg-purple-50 hover:bg-purple-100 border border-purple-200 p-3 rounded-xl flex flex-col items-center gap-2 transition-all text-purple-900 no-underline shadow-sm active:scale-95 group">
+                                        <i
+                                            class="fa-solid fa-leaf text-lg text-green-600 group-hover:scale-110 transition-transform"></i>
+                                        <span class="text-[9px] font-bold text-center uppercase">3D
+                                            Sürdürülebilirlik</span>
+                                    </a>
+
+                                    <a href="https://3dbinadogrula.tkgm.gov.tr/" target="_blank"
+                                        onclick="event.stopPropagation();"
+                                        class="bg-purple-50 hover:bg-purple-100 border border-purple-200 p-3 rounded-xl flex flex-col items-center gap-2 transition-all text-purple-900 no-underline shadow-sm active:scale-95 group">
+                                        <i
+                                            class="fa-solid fa-check-to-slot text-lg text-blue-600 group-hover:scale-110 transition-transform"></i>
+                                        <span class="text-[9px] font-bold text-center uppercase">3D Bina
+                                            Doğrulama</span>
+                                    </a>
+
+                                    <a href="https://3dcitymodelling.com" target="_blank"
+                                        onclick="event.stopPropagation();"
+                                        class="bg-purple-50 hover:bg-purple-100 border border-purple-200 p-3 rounded-xl flex flex-col items-center gap-2 transition-all text-purple-900 no-underline shadow-sm active:scale-95 group">
+                                        <i
+                                            class="fa-solid fa-street-view text-lg text-orange-600 group-hover:scale-110 transition-transform"></i>
+                                        <span class="text-[9px] font-bold text-center uppercase">3D Sunum /
+                                            Modelleme</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="bilgi-karti border-t-2 border-t-purple-200">
+                                <h4 class="text-xs text-purple-900">3 Boyutlu Şehir Modelleri ve Kadastro Projesi</h4>
+                                <p class="text-[0.65rem] leading-relaxed text-justify">
+                                    TKGM 1924'ten bu güne kadar 2 boyutlu kadastrosunu yaklaşık 58,5 milyon parselin
+                                    ölçümünü yaparak tamamlamıştır. Bina ve bağımsız bölümlerin geometrisinin 3 boyutlu
+                                    dijital ortamda yönetilmesi amacıyla çeşitli çalışmalar yapılmıştır ve bunun
+                                    sonucunda 2020 yılında “3B Şehir Modelleri Üretimi ve 3B Kadastro Altlıklarının
+                                    Oluşturulması Projesi” başlatılmıştır. Bu proje ile TKGM tarafından üretilen veya
+                                    ürettirilecek olan üç boyutlu verilerin; üretim takibi, doğrulama ve barındırılması,
+                                    entegrasyonu, sunumu, paylaşım ve süreklilik modelini içeren TKGM 3B Şehir Modelleri
+                                    Yönetim Bilgi Sisteminin kurulması amaçlanmıştır. Üretilecek 3 boyutlu bina verileri
+                                    için TKGM standartları oluşturulmuş ve yayınlanmıştır.
+                                </p>
+                            </div>
+
+                            <div class="bilgi-karti">
+                                <h4 class="text-xs text-purple-900">3 Boyutlu Veri Üretim Süreci Takip ve İzleme
+                                    Uygulaması</h4>
+                                <p class="text-[0.65rem] leading-relaxed text-justify">
+                                    Oluşturulan 3 boyutlu verilerin doğrulanması için iki aşamalı doğrulama yöntemi
+                                    izlenmiştir. İlk aşamada üretilen veriler yaklaşık 400 maddelik dinamik bir kontrol
+                                    listesi üzerinden geliştirilen bir uygulama ile doğrulanmaktadır. Birinci aşamayı
+                                    geçen veriler manuel kontrol aşamasına (ikinci aşama) tabi tutulur. Manuel kontrol
+                                    için geliştirilen web tabanlı uygulamayı kullanarak veri kontrol personeli manuel
+                                    kontrol kurallarına göre verileri kontrol edilmektedir.
+                                </p>
+                            </div>
+
+                            <div class="bilgi-karti">
+                                <h4 class="text-xs text-purple-900">TKGM 3 Boyutlu Veri Tabanı</h4>
+                                <p class="text-[0.65rem] leading-relaxed text-justify">
+                                    İki aşamalı kontrol süreçlerinden başarıyla geçen doğrulanmış 3 boyutlu veriler 3
+                                    boyutlu veri tabanına aktarılır. Farklı koordinat referans sistemlerini tek bir
+                                    şemada destekleyebilen veri tabanı tamamen CityGML veri modeli yapısını
+                                    içermektedir.
+                                </p>
+                            </div>
+
+                            <img src="file:///Users/erdem/.gemini/antigravity/brain/8d533756-9e1b-44c7-8f46-82766103fdd2/tkgm_3b_city_model_gis_1773086031866.png"
+                                class="w-full h-auto rounded-lg shadow-md mt-2 mb-4" alt="3B Şehir">
+
+                            <div class="bilgi-karti">
+                                <h4 class="text-xs text-purple-900">Ulusal Düzeyde Entegrasyonlar</h4>
+                                <p class="text-[0.65rem] leading-relaxed text-justify">
+                                    3B veri modelleri Türkiye Ulusal Adresleme Sistemi (MAKS) ve Tapu ve Kadastro Bilgi
+                                    Sistemi (TAKBİS) ile de entegre edebilen süreç takip uygulamasıdır.
+                                </p>
+                            </div>
+
+                            <div class="bilgi-karti">
+                                <h4 class="text-xs text-purple-900">Tiling Hizmetleri</h4>
+                                <p class="text-[0.65rem] leading-relaxed text-justify">
+                                    3D bina verilerini I3S ve 3dTiles'da arazi verilerini TMS'de ve nicelleştirilmiş
+                                    mesh formatında tile edebilen yazılım geliştirmeleri başarıyla tamamlanmıştır.
+                                </p>
+                            </div>
+
+                            <div class="bilgi-karti">
+                                <h4 class="text-xs text-purple-900">Veri Dönüşümleri</h4>
+                                <p class="text-[0.65rem] leading-relaxed text-justify">
+                                    TKGM3D platformu, özel dönüştürme hizmetleri ile 3D yapı verilerini CityGML,
+                                    CityJSON, KML, OBJ, Collada, 3Dpdf formatlarına dönüştürebilmektedir.
+                                </p>
+                            </div>
+
+                            <div class="bilgi-karti">
+                                <h4 class="text-xs text-purple-900">Sunum Uygulaması</h4>
+                                <p class="text-[0.65rem] leading-relaxed text-justify">
+                                    Tüm kullanıcılar haritadaki binalar arasında 3 boyutlu olarak gezinebilir. Bağımsız
+                                    bölüm ve parçalar Indoormapping ile 3 boyutlu olarak görüntülenebilir. Adres, yapı
+                                    taşları ve parsel sorgulaması yapılabilir. Binalar farklı formatlara dönüştürülerek
+                                    indirilebilir. Bilgi paylaşımı servisleri hazırlanmıştır.
+                                </p>
+                            </div>
+
+                            <div class="bilgi-karti border-b-2 border-b-purple-200">
+                                <h4 class="text-xs text-purple-900">Analiz ve Sorgulama Hizmetleri</h4>
+                                <p class="text-[0.65rem] leading-relaxed text-justify">
+                                    “3B Şehir Modelleri Üretimi ve 3B Kadastro Altlıklarının Oluşturulması Projesi” ile
+                                    gayrimenkul alım satım süreçlerinde gayrimenkulün alan büyüklüğü, cephesi, oda
+                                    sayısı bilgileri sunulabilecektir. Kurumlar arası entegrasyon kapsamında mal, kişi
+                                    ve adres entegrasyonu sağlanacaktır. Değerleme çalışmaları, bina stoku güncelliği
+                                    takibi, güneş potansiyeli, enerji talebi tahmini, yerleşik yoğunluk analizi, gürültü
+                                    emisyonu ve sigorta sektörü için sismik hasar tahmini gibi pek çok gelişmiş analiz
+                                    yapılabilecektir.
+                                </p>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="sayfa-numarasi">5</div>
+                </div>
+            </div>
+
+            <!-- YAPRAK 4 (MEGSİS VE TARBİS) -->
+            <div class="sayfa" id="s4">
+                <div class="on">
+                    <h2 class="text-center">MEKÂNSAL GAYRİMENKUL SİSTEMİ (MEGSİS)</h2>
+                    <p class="text-[0.6rem] text-gray-500 mb-2 italic">Dinamik Harita Bileşeni:</p>
+                    <div id="harita"></div>
+                    <div class="bilgi-karti mt-2">
+                        <h4><i class="fa-solid fa-cloud-arrow-up text-blue-400"></i> MEGSİS Portalı</h4>
+                        <p class="text-[0.75rem]">Parsel verilerinin CBS standartlarında toplandığı ve paylaşıldığı
+                            ulusal harita portalıdır.</p>
+                    </div>
+                    <div class="sayfa-numarasi">6</div>
+                </div>
+                <div class="arka">
+                    <h2 class="text-center">TAPU ARŞİV BİLGİ SİSTEMİ (TARBİS)</h2>
+                    <div class="bilgi-karti">
+                        <h4><i class="fa-solid fa-file-pdf text-red-500"></i> Arşiv Dijitizasyonu</h4>
+                        <p class="text-[0.75rem]">Osmanlı'dan günümüze tüm tapu kayıtlarının taranarak dijital ortama
+                            aktarılması süreci.</p>
+                    </div>
+                    <div class="sayfa-numarasi">7</div>
+                </div>
+            </div>
+
+            <!-- SAYFA 5 (HARİTA BANKASI VE WEB TAPU) -->
+            <div class="sayfa" id="s5">
+                <div class="on">
+                    <h2>HARİTA BİLGİ BANKASI</h2>
+                    <div class="bilgi-karti">
+                        <h4><i class="fa-solid fa-vault text-amber-600"></i> Ulusal Veri Deposu</h4>
+                        <p>Türkiye'deki tüm harita üretim çalışmalarının raporlandığı ve arşivlendiği ana
+                            platformdur.</p>
+                    </div>
+                    <div class="sayfa-numarasi">8</div>
+                </div>
+                <div class="arka">
+                    <h2>WEB TAPU SİSTEMİ</h2>
+                    <div class="bilgi-karti">
+                        <h4><i class="fa-solid fa-user-shield text-green-500"></i> Vatandaş Portalı</h4>
+                        <p>Vatandaşların müdürlüğe gitmeden tapu işlemlerini başlatabildiği e-devlet entegrasyonlu
+                            sistem.</p>
+                    </div>
+                    <div class="sayfa-numarasi">9</div>
+                </div>
+            </div>
+
+            <!-- SAYFA 6 (TUCBS VE ASKI) -->
+            <div class="sayfa" id="s6">
+                <div class="on">
+                    <h2>TÜRKİYE ULUSAL CBS (TUCBS)</h2>
+                    <div class="bilgi-karti">
+                        <h4><i class="fa-solid fa-share-nodes text-indigo-500"></i> Veri Paylaşım Standartları</h4>
+                        <p>Kurumlar arası coğrafi veri paylaşımını sağlayan ulusal altyapı ve portal.</p>
+                    </div>
+                    <div class="sayfa-numarasi">10</div>
+                </div>
+                <div class="arka">
+                    <h2>ASKI İLANI SORGULAMA SİSTEMİ</h2>
+                    <div class="bilgi-karti">
+                        <h4><i class="fa-solid fa-bullhorn text-orange-500"></i> Şeffaf Yönetim ve Devlet</h4>
+                        <p class="text-[0.75rem]">Tapu ve Kadastro bilgilerinin çevrimiçi ve güncel olarak vatandaşların
+                            incelemesine sunulması, şeffaf devlet anlayışına doğrudan katkı sağlamaktadır.</p>
+                    </div>
+                    <div class="bilgi-karti border-l-4 border-l-orange-400">
+                        <h4><i class="fa-solid fa-desktop text-orange-600"></i> E-İLAN Geliştirme Süreci</h4>
+                        <p class="text-[0.7rem] italic">"Kadastro çalışmaları sonucunda yapılan bilgilendirme ve askı
+                            ilanlarının tamamen web ortamına taşınmasına yönelik dijitalleşme çalışmaları devam
+                            etmektedir."</p>
+                        <div
+                            class="mt-2 text-[8px] font-mono text-orange-800 bg-orange-50 px-2 py-1 rounded inline-block">
+                            KAYNAK: DİJİTAL UYGULAMALAR SUNUMU (SLAYT 38)</div>
+                    </div>
+                    <div class="sayfa-numarasi">11</div>
+                </div>
+            </div>
+
+            <!-- SAYFA 7 (MODERNİZASYON VE YAZILIMCILIK) -->
+            <div class="sayfa" id="s7">
+                <div class="on">
+                    <h2>TAPU KADASTRO MODERNİZASYONU</h2>
+                    <div class="bilgi-karti">
+                        <h4><i class="fa-solid fa-arrows-spin text-blue-600"></i> Süreç İyileştirme</h4>
+                        <p>Bürokrasinin azaltılması ve işlem sürelerinin teknoloji ile kısaltılması çalışmaları.</p>
+                    </div>
+                    <div class="sayfa-numarasi">12</div>
+                </div>
+                <div class="arka">
+                    <h2>TK ALANINDA YAZILIMCILIK</h2>
+                    <div class="bilgi-karti">
+                        <h4><i class="fa-solid fa-laptop-code text-slate-700"></i> Geleceğin Mesleği</h4>
+                        <p>Mekansal veri tabanları, Python scriptleri ve web tabanlı CBS geliştirme yetkinlikleri.
+                        </p>
+                    </div>
+                    <div class="sayfa-numarasi">13</div>
+                </div>
+            </div>
+
+            <!-- SAYFA 8 (İHA VE FOTOGRAMETRİ / VERİ GÜVENLİĞİ) -->
+            <div class="sayfa" id="s8">
+                <div class="on">
+                    <h2>İHA VE FOTOGRAMETRİ</h2>
+                    <div class="bilgi-karti">
+                        <h4><i class="fa-solid fa-satellite text-sky-500"></i> İHA ve Fotogrametri</h4>
+                        <p>Kadastro güncellemelerinde drone teknolojisinin kullanımı.</p>
+                    </div>
+                    <div class="sayfa-numarasi">14</div>
+                </div>
+                <div class="arka">
+                    <h2>VERİ GÜVENLİĞİ</h2>
+                    <div class="bilgi-karti">
+                        <h4><i class="fa-solid fa-shield-halved text-red-500"></i> Siber Defans</h4>
+                        <p>Mülkiyet verilerinin KVKK ve siber güvenlik standartlarında korunması.</p>
+                    </div>
+                    <div class="sayfa-numarasi">15</div>
+                </div>
+            </div>
+
+            <!-- SAYFA 9 (YAPAY ZEKA ENTEGRASYONU / AKILLI ŞEHİRLER) -->
+            <div class="sayfa" id="s9">
+                <div class="on">
+                    <h2>YAPAY ZEKA ENTEGRASYONU</h2>
+                    <div class="bilgi-karti">
+                        <h4><i class="fa-solid fa-brain text-pink-500"></i> Akıllı Karar Destek</h4>
+                        <p>Tapu kayıtlarındaki anormalliklerin makine öğrenmesi ile tespiti.</p>
+                    </div>
+                    <div class="sayfa-numarasi">16</div>
+                </div>
+                <div class="arka">
+                    <h2>AKILLI ŞEHİRLER</h2>
+                    <div class="bilgi-karti">
+                        <h4><i class="fa-solid fa-city text-blue-500"></i> Kentsel Dönüşüm ve Planlama</h4>
+                        <p>Coğrafi bilgi sistemleri ile akıllı şehir uygulamalarının entegrasyonu.</p>
+                    </div>
+                    <div class="sayfa-numarasi">17</div>
+                </div>
+            </div>
+
+            <!-- SAYFA 10 (SERTİFİKASYON / SON) -->
+            <div class="sayfa" id="s10">
+                <div class="on">
+                    <h2>SERTİFİKASYON SÜRECİ</h2>
+                    <div class="bilgi-karti">
+                        <h4><i class="fa-solid fa-award text-yellow-500"></i> Uzmanlık Belgesi</h4>
+                        <p>Tüm modülleri başarıyla tamamlayan katılımcılar "MEGSİS Uzmanlık Belgesi" almaya hak kazanır.
+                        </p>
+                    </div>
+                    <div class="sayfa-numarasi">18</div>
+                </div>
+                <div class="arka kapak-on" style="border-radius: 10px 0 0 10px;">
+                    <i class="fa-solid fa-trophy text-7xl mb-8" style="color: var(--kitap-altin);"></i>
+                    <h2 style="color: white; border-bottom: none; font-size: 1.8rem;">EĞİTİM TAMAMLANDI</h2>
+                    <div class="mt-20">
+                        <div class="text-2xl font-bold italic" style="color: var(--kitap-altin);">Öğr. Gör. Erdem
+                            ALPAR
+                        </div>
+                        <div class="mt-4 tracking-widest text-sm opacity-60">TKGM Eğitim Kitabı</div>
+                        <div class="mt-20 font-mono text-[10px] opacity-30 tracking-[0.5em]">KOD: TKGM-2026-CBS
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const toplam_sayfa_sayisi = 10;
+        let mevcut_sayfa = 1;
+        const sayfalar = [];
+        const mesaj_kutusu = document.getElementById('mesajKutusu');
+        let harita;
+
+        function mesaj_goster(metin) {
+            mesaj_kutusu.innerText = metin;
+            mesaj_kutusu.style.display = 'block';
+            setTimeout(() => { mesaj_kutusu.style.display = 'none'; }, 3000);
+        }
+
+        // Harita Başlatma
+        function haritayi_baslat() {
+            if (!harita) {
+                harita = L.map('harita').setView([39.9334, 32.8597], 13); // Ankara Merkezi
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap'
+                }).addTo(harita);
+
+                L.marker([39.9334, 32.8597]).addTo(harita)
+                    .bindPopup('Ankara MEGSİS Veri Merkezi')
+                    .openPopup();
+
+                // Harita boyutunu güncelle (Sayfa çevrildiğinde görünür olması için)
+                setTimeout(() => { harita.invalidateSize(); }, 500);
+            }
+        }
+
+        // Sayfaları diziye al
+        for (let i = 1; i <= toplam_sayfa_sayisi; i++) {
+            const sayfa_el = document.getElementById('s' + i);
+            if (sayfa_el) sayfalar.push(sayfa_el);
+        }
+
+        // Ana Ders Planı ve Doğruluk Kaynağı
+        const ders_plani = [
+            { baslik: 'KAPAK', yaprak: 1, yuz: 'on' },
+            { baslik: 'İÇERİK', yaprak: 2, yuz: 'on' },
+            { baslik: 'MODÜL', yaprak: 2, yuz: 'on' },
+            { baslik: 'DIJITAL', yaprak: 3, yuz: 'arka' },
+            { baslik: 'TAKBİS', yaprak: 3, yuz: 'on' },
+            { baslik: '3B MOD', yaprak: 4, yuz: 'arka' },
+            { baslik: 'MEGSİS', yaprak: 4, yuz: 'on' },
+            { baslik: 'TARBİS', yaprak: 5, yuz: 'arka' },
+            { baslik: 'HBB', yaprak: 5, yuz: 'on' },
+            { baslik: 'WEBTP', yaprak: 6, yuz: 'arka' },
+            { baslik: 'TUCBS', yaprak: 6, yuz: 'on' },
+            { baslik: 'ASKI', yaprak: 7, yuz: 'arka' },
+            { baslik: 'MODERN', yaprak: 7, yuz: 'on' },
+            { baslik: 'YAZILIM', yaprak: 8, yuz: 'arka' },
+            { baslik: 'İHA-FOTO', yaprak: 8, yuz: 'on' },
+            { baslik: 'GÜVENLİK', yaprak: 9, yuz: 'arka' },
+            { baslik: 'Z-ZEKA', yaprak: 9, yuz: 'on' },
+            { baslik: 'ŞEHİR', yaprak: 10, yuz: 'arka' },
+            { baslik: 'BELGE', yaprak: 10, yuz: 'on' },
+            { baslik: 'SON', yaprak: 11, yuz: 'arka' }
+        ];
+
+        // Tekli Fihrist Sekmelerini Oluştur
+        const fihrist_el = document.getElementById('fihrist');
+        ders_plani.forEach(konu => {
+            const sekme = document.createElement('div');
+            sekme.className = 'sekme';
+            sekme.innerText = konu.baslik;
+            sekme.title = konu.baslik;
+
+            sekme.onclick = (e) => {
+                e.stopPropagation();
+                sayfaya_git(konu.yaprak);
+            };
+            fihrist_el.appendChild(sekme);
+        });
+
+        function z_indekslerini_guncelle() {
+            sayfalar.forEach((sayfa, indeks) => {
+                const no = indeks + 1;
+                if (no < mevcut_sayfa) sayfa.style.zIndex = no;
+                else if (no === mevcut_sayfa) sayfa.style.zIndex = toplam_sayfa_sayisi + 1;
+                else sayfa.style.zIndex = toplam_sayfa_sayisi - no;
+            });
+
+            // MEGSİS yaprağı s4 (Harita tetikleyicisi)
+            if (mevcut_sayfa === 4) {
+                setTimeout(haritayi_baslat, 600);
+            }
+        }
+
+        function sonraki_sayfa() {
+            if (mevcut_sayfa <= toplam_sayfa_sayisi) {
+                const el = document.getElementById('s' + mevcut_sayfa);
+                if (el) el.classList.add('cevrilmis');
+                mevcut_sayfa++;
+                z_indekslerini_guncelle();
+            }
+        }
+
+        function onceki_sayfa() {
+            if (mevcut_sayfa > 1) {
+                mevcut_sayfa--;
+                const el = document.getElementById('s' + mevcut_sayfa);
+                if (el) el.classList.remove('cevrilmis');
+                z_indekslerini_guncelle();
+            }
+        }
+
+        function sayfaya_git(hedef) {
+            if (mevcut_sayfa === hedef) return;
+
+            const adim = () => {
+                if (mevcut_sayfa < hedef) {
+                    sonraki_sayfa();
+                    if (mevcut_sayfa < hedef) setTimeout(adim, 200);
+                }
+                else if (mevcut_sayfa > hedef) {
+                    onceki_sayfa();
+                    if (mevcut_sayfa > hedef) setTimeout(adim, 200);
+                }
+            };
+            adim();
+        }
+
+        // Tıklama olayları
+        sayfalar.forEach((sayfa) => {
+            sayfa.addEventListener('click', (e) => {
+                // Harita etkileşimini engelleme
+                if (e.target.closest('#harita')) return;
+
+                if (sayfa.classList.contains('cevrilmis')) onceki_sayfa();
+                else sonraki_sayfa();
+            });
+        });
+
+        // Fullscreen Yönetimi
+        const tam_ekran_butonu = document.getElementById('tamEkranButonu');
+        const tam_ekran_ikonu = document.getElementById('tamEkranIkonu');
+
+        tam_ekran_butonu.addEventListener('click', async () => {
+            try {
+                if (!document.fullscreenElement) {
+                    await document.documentElement.requestFullscreen();
+                } else {
+                    await document.exitFullscreen();
+                }
+            } catch (err) {
+                mesaj_goster("Tam ekran modu bu ortamda kısıtlanmış olabilir.");
+            }
+        });
+
+        document.addEventListener('fullscreenchange', () => {
+            if (document.fullscreenElement) {
+                tam_ekran_ikonu.classList.replace('fa-expand', 'fa-compress');
+            } else {
+                tam_ekran_ikonu.classList.replace('fa-compress', 'fa-expand');
+            }
+        });
+
+        // Başlat
+        z_indekslerini_guncelle();
+        mesaj_goster("MEGSİS-CBS Eğitim Kitabına Hoş Geldiniz");
+    </script>
+</body>
+
+</html>
