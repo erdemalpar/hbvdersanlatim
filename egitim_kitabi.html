@@ -924,9 +924,13 @@
 
                         <!-- TARBİS Hologram Sanal Arşiv Eğitimi -->
                         <div class="mb-4 mt-2 relative overflow-hidden rounded-xl shadow-md group">
-                            <img src="assets/img/tarbis_vr_hologram.jpg" alt="TARBİS VR Hologram Arşivi" class="w-full h-48 object-cover border border-gray-200 transition-transform duration-700 group-hover:scale-105">
-                            <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-3">
-                                <span class="text-white text-[9px] font-bold tracking-widest uppercase"><i class="fa-solid fa-vr-cardboard text-blue-400 mr-2"></i>Dijital Eğitim Simülasyonu</span>
+                            <img src="assets/img/tarbis_vr_hologram.jpg" alt="TARBİS VR Hologram Arşivi"
+                                class="w-full h-48 object-cover border border-gray-200 transition-transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-3">
+                                <span class="text-white text-[9px] font-bold tracking-widest uppercase"><i
+                                        class="fa-solid fa-vr-cardboard text-blue-400 mr-2"></i>Dijital Eğitim
+                                    Simülasyonu</span>
                             </div>
                         </div>
 
@@ -1204,7 +1208,8 @@
                                     Madde 10 esas alınmaktadır.</p>
 
                                 <div class="grid grid-cols-2 gap-3 mb-3">
-                                    <a href="https://drive.google.com/file/d/1tyc_IWLtYAaBxGFYpg2ahFytjLioRbW9/view?usp=sharing" target="_blank"
+                                    <a href="https://drive.google.com/file/d/1tyc_IWLtYAaBxGFYpg2ahFytjLioRbW9/view?usp=sharing"
+                                        target="_blank"
                                         class="block bg-amber-50 border border-amber-200 rounded-xl p-3 text-center shadow-sm hover:shadow-md transition-shadow cursor-pointer no-underline">
                                         <i class="fa-solid fa-temperature-arrow-down text-2xl text-amber-600 mb-2"></i>
                                         <h4 class="text-[9px] font-bold text-amber-900 mb-1 uppercase tracking-wider">
@@ -1215,7 +1220,8 @@
                                         </p>
                                     </a>
 
-                                    <a href="https://drive.google.com/file/d/1lDsjvTvm3-doIsGcOfZ4OAY_b6VJlf_t/view?usp=sharing" target="_blank"
+                                    <a href="https://drive.google.com/file/d/1lDsjvTvm3-doIsGcOfZ4OAY_b6VJlf_t/view?usp=sharing"
+                                        target="_blank"
                                         class="block bg-teal-50 border border-teal-200 rounded-xl p-3 text-center shadow-sm hover:shadow-md transition-shadow cursor-pointer no-underline">
                                         <i class="fa-solid fa-microscope text-2xl text-teal-600 mb-2"></i>
                                         <h4 class="text-[9px] font-bold text-teal-900 mb-1 uppercase tracking-wider">
@@ -1506,7 +1512,9 @@
                                     ortamda deneyimlemek mümkündür.</p>
 
                                 <div class="mt-2 mb-3 aspect-video w-full">
-                                    <iframe src="https://muze.tkgm.gov.tr/" class="w-full h-full rounded-lg shadow-sm border border-gray-200" allowfullscreen></iframe>
+                                    <iframe src="https://muze.tkgm.gov.tr/"
+                                        class="w-full h-full rounded-lg shadow-sm border border-gray-200"
+                                        allowfullscreen></iframe>
                                 </div>
 
                                 <a href="https://muze.tkgm.gov.tr/" target="_blank"
@@ -1538,10 +1546,165 @@
             <div class="sayfa" id="s5">
                 <div class="on">
                     <h2>HARİTA BİLGİ BANKASI</h2>
-                    <div class="bilgi-karti">
-                        <h4><i class="fa-solid fa-vault text-amber-600"></i> Ulusal Veri Deposu</h4>
-                        <p>Türkiye'deki tüm harita üretim çalışmalarının raporlandığı ve arşivlendiği ana
-                            platformdur.</p>
+                    <div class="overflow-y-auto pr-2" style="max-height: 90%;">
+
+                        <!-- HBB Portal İframe Tıklanabilir Alanı -->
+                        <div class="relative w-full h-80 mb-4 group cursor-pointer">
+                            <iframe src="https://hbb.tkgm.gov.tr/"
+                                class="w-full h-full border border-gray-300 rounded-xl shadow-sm bg-white pointer-events-none"
+                                title="Harita Bilgi Bankası Portalı" tabindex="-1"></iframe>
+                            <a href="https://hbb.tkgm.gov.tr/home" target="_blank" rel="noopener noreferrer"
+                                class="absolute inset-0 z-10 flex items-center justify-center bg-transparent hover:bg-black/10 transition-colors duration-300 rounded-xl"
+                                title="Yeni sekmede açmak için tıklayın">
+                                <div
+                                    class="bg-blue-600/90 text-white w-12 h-12 flex items-center justify-center rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg backdrop-blur-sm">
+                                    <i class="fa-solid fa-up-right-from-square text-lg"></i>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="bilgi-karti mb-4">
+                            <h4><i class="fa-solid fa-circle-info text-blue-600"></i> HBB Nedir?</h4>
+                            <p class="mb-2 leading-relaxed text-[0.75rem] text-justify text-gray-800">Harita Bilgi
+                                Bankası (HBB), Büyük Ölçekli Harita ve Harita Bilgileri Üretim Yönetmeliği çerçevesinde,
+                                ülke kaynaklarının verimli kullanımı ve mükerrer harita üretiminin önlenmesi amacıyla
+                                Tapu ve Kadastro Genel Müdürlüğü Harita Dairesi Başkanlığı bünyesinde geliştirilmiş
+                                ulusal bir metaveri portalıdır.</p>
+                            <p class="leading-relaxed text-[0.75rem] text-justify text-gray-800">ISO 19115
+                                standartlarına uygun olarak tasarlanan sistem, 2008 yılından bu yana bakanlıklar, kamu
+                                kurum ve kuruluşları ile belediyelerin harita projelerini kayıt altına almasını, proje
+                                kayıt numarası almasını ve yer kontrol noktası numaralarının tek merkezden verilmesini
+                                sağlamaktadır.</p>
+                        </div>
+
+                        <div class="bg-slate-800 p-4 rounded-xl mb-4 text-white shadow-md">
+                            <h4 class="text-center text-blue-300 text-[0.6rem] uppercase tracking-wider font-bold mb-1">
+                                RAKAMLARLA HBB</h4>
+                            <h3 class="text-center text-[0.9rem] font-bold mb-1">Türkiye'nin Harita Metaveri Altyapısı
+                            </h3>
+                            <p class="text-center text-[0.65rem] text-slate-300 mb-3">Onlarca yıllık birikimle
+                                oluşturulan kapsamlı coğrafi veri bankası</p>
+                            <div class="grid grid-cols-2 gap-3 text-center">
+                                <div>
+                                    <div class="text-2xl font-black text-blue-400">81</div>
+                                    <div
+                                        class="text-[0.6rem] text-slate-300 border-b-2 border-orange-500 inline-block pb-1">
+                                        İl Kapsamı</div>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-black text-blue-400">110+</div>
+                                    <div
+                                        class="text-[0.6rem] text-slate-300 border-b-2 border-orange-500 inline-block pb-1">
+                                        Kayıtlı Kurum ve Kuruluş</div>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-black text-blue-400">60+</div>
+                                    <div
+                                        class="text-[0.6rem] text-slate-300 border-b-2 border-orange-500 inline-block pb-1">
+                                        Yıllık Arşiv</div>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-black text-blue-400">9500+</div>
+                                    <div
+                                        class="text-[0.6rem] text-slate-300 border-b-2 border-orange-500 inline-block pb-1">
+                                        Metadata Girişi</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-[1rem] font-bold text-gray-800 mb-1 border-b pb-1 mt-4">Özellikler</h3>
+                        <p class="text-[0.75rem] text-gray-600 mb-3">Temel Hizmetler</p>
+
+                        <details class="bg-white border border-blue-200 rounded-lg mb-2 shadow-sm group">
+                            <summary
+                                class="font-bold text-[0.8rem] text-blue-900 p-2 cursor-pointer list-none flex items-center gap-2">
+                                <i class="fa-solid fa-database text-blue-500 w-5 text-center"></i> Metadata Yönetimi
+                                <i
+                                    class="fa-solid fa-chevron-down ml-auto transition-transform group-open:rotate-180 text-gray-400 text-xs"></i>
+                            </summary>
+                            <div
+                                class="p-3 pt-0 text-[0.7rem] text-gray-700 leading-relaxed border-t border-blue-100 mt-1">
+                                <p class="mb-2"><strong>Nedir?</strong> Kamu kurumlarının ürettiği veya üretmeyi
+                                    planladığı harita projelerinin ISO 19115 standartlarına uygun şekilde kayıt altına
+                                    alındığı, proje kayıt numarasının verildiği ve yer kontrol noktası (YKN) numarasının
+                                    talep edildiği merkezi sistemdir.</p>
+                                <p class="mb-2"><strong>Amacı:</strong> Kurumların harita üretim projelerinde, yer
+                                    kontrol noktası numaralarını tek merkezden vererek mükerrer nokta tesisini
+                                    engellemek ve tüm harita üretim faaliyetlerinin izlenebilir olmasını sağlamaktır.
+                                </p>
+                                <p><strong>Nasıl Kullanılır?</strong> Sisteme giriş yaptıktan sonra yeni bir harita
+                                    projesi kaydedilebilir, mevcut projelerin metadata bilgilerini sorgulanabilir, Yer
+                                    Kontrol Nokta numarası talebinde bulunabilir ve jeodezik nokta sorgulamaları
+                                    yapılabilmektedir.</p>
+                            </div>
+                        </details>
+
+                        <details class="bg-white border border-orange-200 rounded-lg mb-2 shadow-sm group">
+                            <summary
+                                class="font-bold text-[0.8rem] text-orange-700 p-2 cursor-pointer list-none flex items-center gap-2">
+                                <i class="fa-solid fa-layer-group text-orange-500 w-5 text-center"></i> Üretim Alanı
+                                Sorgulama
+                                <i
+                                    class="fa-solid fa-chevron-down ml-auto transition-transform group-open:rotate-180 text-gray-400 text-xs"></i>
+                            </summary>
+                            <div
+                                class="p-3 pt-0 text-[0.7rem] text-gray-700 leading-relaxed border-t border-orange-100 mt-1">
+                                <p class="mb-2"><strong>Nedir?</strong> Türkiye genelinde hangi bölgelerde harita
+                                    üretimi yapıldığını, devam eden projeleri ve tamamlanmış çalışmaları gösteren
+                                    sorgulama aracıdır.</p>
+                                <p class="mb-2"><strong>Amacı:</strong> Kamu kurumlarının ve özel sektörün aynı bölgede
+                                    mükerrer harita üretimi yapmasını engellemek, kaynak israfını önlemek ve mevcut
+                                    verilerden haberdar olmalarını sağlamaktır.</p>
+                                <p><strong>Nasıl Kullanılır?</strong> Harita üzerinde bir bölge seçilerek veya il/ilçe
+                                    bazında filtreleme yapılarak o alandaki geçmiş ve devam eden tüm harita üretim
+                                    faaliyetleri görüntülenebilir.</p>
+                            </div>
+                        </details>
+
+                        <details class="bg-white border border-green-200 rounded-lg mb-2 shadow-sm group">
+                            <summary
+                                class="font-bold text-[0.8rem] text-green-700 p-2 cursor-pointer list-none flex items-center gap-2">
+                                <i class="fa-solid fa-download text-green-600 w-5 text-center"></i> Veri Sorgulama ve
+                                İndirme
+                                <i
+                                    class="fa-solid fa-chevron-down ml-auto transition-transform group-open:rotate-180 text-gray-400 text-xs"></i>
+                            </summary>
+                            <div
+                                class="p-3 pt-0 text-[0.7rem] text-gray-700 leading-relaxed border-t border-green-100 mt-1">
+                                <p class="mb-2"><strong>Nedir?</strong> Yetkili kullanıcıların, TKGM ve HGM tarafından
+                                    üretilen ortofoto görüntülerine, sayısal yükseklik modellerine ve standart
+                                    topografik harita (STH) verilerine erişebildiği ve indirebildiği veri sorgulama
+                                    modülüdür.</p>
+                                <p class="mb-2"><strong>Amacı:</strong> Kamu kurumlarının harita üretim ve planlama
+                                    süreçlerinde ihtiyaç duydukları güncel ortofoto, yükseklik ve arazi verilerine tek
+                                    bir platform üzerinden hızlı ve güvenli şekilde ulaşmasını sağlamaktır.</p>
+                                <p><strong>Nasıl Kullanılır?</strong> Sisteme giriş yaptıktan sonra harita üzerinden
+                                    ilgili bölge seçilerek mevcut ortofoto, yükseklik modeli ve STH verileri
+                                    sorgulanabilir, uygun formatta indirilebilir.</p>
+                            </div>
+                        </details>
+
+                        <details class="bg-white border border-cyan-200 rounded-lg mb-2 shadow-sm group">
+                            <summary
+                                class="font-bold text-[0.8rem] text-cyan-800 p-2 cursor-pointer list-none flex items-center gap-2">
+                                <i class="fa-solid fa-scale-balanced text-cyan-700 w-5 text-center"></i> UYAP
+                                Entegrasyonu
+                                <i
+                                    class="fa-solid fa-chevron-down ml-auto transition-transform group-open:rotate-180 text-gray-400 text-xs"></i>
+                            </summary>
+                            <div
+                                class="p-3 pt-0 text-[0.7rem] text-gray-700 leading-relaxed border-t border-cyan-100 mt-1">
+                                <p class="mb-2"><strong>Nedir?</strong> Adalet Bakanlığı'nın Ulusal Yargı Ağı Projesi
+                                    (UYAP) ile Harita Bilgi Bankası arasında kurulan güvenli veri paylaşım köprüsüdür.
+                                </p>
+                                <p class="mb-2"><strong>Amacı:</strong> Mahkemelerin ve yargı mensuplarının dava
+                                    süreçlerinde ihtiyaç duydukları kadastro ve harita verilerine resmi, güvenilir ve
+                                    hızlı bir şekilde ulaşabilmesini sağlamaktır.</p>
+                                <p><strong>Nasıl Kullanılır?</strong> Yetkili yargı mensupları, UYAP sistemi üzerinden
+                                    dosya numarası ile ilgili kadastro ve harita verilerini otomatik olarak
+                                    sorgulayabilir ve dava dosyalarına ekleyebilir.</p>
+                            </div>
+                        </details>
                     </div>
                     <div class="sayfa-numarasi">8</div>
                 </div>
@@ -1639,7 +1802,7 @@
                                     Tesis Etme</strong> Sistemdeki "İşlem Yapılamaz Beyanı" özelliği, dolandırıcılık
                                 risklerine karşı en güçlü araçtır. Bu seçenek aktif edildiğinde, taşınmaz sahibi bizzat
                                 müdürlüğe gidip kaldırmadığı sürece taşınmaz üzerinde hiçbir işlem yapılamaz.</p>
-                            <img src="./assets/img/webtapu_portals_ui_1773094346242.png" alt="Web Tapu Güvenlik"
+                            <img src="./assets/img/islemyapilamazbeyani.png" alt="Web Tapu Güvenlik Rehberi"
                                 class="w-full rounded-2xl shadow-xl mb-4 border border-red-50">
 
                             <div class="p-4 bg-red-50 rounded-xl border border-red-100 mb-4">
@@ -1789,20 +1952,162 @@
                     <div class="sayfa-numarasi">10</div>
                 </div>
                 <div class="arka">
-                    <h2>ASKI İLANI SORGULAMA SİSTEMİ</h2>
-                    <div class="bilgi-karti">
-                        <h4><i class="fa-solid fa-bullhorn text-orange-500"></i> Şeffaf Yönetim ve Devlet</h4>
-                        <p class="text-[0.75rem]">Tapu ve Kadastro bilgilerinin çevrimiçi ve güncel olarak vatandaşların
-                            incelemesine sunulması, şeffaf devlet anlayışına doğrudan katkı sağlamaktadır.</p>
-                    </div>
-                    <div class="bilgi-karti border-l-4 border-l-orange-400">
-                        <h4><i class="fa-solid fa-desktop text-orange-600"></i> E-İLAN Geliştirme Süreci</h4>
-                        <p class="text-[0.7rem] italic">"Kadastro çalışmaları sonucunda yapılan bilgilendirme ve askı
-                            ilanlarının tamamen web ortamına taşınmasına yönelik dijitalleşme çalışmaları devam
-                            etmektedir."</p>
+                    <h2 class="text-center text-[1rem] uppercase">E-İlan (E-Askı) Sistemi</h2>
+                    <div class="overflow-y-auto pr-2" style="max-height: 85%;">
+
+                        <!-- iframe -->
                         <div
-                            class="mt-2 text-[8px] font-mono text-orange-800 bg-orange-50 px-2 py-1 rounded inline-block">
-                            KAYNAK: DİJİTAL UYGULAMALAR SUNUMU (SLAYT 38)</div>
+                            class="w-full bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden mb-4 relative group">
+                            <div
+                                class="bg-gray-100 px-3 py-1.5 border-b border-gray-200 flex items-center justify-between">
+                                <div class="flex items-center gap-1.5">
+                                    <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                                    <div class="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
+                                    <div class="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+                                    <span class="text-[9px] font-bold text-gray-500 ml-2">e-ilan.tkgm.gov.tr</span>
+                                </div>
+                                <a href="https://e-ilan.tkgm.gov.tr/" target="_blank" onclick="event.stopPropagation();"
+                                    class="text-[9px] text-blue-500 hover:text-blue-700 font-bold bg-blue-50 px-2 py-1 rounded transition-colors"><i
+                                        class="fa-solid fa-external-link-alt"></i> Siteye Git</a>
+                            </div>
+                            <!-- Embed wrapper for iframe -->
+                            <div class="w-full h-[180px] overflow-hidden bg-gray-50 relative">
+                                <iframe src="https://e-ilan.tkgm.gov.tr/"
+                                    class="absolute top-0 left-0 border-none transform scale-[0.5] origin-top-left"
+                                    style="width: 200%; height: 360px;" title="e-İlan Portalı"></iframe>
+                            </div>
+                            <div
+                                class="bg-orange-50 p-2 border-t border-orange-100 text-[8px] font-bold text-orange-800 text-center uppercase tracking-wider">
+                                <i class="fa-solid fa-bolt text-orange-500 mr-1"></i> Canlı Sistem Önizlemesi
+                            </div>
+                        </div>
+
+                        <div class="bilgi-karti py-3 px-4 mb-3 border-l-4 border-l-blue-500">
+                            <h4><i class="fa-solid fa-circle-info text-blue-600"></i> e-İlan (e-Askı) Nedir?</h4>
+                            <p class="text-[0.65rem] leading-relaxed text-justify mt-2 mb-0">
+                                Kadastro çalışmaları (tesis, yenileme, 2B, vb.) sonucunda belirlenen sınırların,
+                                yüzölçümlerinin ve hak sahipliklerinin vatandaşların incelemesine sunulduğu resmi bir
+                                <strong>şeffaflık ve duyuru</strong> sistemidir.<br><br>
+                                Eskiden muhtarlıklarda 30 gün süreyle fiziki olarak askıya çıkarılan tutanak cetvelleri,
+                                bu portal sayesinde zaman ve mekandan bağımsız şekilde sorgulanabilmektedir.
+                            </p>
+                        </div>
+
+                        <div class="bilgi-karti py-3 px-4 border-l-4 border-l-orange-500">
+                            <h4><i class="fa-solid fa-route text-orange-500"></i> e-İlan'a Gelene Kadar Kullanılan
+                                Sistemler</h4>
+                            <p class="text-[0.65rem] leading-relaxed text-justify mt-2 mb-3">
+                                Bir taşınmazın e-İlan'a düşmeden önce kurumsal arka planda geçirdiği aşamalar şunlardır:
+                            </p>
+                            <ul class="text-[0.65rem] space-y-2 text-justify pl-1 list-none text-gray-700">
+                                <li class="flex items-start gap-2"><i
+                                        class="fa-solid fa-satellite-dish text-green-600 mt-0.5"></i><span><strong>CORS-TR:</strong>
+                                        Arazide cm hassasiyetinde GNSS uydu ölçümlerinin yapıldığı altyapı.</span></li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fa-solid fa-layer-group text-blue-500 mt-0.5"></i><span><strong>MEGSİS:</strong>
+                                        Toplanan koordinatların harita tabanlı mekânsal sisteme aktarımı.</span></li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fa-solid fa-server text-red-500 mt-0.5"></i><span><strong>TAKBİS:</strong>
+                                        Sınırları çizilen parsele ait malik ve hakların girildiği mülkiyet
+                                        veritabanı.</span></li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fa-solid fa-desktop text-purple-500 mt-0.5"></i><span><strong>Kadastro
+                                            Bilgi Sistemi:</strong> Kontrollerin yapılıp dijital askı cetvellerinin
+                                        üretilmesi.</span></li>
+                            </ul>
+                            <div class="mt-3 bg-green-50 p-2 rounded border border-green-100 flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-green-600 text-lg"></i>
+                                <span class="text-[0.65rem] font-semibold text-green-800 leading-tight">Bu zincirden
+                                    başarıyla geçen veriler e-İlan'a aktarılır ve vatandaşın itirazına açılır.</span>
+                            </div>
+                        </div>
+
+                        <div class="bilgi-karti py-3 px-4 border-l-4 border-l-red-500 mb-6">
+                            <h4><i class="fa-solid fa-scale-balanced text-red-500"></i> Kanuni Dayanak ve Askı Süreleri
+                            </h4>
+                            <p class="text-[0.65rem] leading-relaxed text-justify mt-2 mb-2">
+                                e-İlan sürecinin yasal çerçevesi temel olarak <strong>3402 sayılı Kadastro
+                                    Kanunu</strong>'na dayanmaktadır. Hak kayıplarının yaşanmaması için aşağıdaki
+                                sürelere ve itiraz şartlarına dikkat edilmesi kritik önem taşır:
+                            </p>
+                            <ul class="text-[0.65rem] space-y-2 text-justify pl-1 list-none text-gray-700">
+                                <li class="flex items-start gap-2"><i
+                                        class="fa-solid fa-clock-rotate-left text-yellow-600 mt-0.5"></i><span><strong>Geçici
+                                            İlan (Bilgilendirme İlanı - 15 Gün):</strong> Kesin askı ilanı öncesinde,
+                                        tespit sonuçlarının ve pafta örneklerinin muhtarlıklarda <strong>15 gün
+                                            süreyle</strong> bilgi amaçlı askıya çıkarıldığı süreçtir. Bu 15 günlük
+                                        sürede, olası hatalara karşı Kadastro Komisyonuna incelenmek üzere <em>yalnızca
+                                            "belgeye dayalı" idari itiraz</em> yapılabilir (Mahkemeye değil, kuruma
+                                        başvurulur).</span></li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fa-solid fa-calendar-check text-red-600 mt-0.5"></i><span><strong>Kesin
+                                            Askı İlanı Süresi (30 Gün):</strong> Kadastro müdürü tarafından düzenlenen
+                                        askı cetvellerinin (tutanakların) resmi ilan edilme süresidir. İlan asıldığı gün
+                                        başlar ve <strong>30 gün</strong> sürer (Madde 11).</span></li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fa-solid fa-gavel text-purple-600 mt-0.5"></i><span><strong>İtiraz
+                                            Şartları:</strong> 30 günlük kesin askı süresi içerisinde tutanaklara
+                                        yapılacak itirazlar doğrudan <strong>Kadastro Mahkemesinde dava
+                                            açılarak</strong> yapılmalıdır.</span></li>
+                            </ul>
+                            <div class="mt-3 bg-red-50 p-2 rounded border border-red-200 flex items-start gap-2">
+                                <i class="fa-solid fa-triangle-exclamation text-red-600 mt-0.5"></i>
+                                <span
+                                    class="text-[0.6rem] font-semibold text-red-800 leading-tight"><strong>DİKKAT:</strong>
+                                    30 günlük süre içinde Kadastro Mahkemesine dava açılmazsa tutanaklar kesinleşerek
+                                    tapuya tescil edilir. Kesinleşmeden sonra kadastrodan önceki sebeplere dayanarak hak
+                                    iddia edilecekse; bu dava <strong>10 yıllık hak düşürücü süre</strong> içerisinde
+                                    genel görevli mahkeme olan <strong>Asliye Hukuk Mahkemesi'nde</strong> (Tapu İptal
+                                    ve Tescil Davası olarak) açılmalıdır (Madde 12/3).</span>
+                            </div>
+                        </div>
+
+                        <div class="bilgi-karti py-3 px-4 border-l-4 border-l-indigo-500 mb-6">
+                            <h4><i class="fa-solid fa-clock text-indigo-500"></i> Kurum ve Mahkemelerin Karar/Cevap
+                                Süreleri</h4>
+                            <p class="text-[0.65rem] leading-relaxed text-justify mt-2 mb-2">
+                                İtiraz ve dava süreçlerinde muhatap kurumların (Kadastro Komisyonu, Hazine, TKGM) ve
+                                mahkemelerin cevap süreleri şu şekildedir:
+                            </p>
+                            <ul class="text-[0.65rem] space-y-2 text-justify pl-1 list-none text-gray-700">
+                                <li class="flex items-start gap-2"><i
+                                        class="fa-solid fa-users-gear text-teal-600 mt-0.5"></i><span><strong>15 Günlük
+                                            İdari İtirazda Komisyon Kararı:</strong> Kadastro Komisyonu, kendisine
+                                        intikal eden idari itirazları en geç <strong>1 ay içinde</strong> (veya kadastro
+                                        ekibi o alandaki işini bitirene kadar) karara bağlamak zorundadır (Madde
+                                        10).</span></li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fa-solid fa-scale-unbalanced text-indigo-600 mt-0.5"></i><span><strong>Kadastro
+                                            ve Asliye Hukuk Mahkemelerinde:</strong> 30 günlük askı süresi içinde
+                                        (Kadastro Mahkemesi) veya 10 yıllık sürede (Asliye Hukuk Mahkemesi) açılan
+                                        davalarda, davalı kurumların (Hazine vb.) dava dilekçesine cevap verme süresi
+                                        Hukuk Muhakemeleri Kanunu uyarınca tebligat tarihinden itibaren kural olarak
+                                        <strong>2 hafta (14 gün)</strong>'dür. Mahkemenin nihai kararı ise dava durumuna
+                                        göre daha uzun sürmektedir.</span></li>
+                            </ul>
+                        </div>
+
+                        <div
+                            class="bg-amber-50 border border-amber-200 rounded-xl p-3 text-center shadow-sm mb-6 relative mt-6">
+                            <div
+                                class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-amber-600 text-white px-3 py-1 rounded-full text-[8px] font-bold tracking-widest shadow-sm">
+                                NOSTALJİ: ESKİ SİSTEM
+                            </div>
+                            <h4 class="text-[0.75rem] font-bold text-amber-900 mt-2 mb-2"><i
+                                    class="fa-solid fa-scroll text-amber-700"></i> Eski Fiziksel Askı İlan Cetvelleri
+                            </h4>
+                            <p class="text-[0.6rem] text-amber-800 mb-3 leading-relaxed text-justify">
+                                e-İlan sisteminden önce, kadastro tutanak cetvelleri köy veya mahalle muhtarlıklarına
+                                aşağıdaki gibi fiziksel kağıt çıktısı olarak asılır ve 30 gün boyunca vatandaşlar
+                                isimlerini bu devasa listeler üzerinden satır satır okuyarak bulmaya çalışırdı.
+                            </p>
+                            <div
+                                class="border-2 border-dashed border-amber-300 rounded-lg p-1 bg-white inline-block w-full">
+                                <img src="./assets/img/eskiaskiilanicetveli.png" alt="Fiziksel Askı İlan Cetveli"
+                                    class="w-full h-auto max-h-48 object-cover rounded shadow-sm opacity-90 hover:opacity-100 transition-opacity">
+                            </div>
+                        </div>
+
                     </div>
                     <div class="sayfa-numarasi">11</div>
                 </div>
@@ -1811,10 +2116,41 @@
             <!-- SAYFA 7 (MODERNİZASYON VE YAZILIMCILIK) -->
             <div class="sayfa" id="s7">
                 <div class="on">
-                    <h2>TAPU KADASTRO MODERNİZASYONU</h2>
-                    <div class="bilgi-karti">
-                        <h4><i class="fa-solid fa-arrows-spin text-blue-600"></i> Süreç İyileştirme</h4>
-                        <p>Bürokrasinin azaltılması ve işlem sürelerinin teknoloji ile kısaltılması çalışmaları.</p>
+                    <h2 class="text-center mb-4">TAPU KADASTRO MODERNİZASYONU</h2>
+                    <div class="overflow-y-auto pr-2" style="max-height: 90%;">
+                        <div class="bilgi-karti mb-4">
+                            <h4><i class="fa-solid fa-arrows-spin text-blue-600"></i> Dijital Dönüşüm Hamlesi</h4>
+                            <p class="text-justify leading-relaxed text-[0.75rem]">
+                                <strong>Tapu ve Kadastro Modernizasyonu</strong>, Türkiye'de mülkiyet hakkının devlet
+                                güvencesi altında korunmasını, arazi yönetiminin iyileştirilmesini ve taşınmaz
+                                verilerinin çağdaş standartlara dönüştürülmesini amaçlayan kapsamlı bir dijital dönüşüm
+                                hamlesidir[1][2]. Geleneksel kağıt ve bez paftalara dayalı arşiv yapısından; yüksek
+                                çözünürlüklü <strong>Coğrafi Bilgi Sistemleri (CBS)</strong>, <strong>Üç Boyutlu (3B)
+                                    Kent Modelleri</strong> ve yapay zekâ destekli veri altyapılarına geçişi temsil
+                                eder[2].
+                            </p>
+                            <p class="text-justify leading-relaxed text-[0.75rem] mt-2">
+                                Bu stratejik modernizasyon süreci temel olarak şu ana sütunlar üzerine kurgulanmıştır:
+                            </p>
+                        </div>
+
+                        <div class="bg-blue-50 border-2 border-blue-100 rounded-xl p-2 text-center shadow-sm">
+                            <div class="flex items-center justify-between mb-2 px-1">
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-file-powerpoint text-xl text-blue-600"></i>
+                                    <h4 class="text-[10px] font-bold text-blue-900 uppercase m-0">Modernizasyon Proje
+                                        Sunumu</h4>
+                                </div>
+                                <a href="./assets/sunum/TKGM_Modernizasyon_Proje_Sunumu.pptx" target="_blank"
+                                    onclick="event.stopPropagation();"
+                                    class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded-lg text-[9px] font-bold transition-all shadow-sm inline-flex items-center gap-2 active:scale-95">
+                                    <i class="fa-solid fa-download"></i>
+                                    İNDİR (.PPTX) - 20 MB
+                                </a>
+                            </div>
+                            <iframe src="./assets/sunum/TKGM_Modernizasyon_Proje_Sunumu.pdf" width="100%" height="550px"
+                                class="rounded-lg border-2 border-blue-200 shadow-sm" title="Proje Sunumu PDF"></iframe>
+                        </div>
                     </div>
                     <div class="sayfa-numarasi">12</div>
                 </div>
@@ -1880,6 +2216,1119 @@
                     </div>
                     <div class="sayfa-numarasi">18</div>
                 </div>
+                <div class="arka">
+                    <h2 class="text-center text-[1.2rem] uppercase mb-4">Kurum Hakkında</h2>
+                    <div class="overflow-y-auto pr-2 pb-4" style="max-height: 85%;">
+                        <div class="flex justify-center mb-6 mt-4">
+                            <i class="fa-solid fa-landmark text-6xl text-blue-800"></i>
+                        </div>
+                        <div class="bilgi-karti py-3 px-4 mb-4 border-l-4 border-l-blue-700">
+                            <h4 class="text-blue-800 font-bold"><i class="fa-solid fa-clock-rotate-left mr-2"></i> Köklü
+                                Tarih</h4>
+
+                            <h5 class="text-[0.8rem] font-bold text-gray-800 mt-3 mb-1">Tarihçemiz</h5>
+                            <p class="text-[0.7rem] text-gray-700 mt-1 text-justify leading-relaxed">
+                                Tapu Teşkilatı, ülkemizde ilk kez 21 Mayıs 1847 tarihinde Defterhane-i Amire Kalemi
+                                adıyla kurulmuştur. Cumhuriyet sonrası 1924 yılında Tapu Umum Müdürlüğü Teşkilatı
+                                oluşturulmuş, 1925 yılında kadastro birimi eklenmiştir. Tapu ve Kadastro Genel
+                                Müdürlüğünün bugünkü yapısı ise 1936 yılında belirlenmiştir. Kurum zaman içerisinde
+                                farklı bakanlıklara bağlanmış, 2011 yılından itibaren Çevre ve Şehircilik Bakanlığı
+                                bünyesinde faaliyetlerini sürdürmektedir.
+                            </p>
+
+                            <div class="my-3 flex justify-center">
+                                <img src="assets/img/tkgmhakkinda_1.png" alt="TKGM Hakkında"
+                                    class="max-w-full h-auto rounded-lg shadow-sm border border-gray-200">
+                            </div>
+
+                            <h5 class="text-[0.8rem] font-bold text-gray-800 mt-4 mb-2 leading-tight">Türkiye’nin
+                                taşınmaz varlıklarını modern teknolojilerle kayıt altına alıyor ve koruyoruz.</h5>
+                            <p class="text-[0.7rem] text-gray-700 mt-1 text-justify leading-relaxed">
+                                Tapu ve Kadastro Genel Müdürlüğü, Çevre, Şehircilik ve İklim Değişikliği Bakanlığı'na
+                                bağlı olarak faaliyet gösteren, Türkiye'deki mülkiyet hakkının devlet güvencesi
+                                altındaki koruyucusudur.
+                            </p>
+                            <p class="text-[0.7rem] text-gray-700 mt-2 text-justify leading-relaxed">
+                                Kurumumuz, ülke genelinde taşınmazlara ilişkin kayıtların tutulması, mülkiyet haklarının
+                                belirlenmesi ve bu verilerin güncel teknolojilerle yönetilmesi sorumluluğunu
+                                üstlenmektedir.
+                            </p>
+
+                            <div class="my-3 flex justify-center">
+                                <img src="assets/img/tkgmhakkinda_2.png" alt="TKGM Koruma ve Modernizasyon" class="max-w-full h-auto rounded-lg shadow-sm border border-gray-200">
+                            </div>
+                        </div>
+                        <div class="bilgi-karti py-3 px-4 mb-4 border-l-4 border-l-red-600 bg-red-50">
+                            <h4 class="text-red-700 font-bold"><i class="fa-solid fa-bullseye mr-2"></i> Misyonumuz</h4>
+                            <p class="text-[0.7rem] text-gray-700 mt-2 text-justify leading-relaxed">
+                                Taşınmazlara ilişkin mülkiyet bilgilerini devlet güvencesi altında muhafaza etmek,
+                                güncellemek ve mekânsal bilgi sistemleri vasıtasıyla sunarak halkımızın hizmetine en
+                                güvenli şekilde ulaştırmaktır.
+                            </p>
+                        </div>
+                        <div class="bilgi-karti py-3 px-4 border-l-4 border-l-emerald-600 bg-emerald-50">
+                            <h4 class="text-emerald-700 font-bold"><i class="fa-solid fa-eye mr-2"></i> Vizyonumuz</h4>
+                            <p class="text-[0.7rem] text-gray-700 mt-2 text-justify leading-relaxed">
+                                Taşınmazlara yönelik politikaları belirleyen ve yöneten, mekânsal veride öncü, dünya
+                                çapında lider ve yenilikçi bir kurum olmak.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="sayfa-numarasi">19</div>
+                </div>
+            </div>
+
+            <!-- SAYFA 11 -->
+            <div class="sayfa" id="s11">
+                <div class="on">
+                    <h2 class="text-center text-[1.2rem] uppercase mb-4">Organizasyon Şeması</h2>
+                    <div class="overflow-y-auto pr-2 pb-4" style="max-height: 85%;">
+                        <div class="w-full flex items-center justify-center p-2">
+                            <img src="assets/img/organizasyonsemasi.png" alt="Organizasyon Şeması"
+                                class="max-w-full h-auto rounded-xl shadow-sm border border-gray-200">
+                        </div>
+                    </div>
+                    <div class="sayfa-numarasi">20</div>
+                </div>
+                <div class="arka">
+                    <h2 class="text-center text-[1.2rem] uppercase mb-4">Daire Başkanlıkları</h2>
+                    <div class="overflow-y-auto pr-2 pb-4" style="max-height: 85%;">
+                        <div class="grid grid-cols-2 gap-2 pt-2">
+                            <div class="bg-white border-l-4 border-l-amber-600 p-2 rounded-lg shadow-sm flex items-center gap-2">
+                                <i class="fa-solid fa-magnifying-glass text-amber-600 text-lg w-5 text-center"></i>
+                                <div class="flex flex-col">
+                                    <span class="text-[0.55rem] font-bold text-gray-700 leading-tight">Teftiş Kurulu Başkanlığı</span>
+                                    <span class="text-[0.5rem] text-gray-500">Dr. Ömer Faruk MUTLU</span>
+                                </div>
+                            </div>
+                            <div class="bg-white border-l-4 border-l-cyan-600 p-2 rounded-lg shadow-sm flex items-center gap-2">
+                                <i class="fa-solid fa-scale-balanced text-cyan-600 text-lg w-5 text-center"></i>
+                                <div class="flex flex-col">
+                                    <span class="text-[0.55rem] font-bold text-gray-700 leading-tight">Hukuk Müşavirliği</span>
+                                    <span class="text-[0.5rem] text-gray-500">Ömer Sinan BAYÇELEBİ</span>
+                                </div>
+                            </div>
+                            <div class="bg-white border-l-4 border-l-lime-600 p-2 rounded-lg shadow-sm flex items-center gap-2">
+                                <i class="fa-solid fa-clipboard-check text-lime-600 text-lg w-5 text-center"></i>
+                                <div class="flex flex-col">
+                                    <span class="text-[0.55rem] font-bold text-gray-700 leading-tight">İç Denetim Birimi Bşk.</span>
+                                    <span class="text-[0.5rem] text-gray-500">Halil İbrahim KARAKAYA</span>
+                                </div>
+                            </div>
+                            <div class="bg-white border-l-4 border-l-teal-500 p-2 rounded-lg shadow-sm flex items-center gap-2">
+                                <i class="fa-solid fa-chart-line text-teal-500 text-lg w-5 text-center"></i>
+                                <div class="flex flex-col">
+                                    <span class="text-[0.55rem] font-bold text-gray-700 leading-tight">Strateji Geliştirme Dairesi</span>
+                                    <span class="text-[0.5rem] text-gray-500">Sinem CANBAY</span>
+                                </div>
+                            </div>
+                            <div class="bg-white border-l-4 border-l-blue-500 p-2 rounded-lg shadow-sm flex items-center gap-2">
+                                <i class="fa-solid fa-laptop-code text-blue-500 text-lg w-5 text-center"></i>
+                                <div class="flex flex-col">
+                                    <span class="text-[0.55rem] font-bold text-gray-700 leading-tight">Bilgi Teknolojileri Dairesi</span>
+                                    <span class="text-[0.5rem] text-gray-500">Fatih Çağatay KAPLAN</span>
+                                </div>
+                            </div>
+                            <div class="bg-white border-l-4 border-l-red-500 p-2 rounded-lg shadow-sm flex items-center gap-2">
+                                <i class="fa-solid fa-file-signature text-red-500 text-lg w-5 text-center"></i>
+                                <div class="flex flex-col">
+                                    <span class="text-[0.55rem] font-bold text-gray-700 leading-tight">Tapu Dairesi</span>
+                                    <span class="text-[0.5rem] text-gray-500">Abdullah ÜNLÜ</span>
+                                </div>
+                            </div>
+                            <div class="bg-white border-l-4 border-l-green-500 p-2 rounded-lg shadow-sm flex items-center gap-2">
+                                <i class="fa-solid fa-map text-green-500 text-lg w-5 text-center"></i>
+                                <div class="flex flex-col">
+                                    <span class="text-[0.55rem] font-bold text-gray-700 leading-tight">Kadastro Dairesi</span>
+                                    <span class="text-[0.5rem] text-gray-500">Özgen Sadu ÇAĞLAR</span>
+                                </div>
+                            </div>
+                            <div class="bg-white border-l-4 border-l-purple-500 p-2 rounded-lg shadow-sm flex items-center gap-2">
+                                <i class="fa-solid fa-draw-polygon text-purple-500 text-lg w-5 text-center"></i>
+                                <div class="flex flex-col">
+                                    <span class="text-[0.55rem] font-bold text-gray-700 leading-tight">Harita Dairesi</span>
+                                    <span class="text-[0.5rem] text-gray-500">Ekrem AYYILDIZ</span>
+                                </div>
+                            </div>
+                            <div class="bg-white border-l-4 border-l-orange-500 p-2 rounded-lg shadow-sm flex items-center gap-2">
+                                <i class="fa-solid fa-globe text-orange-500 text-lg w-5 text-center"></i>
+                                <div class="flex flex-col">
+                                    <span class="text-[0.55rem] font-bold text-gray-700 leading-tight">Yabancı İşler Dairesi</span>
+                                    <span class="text-[0.5rem] text-gray-500">Sadettin TUNAS</span>
+                                </div>
+                            </div>
+                            <div class="bg-white border-l-4 border-l-yellow-600 p-2 rounded-lg shadow-sm flex items-center gap-2">
+                                <i class="fa-solid fa-box-archive text-yellow-600 text-lg w-5 text-center"></i>
+                                <div class="flex flex-col">
+                                    <span class="text-[0.55rem] font-bold text-gray-700 leading-tight">Arşiv Dairesi</span>
+                                    <span class="text-[0.5rem] text-gray-500">Hakkı ŞAHİN</span>
+                                </div>
+                            </div>
+                            <div class="bg-white border-l-4 border-l-emerald-500 p-2 rounded-lg shadow-sm flex items-center gap-2">
+                                <i class="fa-solid fa-money-bill-trend-up text-emerald-500 text-lg w-5 text-center"></i>
+                                <div class="flex flex-col">
+                                    <span class="text-[0.55rem] font-bold text-gray-700 leading-tight">Taşınmaz Değerleme Dairesi</span>
+                                    <span class="text-[0.5rem] text-gray-500">Ümit YILDIZ</span>
+                                </div>
+                            </div>
+                            <div class="bg-white border-l-4 border-l-pink-500 p-2 rounded-lg shadow-sm flex items-center gap-2">
+                                <i class="fa-solid fa-users text-pink-500 text-lg w-5 text-center"></i>
+                                <div class="flex flex-col">
+                                    <span class="text-[0.55rem] font-bold text-gray-700 leading-tight">Personel Dairesi</span>
+                                    <span class="text-[0.5rem] text-gray-500">Özer ÖZDEMİR</span>
+                                </div>
+                            </div>
+                            <div class="bg-white border-l-4 border-l-indigo-500 p-2 rounded-lg shadow-sm flex items-center gap-2">
+                                <i class="fa-solid fa-building-columns text-indigo-500 text-lg w-5 text-center"></i>
+                                <div class="flex flex-col">
+                                    <span class="text-[0.55rem] font-bold text-gray-700 leading-tight">Destek Hizmetleri Dairesi</span>
+                                    <span class="text-[0.5rem] text-gray-500">Safa ALTUNTAŞ</span>
+                                </div>
+                            </div>
+                            <div class="bg-white border-l-4 border-l-rose-500 p-2 rounded-lg shadow-sm flex items-center gap-2">
+                                <i class="fa-solid fa-coins text-rose-500 text-lg w-5 text-center"></i>
+                                <div class="flex flex-col">
+                                    <span class="text-[0.55rem] font-bold text-gray-700 leading-tight">Döner Sermaye İşletmesi</span>
+                                    <span class="text-[0.5rem] text-gray-500">Emre DEMİR</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sayfa-numarasi">21</div>
+                </div>
+            </div>
+
+            <!-- SAYFA 12 -->
+            <div class="sayfa" id="s12">
+                <div class="on">
+                    <h2 class="text-center text-[1.2rem] uppercase mb-4">Stratejik Plan</h2>
+                    <div class="overflow-y-auto pr-2 pb-4" style="max-height: 85%;">
+                        <!-- Genelge Metni -->
+                        <div class="mb-3 bg-white border border-gray-200 p-3 rounded-lg shadow-sm text-gray-700 mx-1 mt-1">
+                            <h3 class="text-[0.65rem] font-bold text-center border-b pb-1 mb-2 text-indigo-900">GÖREV YETKİ VE SORUMLULUKLARI HAKKINDA GENELGE</h3>
+                            <div class="flex justify-between items-center text-[0.55rem] text-gray-500 mb-2 font-medium">
+                                <span>Genelge No: 2025/5</span>
+                                <span class="font-bold text-gray-800">Strateji Geliştirme Daire Başkanlığı</span>
+                            </div>
+                            
+                            <h4 class="text-[0.6rem] font-bold text-gray-800 mb-1">Kuruluş ve görev</h4>
+                            <p class="text-[0.45rem] leading-tight text-justify mb-2 text-gray-600">
+                                <span class="font-bold text-gray-800">MADDE 16: (1)</span> Strateji Geliştirme Daire Başkanlığı, 4 sayılı Cumhurbaşkanlığı Kararnamesinin 484 üncü maddesinin birinci fıkrasının (g) bendinde, 5018 sayılı Kanun ve 22/12/2005 tarihli ve 5436 sayılı Kamu Malî Yönetimi ve Kontrol Kanunu ile Bazı Kanun ve Kanun Hükmünde Kararnamelerde Değişiklik Yapılması Hakkında Kanunun 15 inci maddesinde yazılı görevler ile Genel Müdür tarafından verilecek benzeri görevleri Başkanın belirleyeceği iş bölümü esasına dayalı olarak, uyum içerisinde zamanında ve mevzuata uygun yürütmek üzere aşağıda belirtilen şube müdürlükleri ve birimlerden oluşur. Strateji Geliştirme Daire Başkanlığı doğrudan Genel Müdüre bağlı bir danışma birimidir.
+                            </p>
+                            
+                            <div class="grid grid-cols-2 gap-1 text-[0.45rem] bg-gray-50 p-1.5 rounded border border-gray-100">
+                                <ul class="list-none space-y-0.5 text-gray-600">
+                                    <li><span class="font-bold text-indigo-700 w-3 inline-block">a)</span> Personel ve Koordinasyon Şube Müdürlüğü</li>
+                                    <li><span class="font-bold text-indigo-700 w-3 inline-block">b)</span> Stratejik Yönetim ve Planlama Birimi</li>
+                                    <li><span class="font-bold text-indigo-700 w-3 inline-block">c)</span> Yönetim Bilgi Sistemleri Şube Müdürlüğü</li>
+                                    <li><span class="font-bold text-indigo-700 w-3 inline-block">ç)</span> Kalite Yönetim Şube Müdürlüğü</li>
+                                </ul>
+                                <ul class="list-none space-y-0.5 text-gray-600">
+                                    <li><span class="font-bold text-indigo-700 w-3 inline-block">d)</span> Protokol Düzenleme ve Değerlendirme Şube Müdürlüğü</li>
+                                    <li><span class="font-bold text-indigo-700 w-3 inline-block">e)</span> Bütçe, Kesin Hesap ve Raporlama Birimi</li>
+                                    <li><span class="font-bold text-indigo-700 w-3 inline-block">f)</span> İç Kontrol Birimi</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-4 gap-2 mt-2 px-1">
+                            <!-- 2024 - 2028 -->
+                            <div class="flex flex-col">
+                                <div class="bg-[#2c3e5e] p-3 rounded-lg flex justify-center items-center shadow-md mb-2">
+                                    <div class="bg-white w-[90px] h-[130px] rounded shadow relative overflow-hidden border-l-4 border-gray-200 shrink-0">
+                                        <svg viewBox="0 0 100 150" class="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+                                            <defs>
+                                                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                    <stop offset="0%" stop-color="#93c5fd" />
+                                                    <stop offset="100%" stop-color="#1d4ed8" />
+                                                </linearGradient>
+                                            </defs>
+                                            <path d="M0,40 C50,10 50,80 100,30 L100,100 C50,140 50,70 0,110 Z" fill="url(#grad1)" opacity="0.85"/>
+                                        </svg>
+                                        <div class="absolute top-2 right-2 text-blue-700 text-[8px] opacity-70">
+                                            <i class="fa-solid fa-code-branch"></i>
+                                        </div>
+                                        <div class="absolute top-[35%] left-0 right-0 text-center text-white z-10">
+                                            <div class="text-[0.4rem] font-bold">2024 - 2028</div>
+                                            <div class="text-[0.55rem] font-bold">Stratejik Plan</div>
+                                        </div>
+                                        <div class="absolute bottom-5 right-1.5 border border-red-200 rounded text-red-500 bg-white px-1 py-0.5 flex flex-col items-center shadow-sm">
+                                            <i class="fa-regular fa-file-pdf text-[8px]"></i>
+                                        </div>
+                                        <div class="absolute bottom-1 left-0 right-0 text-center">
+                                            <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">TAPU VE KADASTRO</div>
+                                            <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">GENEL MÜDÜRLÜĞÜ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="text-[0.55rem] font-bold text-gray-800 mb-2 truncate">2024 - 2028 Stratejik Plan</h3>
+                                <div class="flex gap-1">
+                                    <a href="https://drive.google.com/file/d/1r6K_uByzRiMnYsRel-Ut201Tf2VPoRfs/view?usp=sharing" target="_blank" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                        Görüntüle <i class="fa-solid fa-file-magnifying-glass"></i>
+                                    </a>
+                                    <a href="https://drive.google.com/uc?export=download&id=1r6K_uByzRiMnYsRel-Ut201Tf2VPoRfs" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                        İndir <i class="fa-solid fa-download"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- 2019 - 2023 -->
+                            <div class="flex flex-col">
+                                <div class="bg-[#2c3e5e] p-3 rounded-lg flex justify-center items-center shadow-md mb-2">
+                                    <div class="bg-white w-[90px] h-[130px] rounded shadow relative overflow-hidden border-l-4 border-gray-200 shrink-0">
+                                        <svg viewBox="0 0 100 150" class="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+                                            <defs>
+                                                <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                    <stop offset="0%" stop-color="#93c5fd" />
+                                                    <stop offset="100%" stop-color="#1d4ed8" />
+                                                </linearGradient>
+                                            </defs>
+                                            <path d="M0,40 C50,10 50,80 100,30 L100,100 C50,140 50,70 0,110 Z" fill="url(#grad2)" opacity="0.85"/>
+                                        </svg>
+                                        <div class="absolute top-2 right-2 text-blue-700 text-[8px] opacity-70">
+                                            <i class="fa-solid fa-code-branch"></i>
+                                        </div>
+                                        <div class="absolute top-[35%] left-0 right-0 text-center text-white z-10">
+                                            <div class="text-[0.4rem] font-bold">2019 - 2023</div>
+                                            <div class="text-[0.55rem] font-bold">Stratejik Plan</div>
+                                        </div>
+                                        <div class="absolute bottom-5 right-1.5 border border-red-200 rounded text-red-500 bg-white px-1 py-0.5 flex flex-col items-center shadow-sm">
+                                            <i class="fa-regular fa-file-pdf text-[8px]"></i>
+                                        </div>
+                                        <div class="absolute bottom-1 left-0 right-0 text-center">
+                                            <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">TAPU VE KADASTRO</div>
+                                            <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">GENEL MÜDÜRLÜĞÜ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="text-[0.55rem] font-bold text-gray-800 mb-2 truncate">2019 - 2023 Stratejik Plan</h3>
+                                <div class="flex gap-1">
+                                    <a href="https://drive.google.com/file/d/1r6K_uByzRiMnYsRel-Ut201Tf2VPoRfs/view?usp=sharing" target="_blank" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                        Görüntüle <i class="fa-solid fa-file-magnifying-glass"></i>
+                                    </a>
+                                    <a href="https://drive.google.com/uc?export=download&id=1r6K_uByzRiMnYsRel-Ut201Tf2VPoRfs" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                        İndir <i class="fa-solid fa-download"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- 2015 - 2019 -->
+                            <div class="flex flex-col">
+                                <div class="bg-[#2c3e5e] p-3 rounded-lg flex justify-center items-center shadow-md mb-2">
+                                    <div class="bg-white w-[90px] h-[130px] rounded shadow relative overflow-hidden border-l-4 border-gray-200 shrink-0">
+                                        <svg viewBox="0 0 100 150" class="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+                                            <defs>
+                                                <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                    <stop offset="0%" stop-color="#93c5fd" />
+                                                    <stop offset="100%" stop-color="#1d4ed8" />
+                                                </linearGradient>
+                                            </defs>
+                                            <path d="M0,40 C50,10 50,80 100,30 L100,100 C50,140 50,70 0,110 Z" fill="url(#grad3)" opacity="0.85"/>
+                                        </svg>
+                                        <div class="absolute top-2 right-2 text-blue-700 text-[8px] opacity-70">
+                                            <i class="fa-solid fa-code-branch"></i>
+                                        </div>
+                                        <div class="absolute top-[35%] left-0 right-0 text-center text-white z-10">
+                                            <div class="text-[0.4rem] font-bold">2015 - 2019</div>
+                                            <div class="text-[0.55rem] font-bold">Stratejik Plan</div>
+                                        </div>
+                                        <div class="absolute bottom-5 right-1.5 border border-red-200 rounded text-red-500 bg-white px-1 py-0.5 flex flex-col items-center shadow-sm">
+                                            <i class="fa-regular fa-file-pdf text-[8px]"></i>
+                                        </div>
+                                        <div class="absolute bottom-1 left-0 right-0 text-center">
+                                            <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">TAPU VE KADASTRO</div>
+                                            <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">GENEL MÜDÜRLÜĞÜ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="text-[0.55rem] font-bold text-gray-800 mb-2 truncate">2015 - 2019 Stratejik Plan</h3>
+                                <div class="flex gap-1">
+                                    <a href="https://drive.google.com/file/d/1CidiSxFzvCi5UEIOK0vvog6o-IpIEFM2/view?usp=sharing" target="_blank" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                        Görüntüle <i class="fa-solid fa-file-magnifying-glass"></i>
+                                    </a>
+                                    <a href="https://drive.google.com/uc?export=download&id=1CidiSxFzvCi5UEIOK0vvog6o-IpIEFM2" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                        İndir <i class="fa-solid fa-download"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- 2010 - 2014 -->
+                            <div class="flex flex-col">
+                                <div class="bg-[#2c3e5e] p-3 rounded-lg flex justify-center items-center shadow-md mb-2">
+                                    <div class="bg-white w-[90px] h-[130px] rounded shadow relative overflow-hidden border-l-4 border-gray-200 shrink-0">
+                                        <svg viewBox="0 0 100 150" class="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+                                            <defs>
+                                                <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                    <stop offset="0%" stop-color="#93c5fd" />
+                                                    <stop offset="100%" stop-color="#1d4ed8" />
+                                                </linearGradient>
+                                            </defs>
+                                            <path d="M0,40 C50,10 50,80 100,30 L100,100 C50,140 50,70 0,110 Z" fill="url(#grad4)" opacity="0.85"/>
+                                        </svg>
+                                        <div class="absolute top-2 right-2 text-blue-700 text-[8px] opacity-70">
+                                            <i class="fa-solid fa-code-branch"></i>
+                                        </div>
+                                        <div class="absolute top-[35%] left-0 right-0 text-center text-white z-10">
+                                            <div class="text-[0.4rem] font-bold">2010 - 2014</div>
+                                            <div class="text-[0.55rem] font-bold">Stratejik Plan</div>
+                                        </div>
+                                        <div class="absolute bottom-5 right-1.5 border border-red-200 rounded text-red-500 bg-white px-1 py-0.5 flex flex-col items-center shadow-sm">
+                                            <i class="fa-regular fa-file-pdf text-[8px]"></i>
+                                        </div>
+                                        <div class="absolute bottom-1 left-0 right-0 text-center">
+                                            <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">TAPU VE KADASTRO</div>
+                                            <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">GENEL MÜDÜRLÜĞÜ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="text-[0.55rem] font-bold text-gray-800 mb-2 truncate">2010 - 2014 Stratejik Plan</h3>
+                                <div class="flex gap-1">
+                                    <a href="https://drive.google.com/file/d/1-u7y8aSoJxDVfVKStfh1wpvEP4d-K6US/view?usp=sharing" target="_blank" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                        Görüntüle <i class="fa-solid fa-file-magnifying-glass"></i>
+                                    </a>
+                                    <a href="https://drive.google.com/uc?export=download&id=1-u7y8aSoJxDVfVKStfh1wpvEP4d-K6US" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                        İndir <i class="fa-solid fa-download"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sayfa-numarasi">22</div>
+                </div>
+                <div class="arka">
+                    <h2 class="text-center text-[1.2rem] uppercase mb-4">Faaliyet Raporları</h2>
+                    <div class="overflow-y-auto pr-2 pb-4" style="max-height: 85%;">
+                        <p class="text-[0.7rem] text-gray-700 text-center mb-6 px-4 mt-2">
+                            Kamu mali yönetimi ilkeleri gereğince, her yıl gerçekleştirilen projeler ve bütçe
+                            kullanımları şeffaflıkla kamuoyuna sunulmaktadır.
+                        </p>
+
+                        <div class="grid grid-cols-4 gap-2 mt-4 px-1">
+                            <!-- 2025 -->
+                            <div class="flex flex-col">
+                                <div class="bg-[#2c3e5e] p-3 rounded-lg flex justify-center items-center shadow-md mb-2">
+                                    <div class="bg-white w-[90px] h-[130px] rounded shadow relative overflow-hidden border-l-4 border-gray-200 shrink-0">
+                                        <svg viewBox="0 0 100 150" class="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+                                            <defs>
+                                                <linearGradient id="greenGrad25" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                    <stop offset="0%" stop-color="#bbf7d0" />
+                                                    <stop offset="100%" stop-color="#16a34a" />
+                                                </linearGradient>
+                                            </defs>
+                                            <path d="M0,40 C50,10 50,80 100,30 L100,100 C50,140 50,70 0,110 Z" fill="url(#greenGrad25)" opacity="0.85"/>
+                                        </svg>
+                                        <div class="absolute top-2 right-2 text-green-700 text-[8px] opacity-80">
+                                            <i class="fa-solid fa-gear"></i>
+                                        </div>
+                                        <div class="absolute top-[35%] left-0 right-0 text-center text-white z-10">
+                                            <div class="text-[0.4rem] font-bold">2025</div>
+                                            <div class="text-[0.55rem] font-bold leading-tight mt-0.5">İdare Faaliyet<br>Raporu</div>
+                                        </div>
+                                        <div class="absolute bottom-5 right-1.5 border border-red-200 rounded text-red-500 bg-white px-1 py-0.5 flex flex-col items-center shadow-sm">
+                                            <i class="fa-regular fa-file-pdf text-[8px]"></i>
+                                        </div>
+                                        <div class="absolute bottom-1 left-0 right-0 text-center">
+                                            <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">TAPU VE KADASTRO</div>
+                                            <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">GENEL MÜDÜRLÜĞÜ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="text-[0.55rem] font-bold text-gray-800 mb-0.5 truncate">2025 Yılı</h3>
+                                <p class="text-[0.55rem] font-bold text-gray-800 mb-2 truncate">İdare Faaliyet Raporu</p>
+                                <div class="flex gap-1">
+                                    <a href="https://drive.google.com/file/d/1uw2QlwKfg7O2h8UlSb5FkcF532chiRmg/view?usp=sharing" target="_blank" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                        Görüntüle <i class="fa-solid fa-file-magnifying-glass"></i>
+                                    </a>
+                                    <a href="https://drive.google.com/uc?export=download&id=1uw2QlwKfg7O2h8UlSb5FkcF532chiRmg" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                        İndir <i class="fa-solid fa-download"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- 2024 -->
+                            <div class="flex flex-col">
+                                <div class="bg-[#2c3e5e] p-3 rounded-lg flex justify-center items-center shadow-md mb-2">
+                                    <div class="bg-white w-[90px] h-[130px] rounded shadow relative overflow-hidden border-l-4 border-gray-200 shrink-0">
+                                        <svg viewBox="0 0 100 150" class="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+                                            <defs>
+                                                <linearGradient id="greenGrad24" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                    <stop offset="0%" stop-color="#bbf7d0" />
+                                                    <stop offset="100%" stop-color="#16a34a" />
+                                                </linearGradient>
+                                            </defs>
+                                            <path d="M0,40 C50,10 50,80 100,30 L100,100 C50,140 50,70 0,110 Z" fill="url(#greenGrad24)" opacity="0.85"/>
+                                        </svg>
+                                        <div class="absolute top-2 right-2 text-green-700 text-[8px] opacity-80">
+                                            <i class="fa-solid fa-gear"></i>
+                                        </div>
+                                        <div class="absolute top-[35%] left-0 right-0 text-center text-white z-10">
+                                            <div class="text-[0.4rem] font-bold">2024</div>
+                                            <div class="text-[0.55rem] font-bold leading-tight mt-0.5">İdare Faaliyet<br>Raporu</div>
+                                        </div>
+                                        <div class="absolute bottom-5 right-1.5 border border-red-200 rounded text-red-500 bg-white px-1 py-0.5 flex flex-col items-center shadow-sm">
+                                            <i class="fa-regular fa-file-pdf text-[8px]"></i>
+                                        </div>
+                                        <div class="absolute bottom-1 left-0 right-0 text-center">
+                                            <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">TAPU VE KADASTRO</div>
+                                            <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">GENEL MÜDÜRLÜĞÜ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="text-[0.55rem] font-bold text-gray-800 mb-0.5 truncate">2024 Yılı</h3>
+                                <p class="text-[0.55rem] font-bold text-gray-800 mb-2 truncate">İdare Faaliyet Raporu</p>
+                                <div class="flex gap-1">
+                                    <a href="https://drive.google.com/file/d/1vA9gAI_nw_-VvckK6-qcrs0Ip8K42DvT/view?usp=sharing" target="_blank" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                        Görüntüle <i class="fa-solid fa-file-magnifying-glass"></i>
+                                    </a>
+                                    <a href="https://drive.google.com/uc?export=download&id=1vA9gAI_nw_-VvckK6-qcrs0Ip8K42DvT" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                        İndir <i class="fa-solid fa-download"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- 2023 -->
+                            <div class="flex flex-col">
+                                <div class="bg-[#2c3e5e] p-3 rounded-lg flex justify-center items-center shadow-md mb-2">
+                                    <div class="bg-white w-[90px] h-[130px] rounded shadow relative overflow-hidden border-l-4 border-gray-200 shrink-0">
+                                        <svg viewBox="0 0 100 150" class="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+                                            <defs>
+                                                <linearGradient id="greenGrad23" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                    <stop offset="0%" stop-color="#bbf7d0" />
+                                                    <stop offset="100%" stop-color="#16a34a" />
+                                                </linearGradient>
+                                            </defs>
+                                            <path d="M0,40 C50,10 50,80 100,30 L100,100 C50,140 50,70 0,110 Z" fill="url(#greenGrad23)" opacity="0.85"/>
+                                        </svg>
+                                        <div class="absolute top-2 right-2 text-green-700 text-[8px] opacity-80">
+                                            <i class="fa-solid fa-gear"></i>
+                                        </div>
+                                        <div class="absolute top-[35%] left-0 right-0 text-center text-white z-10">
+                                            <div class="text-[0.4rem] font-bold">2023</div>
+                                            <div class="text-[0.55rem] font-bold leading-tight mt-0.5">İdare Faaliyet<br>Raporu</div>
+                                        </div>
+                                        <div class="absolute bottom-5 right-1.5 border border-red-200 rounded text-red-500 bg-white px-1 py-0.5 flex flex-col items-center shadow-sm">
+                                            <i class="fa-regular fa-file-pdf text-[8px]"></i>
+                                        </div>
+                                        <div class="absolute bottom-1 left-0 right-0 text-center">
+                                            <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">TAPU VE KADASTRO</div>
+                                            <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">GENEL MÜDÜRLÜĞÜ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="text-[0.55rem] font-bold text-gray-800 mb-0.5 truncate">2023 Yılı</h3>
+                                <p class="text-[0.55rem] font-bold text-gray-800 mb-2 truncate">İdare Faaliyet Raporu</p>
+                                <div class="flex gap-1">
+                                    <a href="https://drive.google.com/file/d/1dk_UMRL2wwWMsVkUoF1yiCTVUU0Axo8y/view?usp=sharing" target="_blank" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                        Görüntüle <i class="fa-solid fa-file-magnifying-glass"></i>
+                                    </a>
+                                    <a href="https://drive.google.com/uc?export=download&id=1dk_UMRL2wwWMsVkUoF1yiCTVUU0Axo8y" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                        İndir <i class="fa-solid fa-download"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- 2022 -->
+                            <div class="flex flex-col">
+                                <div class="bg-[#2c3e5e] p-3 rounded-lg flex justify-center items-center shadow-md mb-2">
+                                    <div class="bg-white w-[90px] h-[130px] rounded shadow relative overflow-hidden border-l-4 border-gray-200 shrink-0">
+                                        <svg viewBox="0 0 100 150" class="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+                                            <defs>
+                                                <linearGradient id="greenGrad22" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                    <stop offset="0%" stop-color="#bbf7d0" />
+                                                    <stop offset="100%" stop-color="#16a34a" />
+                                                </linearGradient>
+                                            </defs>
+                                            <path d="M0,40 C50,10 50,80 100,30 L100,100 C50,140 50,70 0,110 Z" fill="url(#greenGrad22)" opacity="0.85"/>
+                                        </svg>
+                                        <div class="absolute top-2 right-2 text-green-700 text-[8px] opacity-80">
+                                            <i class="fa-solid fa-gear"></i>
+                                        </div>
+                                        <div class="absolute top-[35%] left-0 right-0 text-center text-white z-10">
+                                            <div class="text-[0.4rem] font-bold">2022</div>
+                                            <div class="text-[0.55rem] font-bold leading-tight mt-0.5">İdare Faaliyet<br>Raporu</div>
+                                        </div>
+                                        <div class="absolute bottom-5 right-1.5 border border-red-200 rounded text-red-500 bg-white px-1 py-0.5 flex flex-col items-center shadow-sm">
+                                            <i class="fa-regular fa-file-pdf text-[8px]"></i>
+                                        </div>
+                                        <div class="absolute bottom-1 left-0 right-0 text-center">
+                                            <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">TAPU VE KADASTRO</div>
+                                            <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">GENEL MÜDÜRLÜĞÜ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="text-[0.55rem] font-bold text-gray-800 mb-0.5 truncate">2022 Yılı</h3>
+                                <p class="text-[0.55rem] font-bold text-gray-800 mb-2 truncate">İdare Faaliyet Raporu</p>
+                                <div class="flex gap-1">
+                                    <a href="https://drive.google.com/file/d/19tshIvSXSUOjK9ooQsDFixIsFCP3tLK5/view?usp=sharing" target="_blank" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                        Görüntüle <i class="fa-solid fa-file-magnifying-glass"></i>
+                                    </a>
+                                    <a href="https://drive.google.com/uc?export=download&id=19tshIvSXSUOjK9ooQsDFixIsFCP3tLK5" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                        İndir <i class="fa-solid fa-download"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- 2021 -->
+                            <div class="flex flex-col">
+                                <div class="bg-[#2c3e5e] p-3 rounded-lg flex justify-center items-center shadow-md mb-2">
+                                    <div class="bg-white w-[90px] h-[130px] rounded shadow relative overflow-hidden border-l-4 border-gray-200 shrink-0">
+                                        <svg viewBox="0 0 100 150" class="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+                                            <defs>
+                                                <linearGradient id="greenGrad21" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                    <stop offset="0%" stop-color="#bbf7d0" />
+                                                    <stop offset="100%" stop-color="#16a34a" />
+                                                </linearGradient>
+                                            </defs>
+                                            <path d="M0,40 C50,10 50,80 100,30 L100,100 C50,140 50,70 0,110 Z" fill="url(#greenGrad21)" opacity="0.85"/>
+                                        </svg>
+                                        <div class="absolute top-2 right-2 text-green-700 text-[8px] opacity-80">
+                                            <i class="fa-solid fa-gear"></i>
+                                        </div>
+                                        <div class="absolute top-[35%] left-0 right-0 text-center text-white z-10">
+                                            <div class="text-[0.4rem] font-bold">2021</div>
+                                            <div class="text-[0.55rem] font-bold leading-tight mt-0.5">İdare Faaliyet<br>Raporu</div>
+                                        </div>
+                                        <div class="absolute bottom-5 right-1.5 border border-red-200 rounded text-red-500 bg-white px-1 py-0.5 flex flex-col items-center shadow-sm">
+                                            <i class="fa-regular fa-file-pdf text-[8px]"></i>
+                                        </div>
+                                        <div class="absolute bottom-1 left-0 right-0 text-center">
+                                            <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">TAPU VE KADASTRO</div>
+                                            <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">GENEL MÜDÜRLÜĞÜ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="text-[0.55rem] font-bold text-gray-800 mb-0.5 truncate">2021 Yılı</h3>
+                                <p class="text-[0.55rem] font-bold text-gray-800 mb-2 truncate">İdare Faaliyet Raporu</p>
+                                <div class="flex gap-1">
+                                    <a href="https://drive.google.com/file/d/1P2bgwLaFrthgYtdhfQ4EKtCC75w6kZU0/view?usp=sharing" target="_blank" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                        Görüntüle <i class="fa-solid fa-file-magnifying-glass"></i>
+                                    </a>
+                                    <a href="https://drive.google.com/uc?export=download&id=1P2bgwLaFrthgYtdhfQ4EKtCC75w6kZU0" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                        İndir <i class="fa-solid fa-download"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- 2020 -->
+                            <div class="flex flex-col">
+                                <div class="bg-[#2c3e5e] p-3 rounded-lg flex justify-center items-center shadow-md mb-2">
+                                    <div class="bg-white w-[90px] h-[130px] rounded shadow relative overflow-hidden border-l-4 border-gray-200 shrink-0">
+                                        <svg viewBox="0 0 100 150" class="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+                                            <defs>
+                                                <linearGradient id="greenGrad20" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                    <stop offset="0%" stop-color="#bbf7d0" />
+                                                    <stop offset="100%" stop-color="#16a34a" />
+                                                </linearGradient>
+                                            </defs>
+                                            <path d="M0,40 C50,10 50,80 100,30 L100,100 C50,140 50,70 0,110 Z" fill="url(#greenGrad20)" opacity="0.85"/>
+                                        </svg>
+                                        <div class="absolute top-2 right-2 text-green-700 text-[8px] opacity-80">
+                                            <i class="fa-solid fa-gear"></i>
+                                        </div>
+                                        <div class="absolute top-[35%] left-0 right-0 text-center text-white z-10">
+                                            <div class="text-[0.4rem] font-bold">2020</div>
+                                            <div class="text-[0.55rem] font-bold leading-tight mt-0.5">İdare Faaliyet<br>Raporu</div>
+                                        </div>
+                                        <div class="absolute bottom-5 right-1.5 border border-red-200 rounded text-red-500 bg-white px-1 py-0.5 flex flex-col items-center shadow-sm">
+                                            <i class="fa-regular fa-file-pdf text-[8px]"></i>
+                                        </div>
+                                        <div class="absolute bottom-1 left-0 right-0 text-center">
+                                            <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">TAPU VE KADASTRO</div>
+                                            <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">GENEL MÜDÜRLÜĞÜ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="text-[0.55rem] font-bold text-gray-800 mb-0.5 truncate">2020 Yılı</h3>
+                                <p class="text-[0.55rem] font-bold text-gray-800 mb-2 truncate">İdare Faaliyet Raporu</p>
+                                <div class="flex gap-1">
+                                    <a href="https://drive.google.com/file/d/1x0KZyAsrDa8NsF-XheZYrJ2zMI4tih2m/view?usp=sharing" target="_blank" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                        Görüntüle <i class="fa-solid fa-file-magnifying-glass"></i>
+                                    </a>
+                                    <a href="https://drive.google.com/uc?export=download&id=1x0KZyAsrDa8NsF-XheZYrJ2zMI4tih2m" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                        İndir <i class="fa-solid fa-download"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- 2019 -->
+                            <div class="flex flex-col">
+                                <div class="bg-[#2c3e5e] p-3 rounded-lg flex justify-center items-center shadow-md mb-2">
+                                    <div class="bg-white w-[90px] h-[130px] rounded shadow relative overflow-hidden border-l-4 border-gray-200 shrink-0">
+                                        <svg viewBox="0 0 100 150" class="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+                                            <defs>
+                                                <linearGradient id="greenGrad19" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                    <stop offset="0%" stop-color="#bbf7d0" />
+                                                    <stop offset="100%" stop-color="#16a34a" />
+                                                </linearGradient>
+                                            </defs>
+                                            <path d="M0,40 C50,10 50,80 100,30 L100,100 C50,140 50,70 0,110 Z" fill="url(#greenGrad19)" opacity="0.85"/>
+                                        </svg>
+                                        <div class="absolute top-2 right-2 text-green-700 text-[8px] opacity-80">
+                                            <i class="fa-solid fa-gear"></i>
+                                        </div>
+                                        <div class="absolute top-[35%] left-0 right-0 text-center text-white z-10">
+                                            <div class="text-[0.4rem] font-bold">2019</div>
+                                            <div class="text-[0.55rem] font-bold leading-tight mt-0.5">İdare Faaliyet<br>Raporu</div>
+                                        </div>
+                                        <div class="absolute bottom-5 right-1.5 border border-red-200 rounded text-red-500 bg-white px-1 py-0.5 flex flex-col items-center shadow-sm">
+                                            <i class="fa-regular fa-file-pdf text-[8px]"></i>
+                                        </div>
+                                        <div class="absolute bottom-1 left-0 right-0 text-center">
+                                            <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">TAPU VE KADASTRO</div>
+                                            <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">GENEL MÜDÜRLÜĞÜ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="text-[0.55rem] font-bold text-gray-800 mb-0.5 truncate">2019 Yılı</h3>
+                                <p class="text-[0.55rem] font-bold text-gray-800 mb-2 truncate">İdare Faaliyet Raporu</p>
+                                <div class="flex gap-1">
+                                    <a href="https://drive.google.com/file/d/1Z72T5ajzYuHAiCbwfJTjXdDzEhYdrXwZ/view?usp=sharing" target="_blank" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                        Görüntüle <i class="fa-solid fa-file-magnifying-glass"></i>
+                                    </a>
+                                    <a href="https://drive.google.com/uc?export=download&id=1Z72T5ajzYuHAiCbwfJTjXdDzEhYdrXwZ" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                        İndir <i class="fa-solid fa-download"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- 2018 -->
+                            <div class="flex flex-col">
+                                <div class="bg-[#2c3e5e] p-3 rounded-lg flex justify-center items-center shadow-md mb-2">
+                                    <div class="bg-white w-[90px] h-[130px] rounded shadow relative overflow-hidden border-l-4 border-gray-200 shrink-0">
+                                        <svg viewBox="0 0 100 150" class="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+                                            <defs>
+                                                <linearGradient id="greenGrad18" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                    <stop offset="0%" stop-color="#bbf7d0" />
+                                                    <stop offset="100%" stop-color="#16a34a" />
+                                                </linearGradient>
+                                            </defs>
+                                            <path d="M0,40 C50,10 50,80 100,30 L100,100 C50,140 50,70 0,110 Z" fill="url(#greenGrad18)" opacity="0.85"/>
+                                        </svg>
+                                        <div class="absolute top-2 right-2 text-green-700 text-[8px] opacity-80">
+                                            <i class="fa-solid fa-gear"></i>
+                                        </div>
+                                        <div class="absolute top-[35%] left-0 right-0 text-center text-white z-10">
+                                            <div class="text-[0.4rem] font-bold">2018</div>
+                                            <div class="text-[0.55rem] font-bold leading-tight mt-0.5">İdare Faaliyet<br>Raporu</div>
+                                        </div>
+                                        <div class="absolute bottom-5 right-1.5 border border-red-200 rounded text-red-500 bg-white px-1 py-0.5 flex flex-col items-center shadow-sm">
+                                            <i class="fa-regular fa-file-pdf text-[8px]"></i>
+                                        </div>
+                                        <div class="absolute bottom-1 left-0 right-0 text-center">
+                                            <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">TAPU VE KADASTRO</div>
+                                            <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">GENEL MÜDÜRLÜĞÜ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="text-[0.55rem] font-bold text-gray-800 mb-0.5 truncate">2018 Yılı</h3>
+                                <p class="text-[0.55rem] font-bold text-gray-800 mb-2 truncate">İdare Faaliyet Raporu</p>
+                                <div class="flex gap-1">
+                                    <a href="https://drive.google.com/file/d/1OAG39wivk8PCSIiHRjxyJ3q5iHXl29U3/view?usp=sharing" target="_blank" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                        Görüntüle <i class="fa-solid fa-file-magnifying-glass"></i>
+                                    </a>
+                                    <a href="https://drive.google.com/uc?export=download&id=1OAG39wivk8PCSIiHRjxyJ3q5iHXl29U3" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                        İndir <i class="fa-solid fa-download"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sayfa-numarasi">23</div>
+                </div>
+            </div>
+
+            <!-- SAYFA 13 -->
+            <div class="sayfa" id="s13">
+                <div class="on">
+                    <h2 class="text-center text-[1.2rem] uppercase mb-4">Performans Programı</h2>
+                    <div class="overflow-y-auto pr-2 pb-4" style="max-height: 85%;">
+
+                        <div class="flex items-center gap-4 bg-teal-50 p-4 rounded-xl border border-teal-100 mb-6 mt-2">
+                            <i class="fa-solid fa-chart-pie text-4xl text-teal-600"></i>
+                            <p class="text-[0.65rem] text-teal-900 leading-relaxed text-justify">
+                                Performans Programı, Stratejik Plan'da yer alan amaç ve hedeflere ulaşmak için
+                                yürütülecek faaliyetleri, bütçe ihtiyaçlarını ve performans göstergelerini yıllık olarak
+                                detaylandırır.
+                            </p>
+                        </div>
+
+                        <h4 class="font-bold text-gray-800 text-[0.8rem] mb-3 border-b pb-1"><i
+                                class="fa-solid fa-gauge-high text-blue-500 mr-1"></i> Temel Göstergeler (Örnek)</h4>
+
+                        <div class="space-y-4">
+                            <!-- Metric 1 -->
+                            <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-200">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-[0.65rem] font-bold text-gray-700">WebTapu Üzerinden İşlem
+                                        Oranı</span>
+                                    <span class="text-[0.65rem] font-bold text-blue-600">%85 Hedef</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Metric 2 -->
+                            <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-200">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-[0.65rem] font-bold text-gray-700">3B Kadastro Veri Üretimi</span>
+                                    <span class="text-[0.65rem] font-bold text-green-600">%60 Gerçekleşen</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-green-600 h-2 rounded-full" style="width: 60%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Metric 3 -->
+                            <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-200">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-[0.65rem] font-bold text-gray-700">Müşteri Memnuniyeti
+                                        Skoru</span>
+                                    <span class="text-[0.65rem] font-bold text-yellow-500">92 Puan</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-yellow-500 h-2 rounded-full" style="width: 92%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Raporlar Grid -->
+                        <div class="mt-6">
+                            <h4 class="font-bold text-gray-800 text-[0.8rem] mb-3 border-b pb-1"><i class="fa-solid fa-book-open text-orange-500 mr-1"></i> Performans Programı Raporları</h4>
+                            <div class="grid grid-cols-4 gap-2 px-1">
+                                <!-- 2026 -->
+                                <div class="flex flex-col">
+                                    <div class="bg-[#2c3e5e] p-3 rounded-lg flex justify-center items-center shadow-md mb-2">
+                                        <div class="bg-white w-[90px] h-[130px] rounded shadow relative overflow-hidden border-l-4 border-gray-200 shrink-0">
+                                            <svg viewBox="0 0 100 150" class="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+                                                <defs>
+                                                    <linearGradient id="orangeGrad26" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                        <stop offset="0%" stop-color="#fed7aa" />
+                                                        <stop offset="100%" stop-color="#ea580c" />
+                                                    </linearGradient>
+                                                </defs>
+                                                <path d="M0,40 C50,10 50,80 100,30 L100,100 C50,140 50,70 0,110 Z" fill="url(#orangeGrad26)" opacity="0.85"/>
+                                            </svg>
+                                            <div class="absolute top-2 right-2 text-orange-700 text-[8px] opacity-80">
+                                                <i class="fa-solid fa-chart-column"></i>
+                                            </div>
+                                            <div class="absolute top-[35%] left-0 right-0 text-center text-white z-10">
+                                                <div class="text-[0.4rem] font-bold">2026</div>
+                                                <div class="text-[0.55rem] font-bold leading-tight mt-0.5">Performans<br>Programı</div>
+                                            </div>
+                                            <div class="absolute bottom-5 right-1.5 border border-red-200 rounded text-red-500 bg-white px-1 py-0.5 flex flex-col items-center shadow-sm">
+                                                <i class="fa-regular fa-file-pdf text-[8px]"></i>
+                                            </div>
+                                            <div class="absolute bottom-1 left-0 right-0 text-center">
+                                                <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">TAPU VE KADASTRO</div>
+                                                <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">GENEL MÜDÜRLÜĞÜ</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-[0.55rem] font-bold text-gray-800 mb-0.5 truncate">2026 Yılı</h3>
+                                    <p class="text-[0.55rem] font-bold text-gray-800 mb-2 truncate">Performans Programı</p>
+                                    <div class="flex gap-1">
+                                        <a href="https://drive.google.com/file/d/1yBxlpHuO7XU9WzzbcXxvNy3Y3_dA9DOO/view?usp=sharing" target="_blank" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                            Görüntüle <i class="fa-solid fa-file-magnifying-glass"></i>
+                                        </a>
+                                        <a href="https://drive.google.com/uc?export=download&id=1yBxlpHuO7XU9WzzbcXxvNy3Y3_dA9DOO" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                            İndir <i class="fa-solid fa-download"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- 2025 -->
+                                <div class="flex flex-col">
+                                    <div class="bg-[#2c3e5e] p-3 rounded-lg flex justify-center items-center shadow-md mb-2">
+                                        <div class="bg-white w-[90px] h-[130px] rounded shadow relative overflow-hidden border-l-4 border-gray-200 shrink-0">
+                                            <svg viewBox="0 0 100 150" class="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+                                                <defs>
+                                                    <linearGradient id="orangeGrad25" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                        <stop offset="0%" stop-color="#fed7aa" />
+                                                        <stop offset="100%" stop-color="#ea580c" />
+                                                    </linearGradient>
+                                                </defs>
+                                                <path d="M0,40 C50,10 50,80 100,30 L100,100 C50,140 50,70 0,110 Z" fill="url(#orangeGrad25)" opacity="0.85"/>
+                                            </svg>
+                                            <div class="absolute top-2 right-2 text-orange-700 text-[8px] opacity-80">
+                                                <i class="fa-solid fa-chart-column"></i>
+                                            </div>
+                                            <div class="absolute top-[35%] left-0 right-0 text-center text-white z-10">
+                                                <div class="text-[0.4rem] font-bold">2025</div>
+                                                <div class="text-[0.55rem] font-bold leading-tight mt-0.5">Performans<br>Programı</div>
+                                            </div>
+                                            <div class="absolute bottom-5 right-1.5 border border-red-200 rounded text-red-500 bg-white px-1 py-0.5 flex flex-col items-center shadow-sm">
+                                                <i class="fa-regular fa-file-pdf text-[8px]"></i>
+                                            </div>
+                                            <div class="absolute bottom-1 left-0 right-0 text-center">
+                                                <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">TAPU VE KADASTRO</div>
+                                                <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">GENEL MÜDÜRLÜĞÜ</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-[0.55rem] font-bold text-gray-800 mb-0.5 truncate">2025 Yılı</h3>
+                                    <p class="text-[0.55rem] font-bold text-gray-800 mb-2 truncate">Performans Programı</p>
+                                    <div class="flex gap-1">
+                                        <a href="https://drive.google.com/file/d/1sA68vByB8_TIYPmlz5elJGgSnbE-eDDh/view?usp=sharing" target="_blank" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                            Görüntüle <i class="fa-solid fa-file-magnifying-glass"></i>
+                                        </a>
+                                        <a href="https://drive.google.com/uc?export=download&id=1sA68vByB8_TIYPmlz5elJGgSnbE-eDDh" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                            İndir <i class="fa-solid fa-download"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- 2024 -->
+                                <div class="flex flex-col">
+                                    <div class="bg-[#2c3e5e] p-3 rounded-lg flex justify-center items-center shadow-md mb-2">
+                                        <div class="bg-white w-[90px] h-[130px] rounded shadow relative overflow-hidden border-l-4 border-gray-200 shrink-0">
+                                            <svg viewBox="0 0 100 150" class="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+                                                <defs>
+                                                    <linearGradient id="orangeGrad24" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                        <stop offset="0%" stop-color="#fed7aa" />
+                                                        <stop offset="100%" stop-color="#ea580c" />
+                                                    </linearGradient>
+                                                </defs>
+                                                <path d="M0,40 C50,10 50,80 100,30 L100,100 C50,140 50,70 0,110 Z" fill="url(#orangeGrad24)" opacity="0.85"/>
+                                            </svg>
+                                            <div class="absolute top-2 right-2 text-orange-700 text-[8px] opacity-80">
+                                                <i class="fa-solid fa-chart-column"></i>
+                                            </div>
+                                            <div class="absolute top-[35%] left-0 right-0 text-center text-white z-10">
+                                                <div class="text-[0.4rem] font-bold">2024</div>
+                                                <div class="text-[0.55rem] font-bold leading-tight mt-0.5">Performans<br>Programı</div>
+                                            </div>
+                                            <div class="absolute bottom-5 right-1.5 border border-red-200 rounded text-red-500 bg-white px-1 py-0.5 flex flex-col items-center shadow-sm">
+                                                <i class="fa-regular fa-file-pdf text-[8px]"></i>
+                                            </div>
+                                            <div class="absolute bottom-1 left-0 right-0 text-center">
+                                                <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">TAPU VE KADASTRO</div>
+                                                <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">GENEL MÜDÜRLÜĞÜ</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-[0.55rem] font-bold text-gray-800 mb-0.5 truncate">2024 Yılı</h3>
+                                    <p class="text-[0.55rem] font-bold text-gray-800 mb-2 truncate">Performans Programı</p>
+                                    <div class="flex gap-1">
+                                        <a href="https://drive.google.com/file/d/17Pm8cAEMPGOAgAH8Qx_kKhBXKD2dxhcV/view?usp=sharing" target="_blank" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                            Görüntüle <i class="fa-solid fa-file-magnifying-glass"></i>
+                                        </a>
+                                        <a href="https://drive.google.com/uc?export=download&id=17Pm8cAEMPGOAgAH8Qx_kKhBXKD2dxhcV" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                            İndir <i class="fa-solid fa-download"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- 2023 -->
+                                <div class="flex flex-col">
+                                    <div class="bg-[#2c3e5e] p-3 rounded-lg flex justify-center items-center shadow-md mb-2">
+                                        <div class="bg-white w-[90px] h-[130px] rounded shadow relative overflow-hidden border-l-4 border-gray-200 shrink-0">
+                                            <svg viewBox="0 0 100 150" class="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+                                                <defs>
+                                                    <linearGradient id="orangeGrad23" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                        <stop offset="0%" stop-color="#fed7aa" />
+                                                        <stop offset="100%" stop-color="#ea580c" />
+                                                    </linearGradient>
+                                                </defs>
+                                                <path d="M0,40 C50,10 50,80 100,30 L100,100 C50,140 50,70 0,110 Z" fill="url(#orangeGrad23)" opacity="0.85"/>
+                                            </svg>
+                                            <div class="absolute top-2 right-2 text-orange-700 text-[8px] opacity-80">
+                                                <i class="fa-solid fa-chart-column"></i>
+                                            </div>
+                                            <div class="absolute top-[35%] left-0 right-0 text-center text-white z-10">
+                                                <div class="text-[0.4rem] font-bold">2023</div>
+                                                <div class="text-[0.55rem] font-bold leading-tight mt-0.5">Performans<br>Programı</div>
+                                            </div>
+                                            <div class="absolute bottom-5 right-1.5 border border-red-200 rounded text-red-500 bg-white px-1 py-0.5 flex flex-col items-center shadow-sm">
+                                                <i class="fa-regular fa-file-pdf text-[8px]"></i>
+                                            </div>
+                                            <div class="absolute bottom-1 left-0 right-0 text-center">
+                                                <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">TAPU VE KADASTRO</div>
+                                                <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">GENEL MÜDÜRLÜĞÜ</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-[0.55rem] font-bold text-gray-800 mb-0.5 truncate">2023 Yılı</h3>
+                                    <p class="text-[0.55rem] font-bold text-gray-800 mb-2 truncate">Performans Programı</p>
+                                    <div class="flex gap-1">
+                                        <a href="https://drive.google.com/file/d/1JSj9bKLm85vbdIi6bvfBklAvjbrYkTV1/view?usp=sharing" target="_blank" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                            Görüntüle <i class="fa-solid fa-file-magnifying-glass"></i>
+                                        </a>
+                                        <a href="https://drive.google.com/uc?export=download&id=1JSj9bKLm85vbdIi6bvfBklAvjbrYkTV1" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                            İndir <i class="fa-solid fa-download"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- 2022 -->
+                                <div class="flex flex-col">
+                                    <div class="bg-[#2c3e5e] p-3 rounded-lg flex justify-center items-center shadow-md mb-2">
+                                        <div class="bg-white w-[90px] h-[130px] rounded shadow relative overflow-hidden border-l-4 border-gray-200 shrink-0">
+                                            <svg viewBox="0 0 100 150" class="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+                                                <defs>
+                                                    <linearGradient id="orangeGrad22" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                        <stop offset="0%" stop-color="#fed7aa" />
+                                                        <stop offset="100%" stop-color="#ea580c" />
+                                                    </linearGradient>
+                                                </defs>
+                                                <path d="M0,40 C50,10 50,80 100,30 L100,100 C50,140 50,70 0,110 Z" fill="url(#orangeGrad22)" opacity="0.85"/>
+                                            </svg>
+                                            <div class="absolute top-2 right-2 text-orange-700 text-[8px] opacity-80">
+                                                <i class="fa-solid fa-chart-column"></i>
+                                            </div>
+                                            <div class="absolute top-[35%] left-0 right-0 text-center text-white z-10">
+                                                <div class="text-[0.4rem] font-bold">2022</div>
+                                                <div class="text-[0.55rem] font-bold leading-tight mt-0.5">Performans<br>Programı</div>
+                                            </div>
+                                            <div class="absolute bottom-5 right-1.5 border border-red-200 rounded text-red-500 bg-white px-1 py-0.5 flex flex-col items-center shadow-sm">
+                                                <i class="fa-regular fa-file-pdf text-[8px]"></i>
+                                            </div>
+                                            <div class="absolute bottom-1 left-0 right-0 text-center">
+                                                <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">TAPU VE KADASTRO</div>
+                                                <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">GENEL MÜDÜRLÜĞÜ</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-[0.55rem] font-bold text-gray-800 mb-0.5 truncate">2022 Yılı</h3>
+                                    <p class="text-[0.55rem] font-bold text-gray-800 mb-2 truncate">Performans Programı</p>
+                                    <div class="flex gap-1">
+                                        <a href="https://drive.google.com/file/d/1nuTjNoZaF4-Vl9TsufmeNf0itTyE8idg/view?usp=sharing" target="_blank" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                            Görüntüle <i class="fa-solid fa-file-magnifying-glass"></i>
+                                        </a>
+                                        <a href="https://drive.google.com/uc?export=download&id=1nuTjNoZaF4-Vl9TsufmeNf0itTyE8idg" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                            İndir <i class="fa-solid fa-download"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- 2021 -->
+                                <div class="flex flex-col">
+                                    <div class="bg-[#2c3e5e] p-3 rounded-lg flex justify-center items-center shadow-md mb-2">
+                                        <div class="bg-white w-[90px] h-[130px] rounded shadow relative overflow-hidden border-l-4 border-gray-200 shrink-0">
+                                            <svg viewBox="0 0 100 150" class="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+                                                <defs>
+                                                    <linearGradient id="orangeGrad21" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                        <stop offset="0%" stop-color="#fed7aa" />
+                                                        <stop offset="100%" stop-color="#ea580c" />
+                                                    </linearGradient>
+                                                </defs>
+                                                <path d="M0,40 C50,10 50,80 100,30 L100,100 C50,140 50,70 0,110 Z" fill="url(#orangeGrad21)" opacity="0.85"/>
+                                            </svg>
+                                            <div class="absolute top-2 right-2 text-orange-700 text-[8px] opacity-80">
+                                                <i class="fa-solid fa-chart-column"></i>
+                                            </div>
+                                            <div class="absolute top-[35%] left-0 right-0 text-center text-white z-10">
+                                                <div class="text-[0.4rem] font-bold">2021</div>
+                                                <div class="text-[0.55rem] font-bold leading-tight mt-0.5">Performans<br>Programı</div>
+                                            </div>
+                                            <div class="absolute bottom-5 right-1.5 border border-red-200 rounded text-red-500 bg-white px-1 py-0.5 flex flex-col items-center shadow-sm">
+                                                <i class="fa-regular fa-file-pdf text-[8px]"></i>
+                                            </div>
+                                            <div class="absolute bottom-1 left-0 right-0 text-center">
+                                                <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">TAPU VE KADASTRO</div>
+                                                <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">GENEL MÜDÜRLÜĞÜ</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-[0.55rem] font-bold text-gray-800 mb-0.5 truncate">2021 Yılı</h3>
+                                    <p class="text-[0.55rem] font-bold text-gray-800 mb-2 truncate">Performans Programı</p>
+                                    <div class="flex gap-1">
+                                        <a href="https://drive.google.com/file/d/1hpsdUe7hFBYw2vDY2Qf_NoJ-xjDZ_ObP/view?usp=sharing" target="_blank" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                            Görüntüle <i class="fa-solid fa-file-magnifying-glass"></i>
+                                        </a>
+                                        <a href="https://drive.google.com/uc?export=download&id=1hpsdUe7hFBYw2vDY2Qf_NoJ-xjDZ_ObP" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                            İndir <i class="fa-solid fa-download"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- 2020 -->
+                                <div class="flex flex-col">
+                                    <div class="bg-[#2c3e5e] p-3 rounded-lg flex justify-center items-center shadow-md mb-2">
+                                        <div class="bg-white w-[90px] h-[130px] rounded shadow relative overflow-hidden border-l-4 border-gray-200 shrink-0">
+                                            <svg viewBox="0 0 100 150" class="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+                                                <defs>
+                                                    <linearGradient id="orangeGrad20" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                        <stop offset="0%" stop-color="#fed7aa" />
+                                                        <stop offset="100%" stop-color="#ea580c" />
+                                                    </linearGradient>
+                                                </defs>
+                                                <path d="M0,40 C50,10 50,80 100,30 L100,100 C50,140 50,70 0,110 Z" fill="url(#orangeGrad20)" opacity="0.85"/>
+                                            </svg>
+                                            <div class="absolute top-2 right-2 text-orange-700 text-[8px] opacity-80">
+                                                <i class="fa-solid fa-chart-column"></i>
+                                            </div>
+                                            <div class="absolute top-[35%] left-0 right-0 text-center text-white z-10">
+                                                <div class="text-[0.4rem] font-bold">2020</div>
+                                                <div class="text-[0.55rem] font-bold leading-tight mt-0.5">Performans<br>Programı</div>
+                                            </div>
+                                            <div class="absolute bottom-5 right-1.5 border border-red-200 rounded text-red-500 bg-white px-1 py-0.5 flex flex-col items-center shadow-sm">
+                                                <i class="fa-regular fa-file-pdf text-[8px]"></i>
+                                            </div>
+                                            <div class="absolute bottom-1 left-0 right-0 text-center">
+                                                <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">TAPU VE KADASTRO</div>
+                                                <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">GENEL MÜDÜRLÜĞÜ</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-[0.55rem] font-bold text-gray-800 mb-0.5 truncate">2020 Yılı</h3>
+                                    <p class="text-[0.55rem] font-bold text-gray-800 mb-2 truncate">Performans Programı</p>
+                                    <div class="flex gap-1">
+                                        <a href="https://drive.google.com/file/d/16jBS1VyHwBwMosuksDQjZu1js_9wETmq/view?usp=sharing" target="_blank" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                            Görüntüle <i class="fa-solid fa-file-magnifying-glass"></i>
+                                        </a>
+                                        <a href="https://drive.google.com/uc?export=download&id=16jBS1VyHwBwMosuksDQjZu1js_9wETmq" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                            İndir <i class="fa-solid fa-download"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- 2019 -->
+                                <div class="flex flex-col">
+                                    <div class="bg-[#2c3e5e] p-3 rounded-lg flex justify-center items-center shadow-md mb-2">
+                                        <div class="bg-white w-[90px] h-[130px] rounded shadow relative overflow-hidden border-l-4 border-gray-200 shrink-0">
+                                            <svg viewBox="0 0 100 150" class="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+                                                <defs>
+                                                    <linearGradient id="orangeGrad19" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                        <stop offset="0%" stop-color="#fed7aa" />
+                                                        <stop offset="100%" stop-color="#ea580c" />
+                                                    </linearGradient>
+                                                </defs>
+                                                <path d="M0,40 C50,10 50,80 100,30 L100,100 C50,140 50,70 0,110 Z" fill="url(#orangeGrad19)" opacity="0.85"/>
+                                            </svg>
+                                            <div class="absolute top-2 right-2 text-orange-700 text-[8px] opacity-80">
+                                                <i class="fa-solid fa-chart-column"></i>
+                                            </div>
+                                            <div class="absolute top-[35%] left-0 right-0 text-center text-white z-10">
+                                                <div class="text-[0.4rem] font-bold">2019</div>
+                                                <div class="text-[0.55rem] font-bold leading-tight mt-0.5">Performans<br>Programı</div>
+                                            </div>
+                                            <div class="absolute bottom-5 right-1.5 border border-red-200 rounded text-red-500 bg-white px-1 py-0.5 flex flex-col items-center shadow-sm">
+                                                <i class="fa-regular fa-file-pdf text-[8px]"></i>
+                                            </div>
+                                            <div class="absolute bottom-1 left-0 right-0 text-center">
+                                                <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">TAPU VE KADASTRO</div>
+                                                <div class="text-[0.25rem] font-bold text-gray-800 leading-tight">GENEL MÜDÜRLÜĞÜ</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-[0.55rem] font-bold text-gray-800 mb-0.5 truncate">2019 Yılı</h3>
+                                    <p class="text-[0.55rem] font-bold text-gray-800 mb-2 truncate">Performans Programı</p>
+                                    <div class="flex gap-1">
+                                        <a href="https://drive.google.com/file/d/10cwfoJwj5eXaMPIyKUvaCBjoSo6hodlW/view?usp=sharing" target="_blank" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                            Görüntüle <i class="fa-solid fa-file-magnifying-glass"></i>
+                                        </a>
+                                        <a href="https://drive.google.com/uc?export=download&id=10cwfoJwj5eXaMPIyKUvaCBjoSo6hodlW" class="flex-1 flex items-center justify-center gap-1 py-1 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-[0.5rem] text-gray-700 font-medium">
+                                            İndir <i class="fa-solid fa-download"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="sayfa-numarasi">24</div>
+                </div>
                 <div class="arka kapak-on" style="border-radius: 10px 0 0 10px;">
                     <i class="fa-solid fa-trophy text-7xl mb-8" style="color: var(--kitap-altin);"></i>
                     <h2 style="color: white; border-bottom: none; font-size: 1.8rem;">EĞİTİM TAMAMLANDI</h2>
@@ -1898,7 +3347,7 @@
     </div>
 
     <script>
-        const toplam_sayfa_sayisi = 10;
+        const toplam_sayfa_sayisi = 13;
         let mevcut_sayfa = 1;
         const sayfalar = [];
         const mesaj_kutusu = document.getElementById('mesajKutusu');
@@ -1951,10 +3400,16 @@
             { baslik: 'YAZILIM', yaprak: 8, yuz: 'arka' },
             { baslik: 'İHA-FOTO', yaprak: 8, yuz: 'on' },
             { baslik: 'GÜVENLİK', yaprak: 9, yuz: 'arka' },
-            { baslik: 'Z-ZEKA', yaprak: 9, yuz: 'on' },
+            { baslik: 'Y-ZEKA', yaprak: 9, yuz: 'on' },
             { baslik: 'ŞEHİR', yaprak: 10, yuz: 'arka' },
             { baslik: 'BELGE', yaprak: 10, yuz: 'on' },
-            { baslik: 'SON', yaprak: 11, yuz: 'arka' }
+            { baslik: 'KURUM', yaprak: 11, yuz: 'arka' },
+            { baslik: 'ŞEMA', yaprak: 11, yuz: 'on' },
+            { baslik: 'DAİRE', yaprak: 12, yuz: 'arka' },
+            { baslik: 'S. PLAN', yaprak: 12, yuz: 'on' },
+            { baslik: 'F. RAPOR', yaprak: 13, yuz: 'arka' },
+            { baslik: 'PERF.', yaprak: 13, yuz: 'on' },
+            { baslik: 'SON', yaprak: 14, yuz: 'arka' }
         ];
 
         // Tekli Fihrist Sekmelerini Oluştur
