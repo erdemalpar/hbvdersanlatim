@@ -1943,11 +1943,240 @@
 
             <!-- SAYFA 6 (TUCBS VE ASKI) -->
             <div class="sayfa" id="s6">
-                <div class="on">
-                    <h2>TÜRKİYE ULUSAL CBS (TUCBS)</h2>
-                    <div class="bilgi-karti">
-                        <h4><i class="fa-solid fa-share-nodes text-indigo-500"></i> Veri Paylaşım Standartları</h4>
-                        <p>Kurumlar arası coğrafi veri paylaşımını sağlayan ulusal altyapı ve portal.</p>
+                <div class="on relative">
+                    <div class="flex items-center justify-center gap-3 mb-3">
+                        <h2 class="text-[1.1rem] uppercase text-gray-800 m-0">TÜRKİYE ULUSAL CBS (TUCBS)</h2>
+                        <a href="https://tucbs.gov.tr/" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded shadow-sm text-[0.6rem] transition-colors whitespace-nowrap flex items-center gap-1">
+                            <i class="fa-solid fa-globe"></i> Resmi Site
+                        </a>
+                    </div>
+                    <div class="overflow-y-auto pr-2 pb-6 text-justify text-[0.6rem] leading-relaxed text-gray-700" style="max-height: 85%;">
+                        
+                        <!-- 1. Hukuki Dayanaklar -->
+                        <details class="bg-gray-50 border border-gray-200 rounded-lg mb-2 group cursor-pointer" open>
+                            <summary class="font-bold text-blue-800 p-2 border-b border-gray-200 flex justify-between items-center group-open:bg-blue-50">
+                                <span><i class="fa-solid fa-gavel mr-1"></i> Hukuki Dayanaklar & Mevzuat</span>
+                                <i class="fa-solid fa-chevron-down transition-transform group-open:rotate-180"></i>
+                            </summary>
+                            <div class="p-2 text-[0.55rem]">
+                                <p class="mb-1">TUCBS, kamu yönetiminde mükerrer üretimin önüne geçen stratejik bir mevzuat mimarisi üzerine inşa edilmiştir.</p>
+                                <ul class="list-disc pl-4 space-y-1">
+                                    <li><strong class="text-blue-700">7221 Sayılı Kanun:</strong> Kurumlar arası paylaşım bedelsizdir. İzin yükümlülüğü ve yazılım sertifikasyonu getirir.</li>
+                                    <li><strong class="text-blue-700">İdari Yaptırımlar:</strong> İzinsiz faaliyetlere ciddi cezalar ve yargı yolu (İdare Mahkemesi).</li>
+                                </ul>
+                            </div>
+                        </details>
+
+                        <!-- 2. Ekosistem ve Mimarisi -->
+                        <details class="bg-gray-50 border border-gray-200 rounded-lg mb-2 group cursor-pointer">
+                            <summary class="font-bold text-teal-800 p-2 border-b border-gray-200 flex justify-between items-center group-open:bg-teal-50">
+                                <span><i class="fa-solid fa-server mr-1"></i> Mimari ve Veri Ekosistemi</span>
+                                <i class="fa-solid fa-chevron-down transition-transform group-open:rotate-180"></i>
+                            </summary>
+                            <div class="p-2 text-[0.55rem]">
+                                <img src="assets/img/tucbs_architecture.jpg" alt="TUCBS Mimari" class="w-full h-24 object-cover rounded mb-2 border border-gray-300">
+                                <p class="mb-1">32 coğrafi veri teması, 520 veri katmanı ile 10 grupta 2.038 yetkili idareyi (Bina Yaşam Döngüsü vb.) kapsar.</p>
+                                <ul class="list-disc pl-4 space-y-1">
+                                    <li><strong class="text-teal-700">Tek Noktadan Erişim:</strong> UCBP aracılığıyla.</li>
+                                    <li><strong class="text-teal-700">PostgreSQL/PostGIS:</strong> Uzamsal analiz.</li>
+                                    <li><strong class="text-teal-700">Hale Studio & PDI:</strong> Uyumlaştırma ve ETL.</li>
+                                </ul>
+                            </div>
+                        </details>
+
+                        <!-- 3. OGC ve Analitik Araçlar -->
+                        <details class="bg-gray-50 border border-gray-200 rounded-lg mb-2 group cursor-pointer">
+                            <summary class="font-bold text-indigo-800 p-2 border-b border-gray-200 flex justify-between items-center group-open:bg-indigo-50">
+                                <span><i class="fa-solid fa-layer-group mr-1"></i> OGC Servisleri ve QGIS Eklentileri</span>
+                                <i class="fa-solid fa-chevron-down transition-transform group-open:rotate-180"></i>
+                            </summary>
+                            <div class="p-2 text-[0.55rem]">
+                                <img src="assets/img/tucbs_ogc_services.jpg" alt="OGC Servisleri" class="w-full h-24 object-cover rounded mb-2 border border-gray-300">
+                                <p class="mb-1">TUCBS'nin dış dünyaya açılan teknik kapısı OGC (WMS, WMTS, WFS) servisleridir.</p>
+                                <ul class="list-disc pl-4 space-y-1">
+                                    <li><strong class="text-indigo-700">TUCBS Veri Şeması Oluşturucu:</strong> UML v2 üzerinden GeoPackage üretir.</li>
+                                    <li><strong class="text-indigo-700">H3Spatial & SDG Insight:</strong> Çok seviyeli grid analizi ve BM kalkınma hedefleri uyumu.</li>
+                                </ul>
+                            </div>
+                        </details>
+
+                        <!-- 4. Paydaşlar ve Portallar -->
+                        <details class="bg-gray-50 border border-gray-200 rounded-lg group cursor-pointer">
+                            <summary class="font-bold text-orange-800 p-2 border-b border-gray-200 flex justify-between items-center group-open:bg-orange-50">
+                                <span><i class="fa-solid fa-users mr-1"></i> Portallar ve Paydaş Erişimi</span>
+                                <i class="fa-solid fa-chevron-down transition-transform group-open:rotate-180"></i>
+                            </summary>
+                            <div class="p-2 text-[0.55rem]">
+                                <table class="w-full text-left border rounded shadow-sm mb-2">
+                                    <thead class="bg-gray-100 border-b">
+                                        <tr><th class="px-1 py-1">Kullanıcı</th><th class="px-1 py-1">Paylaşım Esası</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="border-b"><td class="px-1 py-1 font-bold">Kamu</td><td class="px-1 py-1">Bedelsiz (Yetki Matrisi)</td></tr>
+                                        <tr class="bg-gray-50 border-b"><td class="px-1 py-1 font-bold">Özel Skt.</td><td class="px-1 py-1">Pafta başı izin bedeli</td></tr>
+                                    </tbody>
+                                </table>
+                                <p><strong>tucbs.gov.tr</strong> ve <strong>tucbskontrol.csb.gov.tr</strong> portalları ile veri ekosistemi dijital olarak kontrol edilir ve paylaşılır.</p>
+                            </div>
+                        </details>
+
+                        <!-- 5. TKGM Veri Paylaşım Matrisi -->
+                        <details class="bg-gray-50 border border-gray-200 rounded-lg group cursor-pointer mt-2" open>
+                            <summary class="font-bold text-red-800 p-2 border-b border-gray-200 flex justify-between items-center group-open:bg-red-50">
+                                <span><i class="fa-solid fa-map-location-dot mr-1"></i> TKGM Veri Paylaşım Matrisi</span>
+                                <i class="fa-solid fa-chevron-down transition-transform group-open:rotate-180"></i>
+                            </summary>
+                            <div class="p-2 text-[0.45rem]">
+                                <div class="overflow-x-auto pb-1 mb-2">
+                                    <table class="w-full text-left border-collapse whitespace-nowrap">
+                                        <thead class="bg-gray-100 border-b-2 border-gray-300">
+                                            <tr>
+                                                <th class="px-2 py-1.5 font-bold text-gray-700">Sıra No</th>
+                                                <th class="px-2 py-1.5 font-bold text-gray-700">Kurum Adı</th>
+                                                <th class="px-2 py-1.5 font-bold text-gray-700">Alt Kurum Adı</th>
+                                                <th class="px-2 py-1.5 font-bold text-gray-700">Katman Adı</th>
+                                                <th class="px-2 py-1.5 font-bold text-gray-700">Kısıtlılık Derecesi</th>
+                                                <th class="px-2 py-1.5 font-bold text-gray-700">TUCBS Alt Tema Adı</th>
+                                                <th class="px-2 py-1.5 font-bold text-gray-700">TUCBS Katman Adı</th>
+                                                <th class="px-2 py-1.5 font-bold text-gray-700">Görüntüleme Servisi</th>
+                                                <th class="px-2 py-1.5 font-bold text-gray-700">İndirme Servisi</th>
+                                                <th class="px-2 py-1.5 font-bold text-gray-700">Matris Detay Görüntüle</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="text-gray-800">
+                                            <tr class="bg-green-200 border-b border-white">
+                                                <td class="px-2 py-1.5">1</td>
+                                                <td class="px-2 py-1.5">ÇEVRE, ŞEHİRCİLİK VE İKLİM DEĞİŞİKLİĞİ BAKANLIĞI</td>
+                                                <td class="px-2 py-1.5">TAPU VE KADASTRO GENEL MÜDÜRLÜĞÜ</td>
+                                                <td class="px-2 py-1.5">ADA</td>
+                                                <td class="px-2 py-1.5">Tasnif Dışı</td>
+                                                <td class="px-2 py-1.5">Kadastro</td>
+                                                <td class="px-2 py-1.5">Ada</td>
+                                                <td class="px-2 py-1.5">Evet</td>
+                                                <td class="px-2 py-1.5">Evet</td>
+                                                <td class="px-2 py-1.5"><button onclick="document.getElementById('pdfModal').classList.remove('hidden')" class="bg-red-600 hover:bg-red-700 text-white rounded px-3 py-1 font-bold shadow-sm transition-colors">Detay</button></td>
+                                            </tr>
+                                            <tr class="bg-green-200 border-b border-white">
+                                                <td class="px-2 py-1.5">2</td>
+                                                <td class="px-2 py-1.5">ÇEVRE, ŞEHİRCİLİK VE İKLİM DEĞİŞİKLİĞİ BAKANLIĞI</td>
+                                                <td class="px-2 py-1.5">TAPU VE KADASTRO GENEL MÜDÜRLÜĞÜ</td>
+                                                <td class="px-2 py-1.5">İRTİFAK HAKLARI</td>
+                                                <td class="px-2 py-1.5">Tasnif Dışı</td>
+                                                <td class="px-2 py-1.5">Kadastro</td>
+                                                <td class="px-2 py-1.5">Irtifak</td>
+                                                <td class="px-2 py-1.5">Evet</td>
+                                                <td class="px-2 py-1.5">Evet</td>
+                                                <td class="px-2 py-1.5"><button onclick="document.getElementById('pdfModal').classList.remove('hidden')" class="bg-red-600 hover:bg-red-700 text-white rounded px-3 py-1 font-bold shadow-sm transition-colors">Detay</button></td>
+                                            </tr>
+                                            <tr class="bg-green-200 border-b border-white">
+                                                <td class="px-2 py-1.5">3</td>
+                                                <td class="px-2 py-1.5">ÇEVRE, ŞEHİRCİLİK VE İKLİM DEĞİŞİKLİĞİ BAKANLIĞI</td>
+                                                <td class="px-2 py-1.5">TAPU VE KADASTRO GENEL MÜDÜRLÜĞÜ</td>
+                                                <td class="px-2 py-1.5">KADASTRO ÇALIŞMA ALANI SINIRI (İL)</td>
+                                                <td class="px-2 py-1.5">Tasnif Dışı</td>
+                                                <td class="px-2 py-1.5">Kadastro</td>
+                                                <td class="px-2 py-1.5">CalismaBolgesi</td>
+                                                <td class="px-2 py-1.5">Evet</td>
+                                                <td class="px-2 py-1.5">Evet</td>
+                                                <td class="px-2 py-1.5"><button onclick="document.getElementById('pdfModal').classList.remove('hidden')" class="bg-red-600 hover:bg-red-700 text-white rounded px-3 py-1 font-bold shadow-sm transition-colors">Detay</button></td>
+                                            </tr>
+                                            <tr class="bg-green-200 border-b border-white">
+                                                <td class="px-2 py-1.5">4</td>
+                                                <td class="px-2 py-1.5">ÇEVRE, ŞEHİRCİLİK VE İKLİM DEĞİŞİKLİĞİ BAKANLIĞI</td>
+                                                <td class="px-2 py-1.5">TAPU VE KADASTRO GENEL MÜDÜRLÜĞÜ</td>
+                                                <td class="px-2 py-1.5">KADASTRO ÇALIŞMA ALANI SINIRI (İLÇE)</td>
+                                                <td class="px-2 py-1.5">Tasnif Dışı</td>
+                                                <td class="px-2 py-1.5">Kadastro</td>
+                                                <td class="px-2 py-1.5">CalismaBolgesi</td>
+                                                <td class="px-2 py-1.5">Evet</td>
+                                                <td class="px-2 py-1.5">Evet</td>
+                                                <td class="px-2 py-1.5"><button onclick="document.getElementById('pdfModal').classList.remove('hidden')" class="bg-red-600 hover:bg-red-700 text-white rounded px-3 py-1 font-bold shadow-sm transition-colors">Detay</button></td>
+                                            </tr>
+                                            <tr class="bg-green-200 border-b border-white">
+                                                <td class="px-2 py-1.5">5</td>
+                                                <td class="px-2 py-1.5">ÇEVRE, ŞEHİRCİLİK VE İKLİM DEĞİŞİKLİĞİ BAKANLIĞI</td>
+                                                <td class="px-2 py-1.5">TAPU VE KADASTRO GENEL MÜDÜRLÜĞÜ</td>
+                                                <td class="px-2 py-1.5">KADASTRO ÇALIŞMA ALANI SINIRI (MAHALLE)</td>
+                                                <td class="px-2 py-1.5">Tasnif Dışı</td>
+                                                <td class="px-2 py-1.5">Kadastro</td>
+                                                <td class="px-2 py-1.5">CalismaBolgesi</td>
+                                                <td class="px-2 py-1.5">Evet</td>
+                                                <td class="px-2 py-1.5">Evet</td>
+                                                <td class="px-2 py-1.5"><button onclick="document.getElementById('pdfModal').classList.remove('hidden')" class="bg-red-600 hover:bg-red-700 text-white rounded px-3 py-1 font-bold shadow-sm transition-colors">Detay</button></td>
+                                            </tr>
+                                            <tr class="bg-green-200 border-b border-white">
+                                                <td class="px-2 py-1.5">6</td>
+                                                <td class="px-2 py-1.5">ÇEVRE, ŞEHİRCİLİK VE İKLİM DEĞİŞİKLİĞİ BAKANLIĞI</td>
+                                                <td class="px-2 py-1.5">TAPU VE KADASTRO GENEL MÜDÜRLÜĞÜ</td>
+                                                <td class="px-2 py-1.5">MUHDESATLAR</td>
+                                                <td class="px-2 py-1.5">Tasnif Dışı</td>
+                                                <td class="px-2 py-1.5">Kadastro</td>
+                                                <td class="px-2 py-1.5">Parsel</td>
+                                                <td class="px-2 py-1.5">Evet</td>
+                                                <td class="px-2 py-1.5">Evet</td>
+                                                <td class="px-2 py-1.5"><button onclick="document.getElementById('pdfModal').classList.remove('hidden')" class="bg-red-600 hover:bg-red-700 text-white rounded px-3 py-1 font-bold shadow-sm transition-colors">Detay</button></td>
+                                            </tr>
+                                            <tr class="bg-green-200 border-b border-white">
+                                                <td class="px-2 py-1.5">7</td>
+                                                <td class="px-2 py-1.5">ÇEVRE, ŞEHİRCİLİK VE İKLİM DEĞİŞİKLİĞİ BAKANLIĞI</td>
+                                                <td class="px-2 py-1.5">TAPU VE KADASTRO GENEL MÜDÜRLÜĞÜ</td>
+                                                <td class="px-2 py-1.5">ORTOFOTO</td>
+                                                <td class="px-2 py-1.5">Tasnif Dışı</td>
+                                                <td class="px-2 py-1.5">Ortogoruntu</td>
+                                                <td class="px-2 py-1.5">OrtogoruntuCoverage</td>
+                                                <td class="px-2 py-1.5">Evet</td>
+                                                <td class="px-2 py-1.5">Hayır</td>
+                                                <td class="px-2 py-1.5"><button onclick="document.getElementById('pdfModal').classList.remove('hidden')" class="bg-red-600 hover:bg-red-700 text-white rounded px-3 py-1 font-bold shadow-sm transition-colors">Detay</button></td>
+                                            </tr>
+                                            <tr class="bg-green-200 border-b border-white">
+                                                <td class="px-2 py-1.5">8</td>
+                                                <td class="px-2 py-1.5">ÇEVRE, ŞEHİRCİLİK VE İKLİM DEĞİŞİKLİĞİ BAKANLIĞI</td>
+                                                <td class="px-2 py-1.5">TAPU VE KADASTRO GENEL MÜDÜRLÜĞÜ</td>
+                                                <td class="px-2 py-1.5">PARSEL</td>
+                                                <td class="px-2 py-1.5">Tasnif Dışı</td>
+                                                <td class="px-2 py-1.5">Kadastro</td>
+                                                <td class="px-2 py-1.5">Parsel</td>
+                                                <td class="px-2 py-1.5">Evet</td>
+                                                <td class="px-2 py-1.5">Evet</td>
+                                                <td class="px-2 py-1.5"><button onclick="document.getElementById('pdfModal').classList.remove('hidden')" class="bg-red-600 hover:bg-red-700 text-white rounded px-3 py-1 font-bold shadow-sm transition-colors">Detay</button></td>
+                                            </tr>
+                                            <tr class="bg-green-200 border-b border-white">
+                                                <td class="px-2 py-1.5">9</td>
+                                                <td class="px-2 py-1.5">ÇEVRE, ŞEHİRCİLİK VE İKLİM DEĞİŞİKLİĞİ BAKANLIĞI</td>
+                                                <td class="px-2 py-1.5">TAPU VE KADASTRO GENEL MÜDÜRLÜĞÜ</td>
+                                                <td class="px-2 py-1.5">SAYISAL YÜZEY MODELİ</td>
+                                                <td class="px-2 py-1.5">Tasnif Dışı</td>
+                                                <td class="px-2 py-1.5">YukseklikGridCoverage</td>
+                                                <td class="px-2 py-1.5">YukseklikGridCoverage</td>
+                                                <td class="px-2 py-1.5">Evet</td>
+                                                <td class="px-2 py-1.5">Hayır</td>
+                                                <td class="px-2 py-1.5"><button onclick="document.getElementById('pdfModal').classList.remove('hidden')" class="bg-red-600 hover:bg-red-700 text-white rounded px-3 py-1 font-bold shadow-sm transition-colors">Detay</button></td>
+                                            </tr>
+                                            <tr class="bg-green-200">
+                                                <td class="px-2 py-1.5">10</td>
+                                                <td class="px-2 py-1.5">ÇEVRE, ŞEHİRCİLİK VE İKLİM DEĞİŞİKLİĞİ BAKANLIĞI</td>
+                                                <td class="px-2 py-1.5">TAPU VE KADASTRO GENEL MÜDÜRLÜĞÜ</td>
+                                                <td class="px-2 py-1.5">TESCİL HARİCİ ALANLAR</td>
+                                                <td class="px-2 py-1.5">Tasnif Dışı</td>
+                                                <td class="px-2 py-1.5">Kadastro</td>
+                                                <td class="px-2 py-1.5">Parsel</td>
+                                                <td class="px-2 py-1.5">Evet</td>
+                                                <td class="px-2 py-1.5">Evet</td>
+                                                <td class="px-2 py-1.5"><button onclick="document.getElementById('pdfModal').classList.remove('hidden')" class="bg-red-600 hover:bg-red-700 text-white rounded px-3 py-1 font-bold shadow-sm transition-colors">Detay</button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div class="mt-3 flex justify-between items-center gap-2">
+                                    <p class="mb-0 pr-2"><strong>TKGM</strong>, Ulusal Coğrafi Veri Paylaşım Matrisi kapsamında Türkiye genelindeki tapu ve kadastro verilerinin ana <strong>üreticisi ve teminatıdır</strong>.</p>
+                                    <a href="https://cvpm.tucbs.gov.tr/" target="_blank" class="bg-red-600 hover:bg-red-700 text-white font-bold py-1.5 px-3 rounded shadow-sm text-[0.6rem] transition-colors whitespace-nowrap flex items-center gap-1">
+                                        <i class="fa-solid fa-external-link-alt"></i> Matris Portalı'na Git
+                                    </a>
+                                </div>
+                            </div>
+                        </details>
+
                     </div>
                     <div class="sayfa-numarasi">10</div>
                 </div>
@@ -2209,10 +2438,79 @@
             <div class="sayfa" id="s10">
                 <div class="on">
                     <h2>SERTİFİKASYON SÜRECİ</h2>
-                    <div class="bilgi-karti">
-                        <h4><i class="fa-solid fa-award text-yellow-500"></i> Uzmanlık Belgesi</h4>
-                        <p>Tüm modülleri başarıyla tamamlayan katılımcılar "MEGSİS Uzmanlık Belgesi" almaya hak kazanır.
-                        </p>
+                    <div class="overflow-y-auto pr-2 pb-4" style="max-height: 85%;">
+                        <!-- ISO 9001 -->
+                        <div class="bilgi-karti py-3 px-4 mb-4 border-l-4 border-l-blue-600">
+                            <h4 class="text-blue-800 font-bold text-[0.75rem] mb-2"><i class="fa-solid fa-certificate text-blue-500 mr-1"></i> TS EN ISO 9001:2015 Kalite Yönetim Sistemi Belgesi</h4>
+                            <p class="text-[0.65rem] text-gray-700 text-justify leading-relaxed mb-3">
+                                Kurumun vatandaş odaklı hizmet anlayışını ve idari süreçlerindeki kalite standartlarını uluslararası düzeyde tescilleyen sertifikadır. Türk Standardları Enstitüsü (TSE) tarafından periyodik denetimlerle onaylanan bu belge, tapu ve kadastro işlemlerinde standartlaşmayı ve süreç iyileştirmeyi hedefler.
+                            </p>
+                            <div class="flex justify-center bg-white p-2 rounded border border-gray-100 shadow-sm">
+                                <img src="assets/img/iso9001.png" alt="TS EN ISO 9001:2015 Logo" class="h-16 object-contain">
+                            </div>
+                        </div>
+
+                        <!-- IQNet -->
+                        <div class="bilgi-karti py-3 px-4 mb-4 border-l-4 border-l-green-600">
+                            <h4 class="text-green-800 font-bold text-[0.75rem] mb-2"><i class="fa-solid fa-globe text-green-500 mr-1"></i> IQNet (Uluslararası Sertifikasyon Ağı) Belgesi</h4>
+                            <p class="text-[0.65rem] text-gray-700 text-justify leading-relaxed mb-3">
+                                TSE Kalite Yönetim Sistemi Belgesi ile entegre olarak kazanılan bu belge, TKGM'nin uyguladığı yönetim sistemi standartlarının tüm dünyada ve uluslararası sertifikasyon ağlarında tanındığını ve geçerli olduğunu kanıtlar.
+                            </p>
+                            <div class="flex justify-center bg-white p-2 rounded border border-gray-100 shadow-sm">
+                                <img src="assets/img/iqnet.png" alt="IQNet Logo" class="h-16 object-contain">
+                            </div>
+                        </div>
+
+                        <!-- ISO 27001 -->
+                        <div class="bilgi-karti py-3 px-4 border-l-4 border-l-red-600">
+                            <h4 class="text-red-800 font-bold text-[0.75rem] mb-2"><i class="fa-solid fa-shield-halved text-red-500 mr-1"></i> TS EN ISO 27001 Bilgi Güvenliği Yönetim Sistemi Belgesi</h4>
+                            <p class="text-[0.65rem] text-gray-700 text-justify leading-relaxed mb-3">
+                                Tapu ve Kadastro Bilgi Sistemi (TAKBİS) gibi kritik altyapılar üzerinden yönetilen mülkiyet verilerinin gizliliğini, bütünlüğünü ve erişilebilirliğini güvence altına alır. Kurumun siber güvenlik politikalarının, e-Devlet entegrasyonlarının ve vatandaşlara ait hassas verilerin korunma süreçlerinin uluslararası standartlara uygun olduğunu belgeler.
+                            </p>
+                            <div class="flex justify-center bg-white p-2 rounded border border-gray-100 shadow-sm">
+                                <img src="assets/img/iso27001.png" alt="TS EN ISO 27001 Logo" class="h-16 object-contain">
+                            </div>
+                        </div>
+
+                        <!-- Haberler Bölümü -->
+                        <div class="mt-6 border-t border-gray-200 pt-4">
+                            <h4 class="font-bold text-gray-800 text-[0.8rem] mb-3"><i class="fa-regular fa-newspaper text-indigo-500 mr-1"></i> Sertifikasyon Haberleri</h4>
+                            <div class="flex flex-col gap-2">
+                                <a href="https://www.tkgm.gov.tr/kalite-yonetim-sistemi" target="_blank" class="flex items-center p-2 bg-gray-50 border border-gray-200 rounded hover:bg-gray-100 transition-colors">
+                                    <div class="bg-blue-100 text-blue-600 p-2 rounded-full mr-3">
+                                        <i class="fa-solid fa-bullhorn text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-[0.65rem] font-bold text-gray-800 mb-0.5">Kurumumuzun TS EN ISO 9001:2015 Belgesi Yenilendi</h5>
+                                        <p class="text-[0.55rem] text-gray-600">TSE tarafından gerçekleştirilen tetkikler sonucunda belgenin geçerliliği uzatıldı.</p>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-right ml-auto text-gray-400 text-xs"></i>
+                                </a>
+
+                                <a href="https://www.tkgm.gov.tr/bilgi-guvenligi" target="_blank" class="flex items-center p-2 bg-gray-50 border border-gray-200 rounded hover:bg-gray-100 transition-colors">
+                                    <div class="bg-red-100 text-red-600 p-2 rounded-full mr-3">
+                                        <i class="fa-solid fa-shield-halved text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-[0.65rem] font-bold text-gray-800 mb-0.5">Bilgi Güvenliği (ISO 27001) Kapsamında Yenilikler</h5>
+                                        <p class="text-[0.55rem] text-gray-600">Dijital altyapılarda siber güvenliğin sağlanmasına yönelik kurum içi denetimler.</p>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-right ml-auto text-gray-400 text-xs"></i>
+                                </a>
+
+                                <a href="https://www.tse.org.tr/" target="_blank" class="flex items-center p-2 bg-gray-50 border border-gray-200 rounded hover:bg-gray-100 transition-colors">
+                                    <div class="bg-green-100 text-green-600 p-2 rounded-full mr-3">
+                                        <i class="fa-solid fa-globe text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-[0.65rem] font-bold text-gray-800 mb-0.5">TSE ve IQNet Entegrasyonu ile Uluslararası Geçerlilik</h5>
+                                        <p class="text-[0.55rem] text-gray-600">Sertifikalarımız, IQNet ağı aracılığıyla dünya çapında geçerliliğini korumaktadır.</p>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-right ml-auto text-gray-400 text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="sayfa-numarasi">18</div>
                 </div>
@@ -3536,6 +3834,75 @@
             </button>
             <iframe src="https://drive.google.com/file/d/1L2ePPxbfvH3x1m-nnntVnUFZra33M50a/preview"
                 class="w-full h-full rounded-lg" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+    <!-- CVPM Matris PDF Modal -->
+    <div id="pdfModal" class="fixed inset-0 bg-black/70 z-[100] hidden flex flex-col items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-gray-100 rounded-lg shadow-2xl w-full max-w-2xl h-[85%] flex flex-col overflow-hidden relative border border-gray-300">
+            <!-- Header -->
+            <div class="bg-gradient-to-r from-red-800 to-red-600 text-white px-4 py-3 flex justify-between items-center shadow">
+                <div class="flex items-center gap-2">
+                    <span class="font-bold text-[0.7rem] uppercase tracking-wide">cvpm.tucbs.gov.tr - Matris Detayı</span>
+                </div>
+                <button onclick="document.getElementById('pdfModal').classList.add('hidden')" class="hover:bg-red-500 rounded p-1 transition-colors"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+            
+            <!-- Body / PDF Viewer Simulator -->
+            <div class="flex-1 bg-gray-300 p-4 overflow-y-auto flex justify-center items-start shadow-inner">
+                <!-- PDF Sayfası Temsili -->
+                <div class="w-full bg-white shadow-lg p-6 text-[0.55rem] leading-relaxed text-gray-800 border-t border-l border-r border-gray-200">
+                    <div class="text-center font-extrabold mb-4 border-b-2 border-red-700 pb-2 text-red-700 text-[0.7rem]">
+                        ÇEVRE, ŞEHİRCİLİK VE İKLİM DEĞİŞİKLİĞİ BAKANLIĞI<br>
+                        TAPU VE KADASTRO GENEL MÜDÜRLÜĞÜ<br>
+                        <span class="text-gray-500 text-[0.5rem]">COĞRAFİ VERİ PAYLAŞIM MATRİSİ RAPORU</span>
+                    </div>
+                    
+                    <table class="w-full border-collapse border border-gray-800 mb-4 text-center">
+                        <tr class="bg-gray-200">
+                            <th class="border border-gray-800 p-1 w-1/4">TUCBS Tema Adı</th>
+                            <td class="border border-gray-800 p-1 font-bold">Kadastro</td>
+                            <th class="border border-gray-800 p-1 w-1/4">TUCBS Katman Adı</th>
+                            <td class="border border-gray-800 p-1 font-bold">Ada / Parsel / İrtifak vb.</td>
+                        </tr>
+                    </table>
+                    
+                    <h3 class="font-bold mb-2 text-gray-700 bg-gray-100 p-1 border-l-4 border-red-600 uppercase">Paylaşım İzin ve Yetki Detayları</h3>
+                    <table class="w-full border-collapse border border-gray-800 text-center mb-4">
+                        <tr class="bg-gray-200">
+                            <th class="border border-gray-800 p-2" rowspan="2">Kısıtlılık Derecesi</th>
+                            <th class="border border-gray-800 p-1" colspan="2">Görüntüleme Servisi</th>
+                            <th class="border border-gray-800 p-1" colspan="2">İndirme Servisi</th>
+                        </tr>
+                        <tr class="bg-gray-100">
+                            <th class="border border-gray-800 p-1 text-green-700 font-bold">Kamu</th>
+                            <th class="border border-gray-800 p-1 text-red-700 font-bold">Özel Sektör</th>
+                            <th class="border border-gray-800 p-1 text-green-700 font-bold">Kamu</th>
+                            <th class="border border-gray-800 p-1 text-red-700 font-bold">Özel Sektör</th>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-800 p-2 font-bold uppercase text-gray-700">Tasnif Dışı</td>
+                            <td class="border border-gray-800 p-2 bg-green-500 text-white font-extrabold shadow-inner">EVET</td>
+                            <td class="border border-gray-800 p-2 bg-red-500 text-white font-extrabold shadow-inner">HAYIR</td>
+                            <td class="border border-gray-800 p-2 bg-green-500 text-white font-extrabold shadow-inner">EVET</td>
+                            <td class="border border-gray-800 p-2 bg-red-500 text-white font-extrabold shadow-inner">HAYIR</td>
+                        </tr>
+                    </table>
+                    
+                    <div class="text-justify text-gray-600 bg-yellow-50 p-3 border border-yellow-200 rounded">
+                        <p class="font-bold text-yellow-800 mb-1"><i class="fa-solid fa-circle-info"></i> Rapora Dair Açıklamalar:</p>
+                        <ul class="list-disc pl-4 space-y-1">
+                            <li>Bu rapor, 7221 sayılı Kanun ve TUCBS standartları gereğince elektronik ortamda üretilmiştir.</li>
+                            <li>Kamu kurum ve kuruluşlarına ilgili verilerin görüntülenmesi ve indirilmesi ücretsiz olarak tahsis edilmektedir.</li>
+                            <li>Özel sektör ve tüzel kişilerin erişim süreçleri bakanlık yetki sınırları çerçevesinde değerlendirilmektedir.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <div class="bg-gray-100 px-4 py-2 border-t border-gray-300 flex justify-end">
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-1 px-4 rounded transition-colors text-[0.6rem]" onclick="document.getElementById('pdfModal').classList.add('hidden')">Kapat</button>
+            </div>
         </div>
     </div>
 </body>
