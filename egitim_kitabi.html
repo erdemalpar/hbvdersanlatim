@@ -4508,6 +4508,17 @@
                     <i class="fa-solid fa-compress"></i>
                 </button>
                 <div class="w-px h-6 bg-slate-700 mx-1"></div>
+                
+                <!-- Akıllı Tahta Araçları -->
+                <button onclick="toggleCizimModu()" id="btnCizimModu" class="hover:text-yellow-400 text-gray-400 transition-colors bg-slate-800 px-3 py-1.5 rounded" title="Çizim Modu Aç/Kapat">
+                    <i class="fa-solid fa-pen"></i>
+                </button>
+                <input type="color" id="cizimRengi" value="#ff0000" class="w-8 h-8 p-0 border-0 rounded cursor-pointer hidden" title="Kalem Rengi">
+                <button onclick="temizleTahta()" id="btnTemizle" class="hover:text-red-400 text-gray-400 transition-colors bg-slate-800 px-3 py-1.5 rounded hidden" title="Tahtayı Temizle">
+                    <i class="fa-solid fa-eraser"></i>
+                </button>
+                
+                <div class="w-px h-6 bg-slate-700 mx-1"></div>
                 <button onclick="kapatTamEkranSunum()"
                     class="text-red-400 hover:text-red-300 hover:bg-slate-800 px-3 py-1.5 rounded transition-colors"
                     title="Kapat (ESC)">
@@ -4567,13 +4578,137 @@
             }
         });
 
-        // 37 Adet sunum resmini dinamik olarak oluştur
+        // --- Akıllı Tahta Javascript (Çoklu Canvas Mimarisi) ---
+        let cizimModuAktif = false;
+        let cizimYapiyor = false;
+        let aktifCanvas = null;
+        let aktifCtx = null;
+
+        function resizeCanvaslar() {
+            const canvaslar = document.querySelectorAll('.akilliTahtaCanvas');
+            canvaslar.forEach(canvas => {
+                if (canvas.offsetWidth > 0 && canvas.width !== canvas.offsetWidth) {
+                    const tempCtx = canvas.getContext('2d');
+                    let data = null;
+                    if(canvas.width > 0 && canvas.height > 0) {
+                        data = tempCtx.getImageData(0, 0, canvas.width, canvas.height);
+                    }
+                    canvas.width = canvas.offsetWidth;
+                    canvas.height = canvas.offsetHeight;
+                    if(data && data.width > 0) tempCtx.putImageData(data, 0, 0);
+                }
+            });
+        }
+        window.addEventListener('resize', resizeCanvaslar);
+
+        function toggleCizimModu() {
+            cizimModuAktif = !cizimModuAktif;
+            const btn = document.getElementById('btnCizimModu');
+            const colorPicker = document.getElementById('cizimRengi');
+            const btnTemizle = document.getElementById('btnTemizle');
+            const container = document.getElementById('tamEkranSunumContainer');
+            const canvaslar = document.querySelectorAll('.akilliTahtaCanvas');
+
+            if (cizimModuAktif) {
+                btn.classList.replace('text-gray-400', 'text-yellow-400');
+                colorPicker.classList.remove('hidden');
+                btnTemizle.classList.remove('hidden');
+                container.style.overflow = 'hidden'; 
+                
+                canvaslar.forEach(c => {
+                    c.classList.remove('pointer-events-none');
+                    if(c.width === 300) { 
+                        c.width = c.offsetWidth;
+                        c.height = c.offsetHeight;
+                    }
+                });
+                resizeCanvaslar();
+            } else {
+                btn.classList.replace('text-yellow-400', 'text-gray-400');
+                colorPicker.classList.add('hidden');
+                btnTemizle.classList.add('hidden');
+                container.style.overflow = 'auto'; 
+                canvaslar.forEach(c => c.classList.add('pointer-events-none'));
+            }
+        }
+
+        function temizleTahta() {
+            const canvaslar = document.querySelectorAll('.akilliTahtaCanvas');
+            canvaslar.forEach(canvas => {
+                const ctx = canvas.getContext('2d');
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            });
+        }
+
+        function getMousePos(canvasEl, evt) {
+            const rect = canvasEl.getBoundingClientRect();
+            let clientX = evt.clientX;
+            let clientY = evt.clientY;
+            
+            if(evt.touches && evt.touches.length > 0) {
+                clientX = evt.touches[0].clientX;
+                clientY = evt.touches[0].clientY;
+            }
+            return {
+                x: clientX - rect.left,
+                y: clientY - rect.top
+            };
+        }
+
+        function startPosition(e) {
+            if(!cizimModuAktif) return;
+            if(!e.target.classList.contains('akilliTahtaCanvas')) return;
+            
+            cizimYapiyor = true;
+            aktifCanvas = e.target;
+            aktifCtx = aktifCanvas.getContext('2d');
+            
+            draw(e);
+        }
+
+        function endPosition() {
+            cizimYapiyor = false;
+            if(aktifCtx) aktifCtx.beginPath();
+            aktifCanvas = null;
+            aktifCtx = null;
+        }
+
+        function draw(e) {
+            if (!cizimYapiyor || !cizimModuAktif || !aktifCanvas || !aktifCtx) return;
+            e.preventDefault(); 
+            
+            const pos = getMousePos(aktifCanvas, e);
+            
+            aktifCtx.lineWidth = 4;
+            aktifCtx.lineCap = 'round';
+            aktifCtx.strokeStyle = document.getElementById('cizimRengi').value;
+
+            aktifCtx.lineTo(pos.x, pos.y);
+            aktifCtx.stroke();
+            aktifCtx.beginPath();
+            aktifCtx.moveTo(pos.x, pos.y);
+        }
+
+        const sunumContent = document.getElementById('tamEkranSunumContent');
+        sunumContent.addEventListener('mousedown', startPosition);
+        sunumContent.addEventListener('mouseup', endPosition);
+        sunumContent.addEventListener('mousemove', draw);
+        
+        sunumContent.addEventListener('touchstart', startPosition, {passive: false});
+        sunumContent.addEventListener('touchend', endPosition);
+        sunumContent.addEventListener('touchmove', draw, {passive: false});
+
+        // 37 Adet sunum resmini ve her biri için Canvas'ı dinamik olarak oluştur
         document.addEventListener('DOMContentLoaded', function() {
             const tamEkranContainer = document.getElementById('tamEkranSunumContent');
             if (tamEkranContainer) {
                 let htmlIcerik = '';
                 for (let i = 1; i <= 37; i++) {
-                    htmlIcerik += `<img src="./assets/data_dijitaluygulamalar/dijitaluygulamalar_${i}.png" class="max-w-5xl w-full h-auto shadow-2xl rounded bg-white" loading="lazy" alt="Sayfa ${i}">\n`;
+                    htmlIcerik += `
+                    <div class="relative max-w-5xl w-full flex justify-center mb-6 shadow-2xl rounded bg-white">
+                        <img src="./assets/data_dijitaluygulamalar/dijitaluygulamalar_${i}.png" class="w-full h-auto rounded" loading="lazy" alt="Sayfa ${i}">
+                        <canvas class="akilliTahtaCanvas absolute top-0 left-0 w-full h-full pointer-events-none z-10 rounded"></canvas>
+                    </div>\n`;
                 }
                 tamEkranContainer.innerHTML = htmlIcerik;
             }
