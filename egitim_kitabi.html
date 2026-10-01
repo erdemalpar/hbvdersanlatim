@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEGSİS ve CBS Eğitim Portalı</title>
+    <title>HBV - Eğitim Portalı (Öğt.Gör.Erdem ALPAR)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -786,6 +786,22 @@
 
                         <!-- BİREBİR EKLENEN TEKNİK NOTLAR -->
                         <div class="space-y-4">
+                            <!-- Haritacılık Baştan Sona Butonu -->
+                            <div class="mt-2 mb-4">
+                                <button onclick="openHaritacilikModal(event)" class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-bold py-3 px-4 rounded-xl shadow-md flex items-center justify-between transition-all transform hover:scale-[1.02] active:scale-95">
+                                    <div class="flex items-center gap-3">
+                                        <div class="bg-white/20 p-2 rounded-lg">
+                                            <i class="fa-solid fa-map-location-dot text-xl"></i>
+                                        </div>
+                                        <div class="text-left">
+                                            <div class="text-xs font-extrabold uppercase tracking-wider">Haritacılığın Baştan Sona Serüveni</div>
+                                            <div class="text-[9px] font-medium opacity-90">25 Adımda 3B Harita Üretim Süreci (İnteraktif)</div>
+                                        </div>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-right text-lg opacity-70"></i>
+                                </button>
+                            </div>
+
                             <!-- 3B UYGULAMA PORTALLARI -->
                             <div class="mt-6">
                                 <h4
@@ -944,6 +960,138 @@
                                 </p>
                             </div>
 
+                            <!-- Fotogrametri ve 3B Model Üretim Süreci -->
+                            <div class="mt-6 border-t-2 border-purple-200 pt-4">
+                                <h4 class="text-xs font-bold text-purple-900 mb-3 uppercase tracking-widest text-center border-b border-purple-100 pb-1">
+                                    <i class="fa-solid fa-plane-up mr-2"></i>Fotogrametri ve 3B Model Üretim Süreci
+                                </h4>
+                                <div class="space-y-2">
+                                    <!-- 1 -->
+                                    <div class="bg-purple-50 border border-purple-100 p-2 rounded-lg flex items-start gap-2 shadow-sm hover:bg-purple-100 transition-colors">
+                                        <div class="bg-purple-600 text-white w-5 h-5 rounded-full flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5 shadow-sm">1</div>
+                                        <div>
+                                            <h5 class="text-[10px] font-bold text-purple-800 m-0 leading-tight">Uçuş Planı ve Veri Toplama</h5>
+                                            <p class="text-[8px] text-gray-700 m-0 mt-1 leading-tight text-justify">TKGM uçağı, haritası çıkarılacak bölgenin üzerinde önceden belirlenmiş bir rotada (ızgara şeklinde) uçar. Uçağın altındaki özel metrik kameralar, %60 ila %80 oranında birbiriyle örtüşen binlerce yüksek çözünürlüklü ham fotoğraf çeker. Örtüşme olması, derinliği yakalamak için şarttır.</p>
+                                        </div>
+                                    </div>
+                                    <!-- 2 -->
+                                    <div class="bg-purple-50 border border-purple-100 p-2 rounded-lg flex items-start gap-2 shadow-sm hover:bg-purple-100 transition-colors">
+                                        <div class="bg-purple-600 text-white w-5 h-5 rounded-full flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5 shadow-sm">2</div>
+                                        <div>
+                                            <h5 class="text-[10px] font-bold text-purple-800 m-0 leading-tight">Görüntü Eşleştirme ve Nokta Bulutu (Point Cloud)</h5>
+                                            <p class="text-[8px] text-gray-700 m-0 mt-1 leading-tight text-justify">Bilgisayar yazılımları (fotogrametri programları), çekilen farklı fotoğraflardaki aynı nesneleri (örneğin bir binanın köşesini) bulup eşleştirir. İnsan gözünün derinliği algılaması mantığıyla, piksellerin 3 boyutlu koordinatları hesaplanır ve milyonlarca noktadan oluşan bir "Nokta Bulutu" elde edilir.</p>
+                                        </div>
+                                    </div>
+                                    <!-- 3 -->
+                                    <div class="bg-purple-50 border border-purple-100 p-2 rounded-lg flex items-start gap-2 shadow-sm hover:bg-purple-100 transition-colors">
+                                        <div class="bg-purple-600 text-white w-5 h-5 rounded-full flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5 shadow-sm">3</div>
+                                        <div>
+                                            <h5 class="text-[10px] font-bold text-purple-800 m-0 leading-tight">Yüzey Modelleri (DSM ve DTM)</h5>
+                                            <p class="text-[8px] text-gray-700 m-0 mt-1 leading-tight text-justify">Nokta bulutu kullanılarak arazinin engebesi modellenir. Uçağın gördüğü binalar, ağaçlar ve elektrik direkleri dahil her şeyin bulunduğu modele DSM (Sayısal Yüzey Modeli) denir. Ağaçlar ve yapay nesneler silinip geriye sadece "çıplak toprak" bırakıldığında elde edilen modele ise DTM (Sayısal Arazi Modeli) adı verilir.</p>
+                                        </div>
+                                    </div>
+                                    <!-- 4 -->
+                                    <div class="bg-purple-50 border border-purple-100 p-2 rounded-lg flex items-start gap-2 shadow-sm hover:bg-purple-100 transition-colors">
+                                        <div class="bg-purple-600 text-white w-5 h-5 rounded-full flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5 shadow-sm">4</div>
+                                        <div>
+                                            <h5 class="text-[10px] font-bold text-purple-800 m-0 leading-tight">Ortofoto Üretimi</h5>
+                                            <p class="text-[8px] text-gray-700 m-0 mt-1 leading-tight text-justify">Normal bir uçak fotoğrafında merkezden uzaklaştıkça binalar yatık görünür ve ölçek bozulur. DTM ve DSM verileri kullanılarak bu perspektif hataları ve yükselti farklılıkları düzeltilir. Sonuç olarak, üzerinden cetvelle gerçek ölçüm yapılabilen, harita standartlarındaki Ortofoto üretilir.</p>
+                                        </div>
+                                    </div>
+                                    <!-- 5 -->
+                                    <div class="bg-purple-50 border border-purple-100 p-2 rounded-lg flex items-start gap-2 shadow-sm hover:bg-purple-100 transition-colors">
+                                        <div class="bg-purple-600 text-white w-5 h-5 rounded-full flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5 shadow-sm">5</div>
+                                        <div>
+                                            <h5 class="text-[10px] font-bold text-purple-800 m-0 leading-tight">3D Mesh ve 3D Tile (Üç Boyutlu Ağ)</h5>
+                                            <p class="text-[8px] text-gray-700 m-0 mt-1 leading-tight text-justify">Nokta bulutunun arasına üçgen ağlar (mesh) örülür ve fotoğraflardaki gerçek dokular (renkler) bu ağın üzerine kaplanır. Oluşan devasa 3 boyutlu model, bilgisayarlarda veya web tarayıcılarında hızlı yüklenebilmesi için küçük "karo" parçalara bölünür (3D Tile). Google Earth veya uçuş simülatörlerinde gördüğümüz şehirler bu yöntemle hazırlanır.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Mobil Fotogrametri Uygulamaları -->
+                            <div class="mt-6 border-t-2 border-purple-200 pt-4 mb-4">
+                                <h4 class="text-xs font-bold text-purple-900 mb-3 uppercase tracking-widest text-center border-b border-purple-100 pb-1">
+                                    <i class="fa-solid fa-mobile-screen-button mr-2"></i>Mobil Fotogrametri Uygulamaları
+                                </h4>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <!-- Polycam -->
+                                    <div class="bg-white border border-purple-200 p-2 rounded-xl flex flex-col gap-2 shadow-sm hover:shadow-md transition-shadow">
+                                        <div class="flex items-center gap-2">
+                                            <i class="fa-solid fa-camera text-purple-600 text-lg"></i>
+                                            <h5 class="text-[10px] font-bold text-purple-900 m-0">1. Polycam</h5>
+                                        </div>
+                                        <p class="text-[7.5px] text-gray-700 m-0 text-justify leading-tight">Öğrenciler arasında en popüler uygulamadır. <strong class="text-purple-800">iOS (Pro):</strong> LiDAR sensörüyle video çeker gibi 3D model elde edilir. <strong class="text-purple-800">Android/Standart iOS:</strong> 20-50 fotoğraf çekilerek bulutta birleştirilir.</p>
+                                        <div class="flex justify-around gap-1 mt-auto border-t border-purple-100 pt-2">
+                                            <a href="https://apps.apple.com/us/app/polycam-3d-scanner-lidar-360/id1532482376" target="_blank" onclick="event.stopPropagation();" class="text-center group no-underline text-blue-600">
+                                                <span class="text-[7px] font-bold group-hover:underline block"><i class="fa-brands fa-apple"></i> App Store</span>
+                                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://apps.apple.com/us/app/polycam-3d-scanner-lidar-360/id1532482376" alt="Polycam iOS" class="w-10 h-10 mx-auto mt-1 rounded shadow-sm border border-gray-200 transition-transform group-hover:scale-110">
+                                            </a>
+                                            <a href="https://play.google.com/store/apps/details?id=ai.polycam" target="_blank" onclick="event.stopPropagation();" class="text-center group no-underline text-green-600">
+                                                <span class="text-[7px] font-bold group-hover:underline block"><i class="fa-brands fa-google-play"></i> Play Store</span>
+                                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://play.google.com/store/apps/details?id=ai.polycam" alt="Polycam Android" class="w-10 h-10 mx-auto mt-1 rounded shadow-sm border border-gray-200 transition-transform group-hover:scale-110">
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- KIRI Engine -->
+                                    <div class="bg-white border border-purple-200 p-2 rounded-xl flex flex-col gap-2 shadow-sm hover:shadow-md transition-shadow">
+                                        <div class="flex items-center gap-2">
+                                            <i class="fa-solid fa-cube text-purple-600 text-lg"></i>
+                                            <h5 class="text-[10px] font-bold text-purple-900 m-0">2. KIRI Engine</h5>
+                                        </div>
+                                        <p class="text-[7.5px] text-gray-700 m-0 text-justify leading-tight">Fotogrametri algoritması çok güçlüdür. iOS/Android'de tutarlı çalışır. Ücretsiz sürümü haftalık yeterli model üretimi sunar. Alt/üst taranmasında oldukça başarılıdır.</p>
+                                        <div class="flex justify-around gap-1 mt-auto border-t border-purple-100 pt-2">
+                                            <a href="https://apps.apple.com/us/app/kiri-engine-3d-scanner/id1577127142" target="_blank" onclick="event.stopPropagation();" class="text-center group no-underline text-blue-600">
+                                                <span class="text-[7px] font-bold group-hover:underline block"><i class="fa-brands fa-apple"></i> App Store</span>
+                                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://apps.apple.com/us/app/kiri-engine-3d-scanner/id1577127142" alt="KIRI Engine iOS" class="w-10 h-10 mx-auto mt-1 rounded shadow-sm border border-gray-200 transition-transform group-hover:scale-110">
+                                            </a>
+                                            <a href="https://play.google.com/store/apps/details?id=com.kiriengine.app" target="_blank" onclick="event.stopPropagation();" class="text-center group no-underline text-green-600">
+                                                <span class="text-[7px] font-bold group-hover:underline block"><i class="fa-brands fa-google-play"></i> Play Store</span>
+                                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://play.google.com/store/apps/details?id=com.kiriengine.app" alt="KIRI Engine Android" class="w-10 h-10 mx-auto mt-1 rounded shadow-sm border border-gray-200 transition-transform group-hover:scale-110">
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- RealityScan -->
+                                    <div class="bg-white border border-purple-200 p-2 rounded-xl flex flex-col gap-2 shadow-sm hover:shadow-md transition-shadow">
+                                        <div class="flex items-center gap-2">
+                                            <i class="fa-solid fa-gamepad text-purple-600 text-lg"></i>
+                                            <h5 class="text-[10px] font-bold text-purple-900 m-0">3. RealityScan</h5>
+                                        </div>
+                                        <p class="text-[7.5px] text-gray-700 m-0 text-justify leading-tight">Epic Games'in ücretsiz uygulaması. Artırılmış gerçeklik (AR) ile eksik açıları gösterir, fotogrametri mantığını öğretmek için idealdir. Gerçekçi sonuçlar verir ancak eski cihazları yorabilir.</p>
+                                        <div class="flex justify-around gap-1 mt-auto border-t border-purple-100 pt-2">
+                                            <a href="https://apps.apple.com/us/app/realityscan-3d-scanning-app/id1584832280" target="_blank" onclick="event.stopPropagation();" class="text-center group no-underline text-blue-600">
+                                                <span class="text-[7px] font-bold group-hover:underline block"><i class="fa-brands fa-apple"></i> App Store</span>
+                                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://apps.apple.com/us/app/realityscan-3d-scanning-app/id1584832280" alt="RealityScan iOS" class="w-10 h-10 mx-auto mt-1 rounded shadow-sm border border-gray-200 transition-transform group-hover:scale-110">
+                                            </a>
+                                            <a href="https://play.google.com/store/apps/details?id=com.epicgames.realityscan" target="_blank" onclick="event.stopPropagation();" class="text-center group no-underline text-green-600">
+                                                <span class="text-[7px] font-bold group-hover:underline block"><i class="fa-brands fa-google-play"></i> Play Store</span>
+                                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://play.google.com/store/apps/details?id=com.epicgames.realityscan" alt="RealityScan Android" class="w-10 h-10 mx-auto mt-1 rounded shadow-sm border border-gray-200 transition-transform group-hover:scale-110">
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- WIDAR -->
+                                    <div class="bg-white border border-purple-200 p-2 rounded-xl flex flex-col gap-2 shadow-sm hover:shadow-md transition-shadow">
+                                        <div class="flex items-center gap-2">
+                                            <i class="fa-solid fa-wand-magic-sparkles text-purple-600 text-lg"></i>
+                                            <h5 class="text-[10px] font-bold text-purple-900 m-0">4. WIDAR</h5>
+                                        </div>
+                                        <p class="text-[7.5px] text-gray-700 m-0 text-justify leading-tight">Sadece tarama değil düzenleme aracıdır. Öğrenciler 3D nesneleri düzenleyebilir, renklerini değiştirebilir ve AR ile masalarına yerleştirip video çekebilirler.</p>
+                                        <div class="flex justify-around gap-1 mt-auto border-t border-purple-100 pt-2">
+                                            <a href="https://apps.apple.com/us/app/widar-3d-scan-ar-camera/id1587522567" target="_blank" onclick="event.stopPropagation();" class="text-center group no-underline text-blue-600">
+                                                <span class="text-[7px] font-bold group-hover:underline block"><i class="fa-brands fa-apple"></i> App Store</span>
+                                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://apps.apple.com/us/app/widar-3d-scan-ar-camera/id1587522567" alt="WIDAR iOS" class="w-10 h-10 mx-auto mt-1 rounded shadow-sm border border-gray-200 transition-transform group-hover:scale-110">
+                                            </a>
+                                            <a href="https://play.google.com/store/apps/details?id=com.wogo.widar.android" target="_blank" onclick="event.stopPropagation();" class="text-center group no-underline text-green-600">
+                                                <span class="text-[7px] font-bold group-hover:underline block"><i class="fa-brands fa-google-play"></i> Play Store</span>
+                                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://play.google.com/store/apps/details?id=com.wogo.widar.android" alt="WIDAR Android" class="w-10 h-10 mx-auto mt-1 rounded shadow-sm border border-gray-200 transition-transform group-hover:scale-110">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
                     </div>
@@ -4508,16 +4656,29 @@
                     <i class="fa-solid fa-compress"></i>
                 </button>
                 <div class="w-px h-6 bg-slate-700 mx-1"></div>
-                
+
                 <!-- Akıllı Tahta Araçları -->
-                <button onclick="toggleCizimModu()" id="btnCizimModu" class="hover:text-yellow-400 text-gray-400 transition-colors bg-slate-800 px-3 py-1.5 rounded" title="Çizim Modu Aç/Kapat">
-                    <i class="fa-solid fa-pen"></i>
-                </button>
-                <input type="color" id="cizimRengi" value="#ff0000" class="w-8 h-8 p-0 border-0 rounded cursor-pointer hidden" title="Kalem Rengi">
-                <button onclick="temizleTahta()" id="btnTemizle" class="hover:text-red-400 text-gray-400 transition-colors bg-slate-800 px-3 py-1.5 rounded hidden" title="Tahtayı Temizle">
-                    <i class="fa-solid fa-eraser"></i>
+                <button onclick="toggleCizimModu()" id="btnCizimModu"
+                    class="hover:text-yellow-400 text-gray-400 transition-colors bg-slate-800 px-3 py-1.5 rounded"
+                    title="Akıllı Tahtayı Aç/Kapat">
+                    <i class="fa-solid fa-chalkboard"></i>
                 </button>
                 
+                <div id="cizimAraclari" class="hidden flex items-center gap-2 ml-2 bg-slate-800 px-2 py-1.5 rounded">
+                    <button onclick="setTool('pen')" id="toolPen" class="text-blue-400 hover:text-blue-300 px-2 py-1" title="Kalem"><i class="fa-solid fa-pen"></i></button>
+                    <button onclick="setTool('highlighter')" id="toolHighlighter" class="text-gray-400 hover:text-blue-400 px-2 py-1" title="Fosforlu Kalem"><i class="fa-solid fa-highlighter"></i></button>
+                    <button onclick="setTool('eraser')" id="toolEraser" class="text-gray-400 hover:text-blue-400 px-2 py-1" title="Noktasal Silgi"><i class="fa-solid fa-eraser"></i></button>
+                    
+                    <div class="w-px h-5 bg-slate-600 mx-1"></div>
+                    <input type="color" id="cizimRengi" value="#ff0000" class="w-6 h-6 p-0 border-0 rounded cursor-pointer" title="Kalem Rengi">
+                    <input type="range" id="cizimKalinlik" min="2" max="40" value="4" class="w-16 accent-blue-500 cursor-pointer" title="Kalınlık">
+                    
+                    <div class="w-px h-5 bg-slate-600 mx-1"></div>
+                    <button onclick="undoTahta()" class="text-gray-400 hover:text-white px-2 py-1" title="Geri Al"><i class="fa-solid fa-rotate-left"></i></button>
+                    <button onclick="redoTahta()" class="text-gray-400 hover:text-white px-2 py-1" title="İleri Al"><i class="fa-solid fa-rotate-right"></i></button>
+                    <button onclick="temizleTahta()" class="text-red-400 hover:text-red-300 px-2 py-1" title="Temizle"><i class="fa-solid fa-trash-can"></i></button>
+                </div>
+
                 <div class="w-px h-6 bg-slate-700 mx-1"></div>
                 <button onclick="kapatTamEkranSunum()"
                     class="text-red-400 hover:text-red-300 hover:bg-slate-800 px-3 py-1.5 rounded transition-colors"
@@ -4578,11 +4739,59 @@
             }
         });
 
-        // --- Akıllı Tahta Javascript (Çoklu Canvas Mimarisi) ---
+        // --- Akıllı Tahta Javascript (Gelişmiş Çoklu Canvas Mimarisi) ---
         let cizimModuAktif = false;
         let cizimYapiyor = false;
         let aktifCanvas = null;
         let aktifCtx = null;
+        
+        let currentTool = 'pen'; 
+        const historyData = new Map();
+
+        function saveHistory(canvasEl) {
+            if(!historyData.has(canvasEl)) {
+                const ctx = canvasEl.getContext('2d');
+                historyData.set(canvasEl, { undo: [ctx.getImageData(0,0, canvasEl.width, canvasEl.height)], redo: [] });
+            }
+            const hist = historyData.get(canvasEl);
+            const ctx = canvasEl.getContext('2d');
+            hist.undo.push(ctx.getImageData(0,0, canvasEl.width, canvasEl.height));
+            hist.redo = []; 
+        }
+
+        function undoTahta() {
+            if(!aktifCanvas) return;
+            const hist = historyData.get(aktifCanvas);
+            if(hist && hist.undo.length > 1) { 
+                const currentState = hist.undo.pop();
+                hist.redo.push(currentState);
+                const prevState = hist.undo[hist.undo.length - 1];
+                const ctx = aktifCanvas.getContext('2d');
+                ctx.putImageData(prevState, 0, 0);
+            }
+        }
+
+        function redoTahta() {
+            if(!aktifCanvas) return;
+            const hist = historyData.get(aktifCanvas);
+            if(hist && hist.redo.length > 0) {
+                const nextState = hist.redo.pop();
+                hist.undo.push(nextState);
+                const ctx = aktifCanvas.getContext('2d');
+                ctx.putImageData(nextState, 0, 0);
+            }
+        }
+
+        function setTool(toolName) {
+            currentTool = toolName;
+            document.getElementById('toolPen').classList.replace('text-blue-400', 'text-gray-400');
+            document.getElementById('toolHighlighter').classList.replace('text-blue-400', 'text-gray-400');
+            document.getElementById('toolEraser').classList.replace('text-blue-400', 'text-gray-400');
+            
+            if(toolName === 'pen') document.getElementById('toolPen').classList.replace('text-gray-400', 'text-blue-400');
+            if(toolName === 'highlighter') document.getElementById('toolHighlighter').classList.replace('text-gray-400', 'text-blue-400');
+            if(toolName === 'eraser') document.getElementById('toolEraser').classList.replace('text-gray-400', 'text-blue-400');
+        }
 
         function resizeCanvaslar() {
             const canvaslar = document.querySelectorAll('.akilliTahtaCanvas');
@@ -4590,12 +4799,12 @@
                 if (canvas.offsetWidth > 0 && canvas.width !== canvas.offsetWidth) {
                     const tempCtx = canvas.getContext('2d');
                     let data = null;
-                    if(canvas.width > 0 && canvas.height > 0) {
+                    if (canvas.width > 0 && canvas.height > 0) {
                         data = tempCtx.getImageData(0, 0, canvas.width, canvas.height);
                     }
                     canvas.width = canvas.offsetWidth;
                     canvas.height = canvas.offsetHeight;
-                    if(data && data.width > 0) tempCtx.putImageData(data, 0, 0);
+                    if (data && data.width > 0) tempCtx.putImageData(data, 0, 0);
                 }
             });
         }
@@ -4604,20 +4813,18 @@
         function toggleCizimModu() {
             cizimModuAktif = !cizimModuAktif;
             const btn = document.getElementById('btnCizimModu');
-            const colorPicker = document.getElementById('cizimRengi');
-            const btnTemizle = document.getElementById('btnTemizle');
+            const cizimAraclari = document.getElementById('cizimAraclari');
             const container = document.getElementById('tamEkranSunumContainer');
             const canvaslar = document.querySelectorAll('.akilliTahtaCanvas');
 
             if (cizimModuAktif) {
                 btn.classList.replace('text-gray-400', 'text-yellow-400');
-                colorPicker.classList.remove('hidden');
-                btnTemizle.classList.remove('hidden');
-                container.style.overflow = 'hidden'; 
+                cizimAraclari.classList.remove('hidden');
+                container.style.overflow = 'hidden';
                 
                 canvaslar.forEach(c => {
                     c.classList.remove('pointer-events-none');
-                    if(c.width === 300) { 
+                    if (c.width === 300) {
                         c.width = c.offsetWidth;
                         c.height = c.offsetHeight;
                     }
@@ -4625,27 +4832,33 @@
                 resizeCanvaslar();
             } else {
                 btn.classList.replace('text-yellow-400', 'text-gray-400');
-                colorPicker.classList.add('hidden');
-                btnTemizle.classList.add('hidden');
-                container.style.overflow = 'auto'; 
+                cizimAraclari.classList.add('hidden');
+                container.style.overflow = 'auto';
                 canvaslar.forEach(c => c.classList.add('pointer-events-none'));
             }
         }
 
         function temizleTahta() {
-            const canvaslar = document.querySelectorAll('.akilliTahtaCanvas');
-            canvaslar.forEach(canvas => {
-                const ctx = canvas.getContext('2d');
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-            });
+            if(aktifCanvas) {
+                const ctx = aktifCanvas.getContext('2d');
+                ctx.clearRect(0, 0, aktifCanvas.width, aktifCanvas.height);
+                saveHistory(aktifCanvas);
+            } else {
+                const canvaslar = document.querySelectorAll('.akilliTahtaCanvas');
+                canvaslar.forEach(canvas => {
+                    const ctx = canvas.getContext('2d');
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    saveHistory(canvas);
+                });
+            }
         }
 
         function getMousePos(canvasEl, evt) {
             const rect = canvasEl.getBoundingClientRect();
             let clientX = evt.clientX;
             let clientY = evt.clientY;
-            
-            if(evt.touches && evt.touches.length > 0) {
+
+            if (evt.touches && evt.touches.length > 0) {
                 clientX = evt.touches[0].clientX;
                 clientY = evt.touches[0].clientY;
             }
@@ -4656,32 +4869,57 @@
         }
 
         function startPosition(e) {
-            if(!cizimModuAktif) return;
-            if(!e.target.classList.contains('akilliTahtaCanvas')) return;
-            
+            if (!cizimModuAktif) return;
+            if (!e.target.classList.contains('akilliTahtaCanvas')) return;
+
             cizimYapiyor = true;
             aktifCanvas = e.target;
             aktifCtx = aktifCanvas.getContext('2d');
-            
+
+            if(!historyData.has(aktifCanvas)) {
+                historyData.set(aktifCanvas, { undo: [aktifCtx.getImageData(0,0, aktifCanvas.width, aktifCanvas.height)], redo: [] });
+            }
+
             draw(e);
         }
 
         function endPosition() {
+            if(cizimYapiyor && aktifCanvas) {
+                 saveHistory(aktifCanvas); 
+            }
             cizimYapiyor = false;
-            if(aktifCtx) aktifCtx.beginPath();
-            aktifCanvas = null;
-            aktifCtx = null;
+            if (aktifCtx) {
+                 aktifCtx.beginPath();
+                 aktifCtx.globalCompositeOperation = 'source-over';
+            }
         }
 
         function draw(e) {
             if (!cizimYapiyor || !cizimModuAktif || !aktifCanvas || !aktifCtx) return;
-            e.preventDefault(); 
-            
+            e.preventDefault();
+
             const pos = getMousePos(aktifCanvas, e);
-            
-            aktifCtx.lineWidth = 4;
+            const seciliRenk = document.getElementById('cizimRengi').value;
+            const seciliKalinlik = document.getElementById('cizimKalinlik').value;
+
+            aktifCtx.lineWidth = seciliKalinlik;
             aktifCtx.lineCap = 'round';
-            aktifCtx.strokeStyle = document.getElementById('cizimRengi').value;
+            aktifCtx.lineJoin = 'round';
+
+            if (currentTool === 'eraser') {
+                aktifCtx.globalCompositeOperation = 'destination-out';
+                aktifCtx.strokeStyle = 'rgba(0,0,0,1)';
+                aktifCtx.globalAlpha = 1;
+            } else if (currentTool === 'highlighter') {
+                aktifCtx.globalCompositeOperation = 'source-over';
+                aktifCtx.strokeStyle = seciliRenk;
+                aktifCtx.globalAlpha = 0.05; 
+                aktifCtx.lineWidth = seciliKalinlik * 2; 
+            } else { 
+                aktifCtx.globalCompositeOperation = 'source-over';
+                aktifCtx.strokeStyle = seciliRenk;
+                aktifCtx.globalAlpha = 1;
+            }
 
             aktifCtx.lineTo(pos.x, pos.y);
             aktifCtx.stroke();
@@ -4693,13 +4931,13 @@
         sunumContent.addEventListener('mousedown', startPosition);
         sunumContent.addEventListener('mouseup', endPosition);
         sunumContent.addEventListener('mousemove', draw);
-        
-        sunumContent.addEventListener('touchstart', startPosition, {passive: false});
+
+        sunumContent.addEventListener('touchstart', startPosition, { passive: false });
         sunumContent.addEventListener('touchend', endPosition);
-        sunumContent.addEventListener('touchmove', draw, {passive: false});
+        sunumContent.addEventListener('touchmove', draw, { passive: false });
 
         // 37 Adet sunum resmini ve her biri için Canvas'ı dinamik olarak oluştur
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const tamEkranContainer = document.getElementById('tamEkranSunumContent');
             if (tamEkranContainer) {
                 let htmlIcerik = '';
@@ -4711,6 +4949,263 @@
                     </div>\n`;
                 }
                 tamEkranContainer.innerHTML = htmlIcerik;
+            }
+        });
+    </script>
+
+    <!-- Haritacılık Modal -->
+    <div id="haritacilikModal" class="fixed inset-0 z-[100] hidden bg-black/95 flex-col font-sans">
+        <!-- Header / Close Button -->
+        <div class="absolute top-4 right-4 z-[110]">
+            <button onclick="closeHaritacilikModal()" class="text-white hover:text-red-500 transition-colors cursor-pointer">
+                <i class="fa-solid fa-circle-xmark text-4xl"></i>
+            </button>
+        </div>
+        
+        <!-- İçerik Alanı (Sol: Resim, Sağ: Açıklama Paneli) -->
+        <div class="flex flex-col md:flex-row w-full h-[75vh] mt-12 px-6 gap-6">
+            <!-- Görsel Alanı (Sol) -->
+            <div id="haritacilikImgContainer" class="relative flex-1 bg-gray-900 rounded-xl overflow-hidden shadow-2xl border border-gray-800 flex items-center justify-center p-2 group cursor-grab">
+                <!-- Zoom Reset Butonu (Sol Üst) -->
+                <button id="haritacilikZoomResetBtn" class="absolute top-4 left-4 z-50 bg-blue-900/80 hover:bg-blue-700 text-white rounded-lg p-2 shadow-lg border border-blue-500/50 backdrop-blur-sm transition-all flex items-center justify-center w-10 h-10 hidden" title="Yakınlaştırmayı Sıfırla">
+                    <i class="fa-solid fa-expand"></i>
+                </button>
+                <!-- Bilgi Mesajı -->
+                <div class="absolute top-4 right-4 z-50 bg-black/50 text-white/80 px-2 py-1 rounded text-xs pointer-events-none hidden md:block">
+                    Yakınlaştırmak için kaydırın (scroll)
+                </div>
+                <!-- Kullanıcı dilerse kendisi manuel zoom yapabilir -->
+                <img id="haritacilikZoomImg" src="./assets/data_3dharita_bastan_sona/Haritacilik_Bastan_Sona.jpeg" 
+                     class="w-full h-full object-contain origin-center select-none" 
+                     draggable="false"
+                     alt="Haritacılık Serüveni">
+            </div>
+            
+            <!-- Açıklama Paneli (Sağ) -->
+            <div class="w-full md:w-80 lg:w-96 bg-gray-800 border border-gray-700 rounded-xl p-6 flex flex-col shadow-2xl text-white overflow-hidden">
+                <div class="border-b border-gray-600 pb-3 mb-4 shrink-0">
+                    <h3 class="text-xl font-bold text-purple-400 uppercase tracking-wider" id="panelTitle">SAHNE 1</h3>
+                    <div class="text-xs text-gray-400 mt-1 uppercase" id="panelSubtitle">Süreç Detayları</div>
+                </div>
+                <div class="text-sm font-medium leading-relaxed text-gray-300 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-purple-600 scrollbar-track-gray-800 transition-opacity duration-300 text-justify" id="panelText">
+                    Açıklama metni burada olacak.
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline (Alt Kısım) -->
+        <div class="w-full h-[15vh] bg-black/80 border-t border-gray-800 px-6 py-2 flex flex-col justify-center mt-auto">
+            <div class="text-center text-white/70 text-[10px] mb-2 font-semibold tracking-widest uppercase">Sahne Seçin</div>
+            <div class="flex overflow-x-auto gap-4 pb-2 scrollbar-thin scrollbar-thumb-purple-600 scrollbar-track-gray-900 snap-x px-4" id="haritacilikTimeline">
+                <!-- Javascript ile butonlar oluşturulacak -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 26 Adımlı (Sahne) Gerçek Veri İçerikleri
+        const rawHaritacilikData = [
+            { title: "SAHNE 1 (GERÇEK DÜNYA)", text: "Haritacılığın veri kaynağı olan gerçek dünya, topoğrafik engebeler, eğimler, yapay yapılar (binalar, yollar, köprüler) ve doğal detaylardan (nehirler, ormanlar) oluşan karmaşık, kesintisiz ve 3 boyutlu bir mekandır. Haritacılığın temel amacı, sonsuz detay barındıran bu fiziksel dünyayı ölçülebilir, analiz edilebilir ve anlamlandırılabilir sonlu dijital verilere dönüştürmektir." },
+            { title: "SAHNE 2 (UÇUŞ PLANLAMASI)", text: "Veri toplama işlemi rastgele yapılmaz; proje alanının sınırları dijital bir altlık harita üzerinde belirlenerek hassas bir uçuş planı oluşturulur. Bu aşamada, kameranın piksel başına yeryüzünde ne kadarlık bir alanı göreceğini belirleyen Yer Örnekleme Aralığı (GSD - Ground Sampling Distance) hedeflenir ve uçuş yüksekliği buna göre hesaplanır. Hava aracının izleyeceği paralel uçuş çizgileri (kolonlar) belirlenir." },
+            { title: "SAHNE 3 (FOTOĞRAF ÇEKİMİ)", text: "Hava aracı planlanan rotada otonom olarak uçarken, belirli saniye veya mesafe aralıklarıyla binlerce fotoğraf çeker. Bu fotoğraflar, 3 boyutlu derinlik algısı yaratabilmek için ileri yönlü uçuş çizgisinde %60 ile %80 oranında (ileri bindirme), yan yana geçen uçuş kolonları arasında ise %30 ile %60 oranında (yan bindirme) örtüşecek şekilde çekilir. Böylece arazideki herhangi bir nokta, birbirinden farklı açılardan çekilmiş en az 3-4 farklı fotoğrafın içinde yer almış olur." },
+            { title: "SAHNE 4 (SENSÖR DONANIMLARI - GNSS ve IMU)", text: "Uçaktaki veya drondaki sistem sadece fotoğraf çekmekle kalmaz; her fotoğrafın tam olarak uzaydaki hangi koordinatta (X, Y, Z) ve hangi açıyla çekildiğini de kaydeder. Küresel Konumlama Sistemi (GNSS) RTK/PPK teknolojileri ile santimetre hassasiyetinde kameranın konumunu belirlerken, Ataletsel Ölçüm Birimi (IMU) kameranın o anki eğiklik açılarını (Yalpa, Yunuslama, Sapma - Roll, Pitch, Yaw) milisaniyeler içinde hesaplayarak her görüntüye bu verileri (Dış Yöneltme Parametreleri) işler." },
+            { title: "SAHNE 5 (YER KONTROL NOKTALARI - GCP)", text: "Havadan alınan verilerin doğruluğunu artırmak ve yeryüzü koordinat sistemine (Ulusal ağa) milimetrik olarak bağlamak için sahaya özel işaretçiler (hedef plakaları) yerleştirilir. Harita mühendisleri bu noktaların koordinatlarını hassas GNSS alıcılarıyla yeryüzünde ölçer (Yer Kontrol Noktası). Ayrıca, yazılıma tanıtılmayan ancak projenin sonunda hata payını hesaplamak (RMSE) için kullanılan \"Kontrol Noktaları\" (Checkpoints) da bu aşamada tesis edilir." },
+            { title: "SAHNE 6 (FOTOGRAMETRİ YAZILIMI VE GÖRÜNTÜ EŞLEŞTİRME)", text: "Yüzlerce gigabaytlık bindirmeli fotoğraf ve uçuş verisi güçlü fotogrametri iş istasyonlarına aktarılır. Yazılım algoritmaları, fotoğrafları piksel piksel tarayarak köşe, kenar, belirgin kaya veya bina köşesi gibi karakteristik özellikleri (feature points) tespit eder. Ardından aynı karakteristik noktanın farklı fotoğraflardaki izdüşümlerini bularak, fotoğrafları matematiksel olarak birbirine bağlayan on binlerce ortak nokta (bağlama noktası - tie point) oluşturur." },
+            { title: "SAHNE 7 (HAVADAN ÜÇGENLEME / BLOK DENGELEME)", text: "Eşleştirilen ortak noktalar, yer kontrol noktaları ve IMU/GNSS verileri kullanılarak \"Blok Dengeleme\" (Bundle Adjustment) adı verilen karmaşık bir matematiksel işlem gerçekleştirilir. Bu süreçte, tüm fotoğrafların uzaydaki konumları ve eğimleri, projeksiyon hatalarını en aza indirecek şekilde aynı anda (eşzamanlı olarak) yeniden hesaplanıp optimize edilir. Artık kameraların ve fotoğrafların sanal ortamdaki geometrisi gerçek dünyadakiyle birebir aynıdır." },
+            { title: "SAHNE 8 (STEREO GÖRÜNTÜ VE OPERATÖR)", text: "Doğru şekilde hizalanmış fotoğraflar, insan gözünün derinlik algısı yaratma prensibinden yararlanılarak 3 boyutlu stereo ekranlara yansıtılır. Özel aktif veya pasif 3D gözlükler kullanan fotogrametri operatörleri, araziyi ekranda kabartmalı olarak görür. Operatör, ekrandaki 3 boyutlu imleci (cursor) kullanarak yolların kenarlarını, binaların çatı sınırlarını veya arazideki ani eğim değişikliklerini (kırık çizgileri) son derece yüksek hassasiyetle manuel olarak vektör veriye dönüştürebilir." },
+            { title: "SAHNE 9 (NOKTA BULUTU)", text: "Blok dengelemesi yapılmış fotoğraflar üzerinden \"Yoğun Görüntü Eşleştirme\" (Dense Image Matching) algoritmaları çalıştırılarak, her bir pikselin uzaydaki X, Y, Z koordinatı hesaplanır. Milyarlarca noktadan oluşan ve her bir noktanın orijinal fotoğraftan aldığı RGB renk bilgisini taşıdığı bu devasa yapıya 3 Boyutlu Nokta Bulutu (Point Cloud) adı verilir." },
+            { title: "SAHNE 10 (DSM - DİJİTAL YÜZEY MODELİ)", text: "Nokta bulutu verisi baz alınarak, yeryüzüne yukarıdan bakıldığında görünen en üst yüzeyin kesintisiz bir modeli üretilir. DSM (Digital Surface Model); binaların çatıları, ağaçların tepe noktaları, köprüler, enerji nakil hatları ve arazinin bizzat kendisi dahil olmak üzere ışığın çarptığı ilk yüzeyi temsil eden bir veri modelidir." },
+            { title: "SAHNE 11 (DTM - DİJİTAL ARAZİ MODELİ)", text: "Harita mühendisliğinde çoğu zaman yapay ve bitkisel örtünün altındaki doğal toprak yüzeyine ihtiyaç duyulur. Nokta bulutu üzerinden binalar, araçlar, ağaçlar ve elektrik direkleri gibi detaylar algoritmalarla (veya manuel düzeltmelerle) silinir (filtreleme/sınıflandırma). Boş kalan alanlar çevre topoğrafyaya göre matematiksel olarak doldurularak, sadece çıplak toprak yüzeyini gösteren DTM (Digital Terrain Model) elde edilir." },
+            { title: "SAHNE 12 (DEM / YÜKSEKLİK GRID MODELİ)", text: "DTM veya DSM verisi, genellikle hücrelerden (piksellerden) oluşan bir Raster formata (Grid) dönüştürülür. Bu yapıda, haritadaki her bir hücre bir renk değeri yerine bir \"yükseklik/rakım değeri\" (Z) taşır. DEM (Digital Elevation Model), su havzası analizleri, eğim-bakı haritaları ve görünürlük analizleri için temel altlık olarak kullanılır." },
+            { title: "SAHNE 13 (EŞ YÜKSELTİ EĞRİLERİ - KONTUR ÇİZGİLERİ)", text: "Sürekli arazi modeli (DTM), belirlenen aralıklarla (örneğin her 1 metrede bir) sanal yatay düzlemlerle kesilir. Bu kesişim hatları, deniz seviyesinden aynı yükseklikte olan noktaları birleştiren vektörel eş yükselti eğrilerini (izohips) oluşturur. Eğrilerin birbirine yaklaştığı yerler arazinin sarp (dik) olduğunu, uzaklaştığı yerler ise düz (eğimsiz) olduğunu görsel olarak ifade eder." },
+            { title: "SAHNE 14 (ORTOREKTİFİKASYON)", text: "Ham bir hava fotoğrafında merkezden kenarlara doğru gidildikçe binalar dışarı doğru yatık görünür ve arazi engebeleri yüzünden ölçek her yerde aynı olmaz. Ortorektifikasyon işleminde, DSM veya DTM kullanılarak fotoğraftaki bu perspektif bozulmaları, kamera eğikliği ve topoğrafik kaymalar matematiksel olarak giderilir. Sonuç olarak, fotoğrafın her noktasında ölçeğin sabit olduğu, üzerinden doğrudan mesafe, açı ve alan ölçülebilen \"Ortofoto\" görüntüsü elde edilir." },
+            { title: "SAHNE 15 (ORTOFOTO MOZAİĞİ)", text: "Ortorektifiye edilmiş binlerce tekil fotoğraf karesi bir araya getirilir. Farklı saatlerde ve ışık koşullarında çekilen fotoğraflar arasındaki ton ve renk farklılıkları algoritmalarla dengelenir (Color Balancing). Fotoğrafların birleşim yerleri (seamlines), binaları veya araçları kesmeyecek şekilde yol ortalarından veya düz alanlardan geçirilerek optik bir bütünlük sağlanır ve projenin tamamını kapsayan tek, devasa bir Ortofoto Mozaiği üretilir." },
+            { title: "SAHNE 16 (3B MESH)", text: "Nokta bulutundaki noktalar birbirlerine üçgen yüzeyler (TIN - Triangulated Irregular Network) ile bağlanarak sürekli bir geometri oluşturulur. Bu tel kafes modelin üzerine, orijinal hava fotoğrafları yüksek çözünürlüklü doku (texture) olarak kaplanır. Böylece, video oyunlarındaki gibi etrafında dönülebilen, cepheleri ve çatıları detaylıca görülebilen kesintisiz, fotogerçekçi 3 boyutlu bir yüzey modeli (Textured 3D Mesh) elde edilir." },
+            { title: "SAHNE 17 (3D TILES / VERİ HİYERARŞİSİ)", text: "Elde edilen 3B Mesh ve Nokta Bulutu verileri yüzlerce gigabayt boyutunda olabilir, bu yüzden internet tarayıcılarında tek seferde yüklenmeleri imkansızdır. Bu veriler, 3D Tiles formatında uzamsal bir hiyerarşiye (octree/quadtree) göre küçük parçalara bölünür. Kullanıcı uzaktan bakarken verinin en kaba hali yüklenir; yaklaştıkça (zoom-in) sadece ekranda görünen alanın daha yüksek detaylı versiyonları (Level of Detail - LoD) arka planda indirilerek cihaz belleği korunur." },
+            { title: "SAHNE 18 (2D MAP TILES)", text: "Benzer bir mantık 2 boyutlu ortofoto mozaiği için de uygulanır. Devasa harita görüntüsü, genellikle 256x256 veya 512x512 piksellik küçük karelere (karo - tile) bölünerek bir \"karo piramidi\" oluşturulur. Örneğin 5. zoom seviyesinde bir şehrin tamamı tek bir görselle sunulurken, 20. zoom seviyesine inildiğinde sadece sokağın bir bölümünü kapsayan yüksek çözünürlüklü kareler sunucudan çekilir." },
+            { title: "SAHNE 19 (KOORDİNAT SİSTEMİ VE COĞRAFİ REFERANSLAMA)", text: "Üretilen verilerin Dünya üzerinde nereye denk geldiğini bilmesi gerekir. Veriler, EPSG kodlarıyla tanımlanan standart Küresel Koordinat Sistemlerine (Enlem/Boylam - WGS84) veya projeksiyon yöntemleriyle 3 boyutlu kürenin 2 boyutlu düzleme açıldığı harita sistemlerine (örneğin UTM) bağlanır (Georeferencing). Bu sayede veri, diğer coğrafi verilerle üst üste tam olarak çakışır." },
+            { title: "SAHNE 20 (CBS / GIS VERİTABANI)", text: "Üretilen raster (ortofoto, DEM) ve vektör veriler (yollar, binalar, eş yükselti eğrileri), salt dosyalar halinde bırakılmaz; PostGIS, Oracle Spatial gibi gelişmiş Coğrafi Bilgi Sistemi (CBS/GIS) ilişkisel veritabanlarına yüklenir. Burada binaların veya yolların şekilsel bilgileri ile \"sokak adı, kat sayısı, inşa yılı\" gibi sözel öznitelikleri (attribute) birbirine bağlanarak analiz edilebilir akıllı bir ağ oluşturulur." },
+            { title: "SAHNE 21 (SEMANTİK VERİ / GML / BIM)", text: "3 boyutlu binalar sadece birer \"kutu\" geometrisi olmaktan çıkarılıp semantik (anlamsal) zekaya kavuşturulur. Bir binanın çatısı, duvarı, penceresi veya kapısı ayrı objeler olarak tanımlanır (CityGML). Mimari projelerdeki Yapı Bilgi Modellemesi (BIM) verileri ile CBS'nin entegrasyonu sayesinde, makine tarafından anlaşılabilir, sorgulanabilir akıllı şehir modelleri kurulur." },
+            { title: "SAHNE 22 (VERİ STANDARTLARI VE ENTEGRASYON)", text: "Üretilen uzamsal verilerin; CAD çizim programları, GIS yazılımları, 3D şehir modelleri ve web sistemleri arasında kayıpsız ve sorunsuz bir şekilde dolaşabilmesi için GeoJSON, KML, GML gibi uluslararası veri formatlarına ve OGC standartlarına dönüştürülmesi gösterilir. Sistemler arası \"ortak bir dil\" oluşturulur." },
+            { title: "SAHNE 23 (KALİTE KONTROL - QC/QA)", text: "Veriler kullanıcıya sunulmadan önce sıkı bir üretim doğrulamasından geçer. Kalite kontrol operatörleri, RMSE (Karesel Ortalama Hata) değerlerinin tolerans limitleri içinde olup olmadığını kontrol eder; bina kenarlarındaki deformasyonları, ortofotodaki piksel yırtılmalarını, topolojik hataları (kesişen veya kopuk vektör çizgiler) tespit edip düzeltir." },
+            { title: "SAHNE 24 (METADATA - ÜSTVERİ)", text: "Kalite kontrolü tamamlanan veri setine dijital bir kimlik kartı eklenir. Bu veri sözlüğünde (metadata); verinin hangi kurum tarafından, hangi tarihte, hangi dron/sensör modeliyle üretildiği, mekansal çözünürlüğü, yatay/düşey hassasiyeti ve kullanım lisansı gibi bilgiler ISO standartlarına uygun olarak belgelenir." },
+            { title: "SAHNE 25 (GEOSERVER VE OGC WEB SERVİSLERİ)", text: "Hazırlanan veri tabanı bir veri merkezindeki güçlü Harita Sunucularına (Örn: GeoServer) yüklenir. Bu sunucular, haritayı internete açmak için standart OGC protokollerini kullanır: WMS (haritayı resim olarak sunar), WFS (haritadaki binaları/yolları vektör obje olarak sunar), WCS (yükseklik verisini sayısal olarak sunar). İstemciden (kullanıcıdan) gelen HTTP istekleri sunucuda işlenir ve veri geri gönderilir." },
+            { title: "SAHNE 26 (TILE CACHE / ÖNBELLEKLEME)", text: "Milyonlarca kişinin aynı anda haritaya girdiği durumlarda sunucunun çökmemesi için haritalar anlık olarak üretilmek yerine önceden render edilerek (çizdirilerek) oluşturulan küçük harita kareleri (tile) sunucunun hafızasında hazır bekletilir (Önbellekleme/Cache). Kullanıcı bir bölgeye baktığında sunucu sadece o bölgeye ait hazır kareleri saniyeler içinde ağ üzerinden gönderir." },
+            { title: "SAHNE 27 (WEB CBS ARAYÜZÜ)", text: "Bilgisayardaki web tarayıcısı üzerinden çalışan interaktif harita arayüzü açılır. Kullanıcı, sol taraftaki menüden istediği katmanı (kadastro parselleri, yollar, ortofoto, kontur çizgileri) açıp kapatabilir. Ekranda uzunluk, alan veya hacim ölçümleri yapabilir ve tıkladığı bir binanın öznitelik bilgilerini okuyabilir." },
+            { title: "SAHNE 28 (3B WEB CBS)", text: "Sistem sadece 2 boyutlu değil, aynı zamanda WebGL tabanlı dijital küre teknolojileri (Örn: Cesium) ile 3 boyutlu çalışır. Düz ortofoto, yükseklik modeli (DEM) üzerine giydirilir, ardından 3D Mesh ve akıllı binalar sahneye yüklenir. Kullanıcı farenin tuşuna basılı tutarak arazi içinde dolaşabilir, ülke ölçeğinden tek bir binanın detayına kadar kesintisiz yaklaşabilir." },
+            { title: "SAHNE 29 (SON KULLANICI)", text: "Bilgisayarı veya cep telefonu başında oturan standart bir vatandaş veya karar verici, fotogrametri ve CBS yazılımlarının karmaşık algoritmalarından habersiz bir şekilde harita uygulamasını açar. Arka plandaki tüm bu mühendislik süzgecinden geçmiş yüksek hassasiyetli ürünlere tek bir tıkla, son derece hızlı ve anlaşılır bir şekilde ulaşır." },
+            { title: "SAHNE 30 (FİNAL ÖZETİ)", text: "Gerçek dünyadan başlayan serüven dijital dünyada son bulur. Harita üretiminin basitçe \"dron uçurup resim çekmek\" değil; ölçme, fotogrametrik veri üretimi, 3 boyutlu modelleme, veri tabanı standartlaştırması ve sunucu teknolojilerini barındıran devasa bir mühendislik zinciri olduğu görsel bir özet eşliğinde izleyiciye aktarılır." }
+        ];
+
+        const haritacilikData = rawHaritacilikData.map((d, index) => {
+            return {
+                step: index + 1,
+                title: d.title,
+                text: d.text
+            };
+        });
+
+        let isHaritacilikModalOpen = false;
+
+        function openHaritacilikModal(e) {
+            if(e) e.stopPropagation();
+            document.getElementById('haritacilikModal').classList.remove('hidden');
+            document.getElementById('haritacilikModal').classList.add('flex');
+            isHaritacilikModalOpen = true;
+            setTimeout(() => { goToHaritacilikStep(1); }, 100);
+        }
+
+        function closeHaritacilikModal() {
+            document.getElementById('haritacilikModal').classList.add('hidden');
+            document.getElementById('haritacilikModal').classList.remove('flex');
+            isHaritacilikModalOpen = false;
+        }
+
+        function goToHaritacilikStep(stepNumber) {
+            const data = haritacilikData.find(d => d.step === stepNumber);
+            if(!data) return;
+
+            // Paneli Güncelle
+            const panelText = document.getElementById('panelText');
+            panelText.style.opacity = 0; // Yumuşak geçiş için
+            
+            setTimeout(() => {
+                document.getElementById('panelTitle').innerText = data.title;
+                document.getElementById('panelText').innerText = data.text;
+                panelText.style.opacity = 1;
+            }, 200);
+            
+            // Timeline Aktiflik Durumu
+            document.querySelectorAll('.haritacilik-btn').forEach(btn => {
+                btn.classList.remove('bg-purple-600', 'text-white', 'scale-125', 'border-purple-400');
+                btn.classList.add('bg-gray-800', 'text-gray-400', 'border-gray-700');
+            });
+            const activeBtn = document.getElementById(`hbtn-${stepNumber}`);
+            if(activeBtn) {
+                activeBtn.classList.remove('bg-gray-800', 'text-gray-400', 'border-gray-700');
+                activeBtn.classList.add('bg-purple-600', 'text-white', 'scale-125', 'border-purple-400');
+                activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const tlContainer = document.getElementById('haritacilikTimeline');
+            if(tlContainer) {
+                haritacilikData.forEach(d => {
+                    const btn = document.createElement('button');
+                    btn.id = `hbtn-${d.step}`;
+                    btn.className = `haritacilik-btn flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full font-extrabold text-[11px] md:text-sm transition-all duration-300 snap-center bg-gray-800 text-gray-400 hover:bg-purple-500 hover:text-white border-2 border-gray-700 shadow-lg cursor-pointer`;
+                    btn.innerText = d.step;
+                    btn.onclick = () => goToHaritacilikStep(d.step);
+                    tlContainer.appendChild(btn);
+                });
+            }
+        });
+
+        // Haritacılık Modal Zoom ve Pan Özelliği
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('haritacilikImgContainer');
+            const img = document.getElementById('haritacilikZoomImg');
+            const resetBtn = document.getElementById('haritacilikZoomResetBtn');
+            
+            if(!container || !img) return;
+
+            let currentScale = 1;
+            let isPanning = false;
+            let startX = 0, startY = 0;
+            let translateX = 0, translateY = 0;
+
+            function updateTransform(animate = false) {
+                img.style.transition = animate ? 'transform 0.3s ease-out' : 'none';
+                img.style.transform = `translate(${translateX}px, ${translateY}px) scale(${currentScale})`;
+                
+                if(currentScale > 1) {
+                    container.classList.remove('cursor-grab');
+                    container.classList.add(isPanning ? 'cursor-grabbing' : 'cursor-grab');
+                    if(resetBtn) resetBtn.classList.remove('hidden');
+                } else {
+                    container.classList.remove('cursor-grabbing');
+                    container.classList.add('cursor-grab');
+                    if(resetBtn) resetBtn.classList.add('hidden');
+                }
+            }
+
+            function resetZoom() {
+                currentScale = 1;
+                translateX = 0;
+                translateY = 0;
+                updateTransform(true);
+            }
+
+            if(resetBtn) {
+                resetBtn.addEventListener('click', resetZoom);
+            }
+
+            container.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                const zoomIntensity = 0.1;
+                
+                const rect = container.getBoundingClientRect();
+                const mouseX = e.clientX - rect.left;
+                const mouseY = e.clientY - rect.top;
+                
+                let delta = e.deltaY > 0 ? -1 : 1;
+                let newScale = currentScale + (delta * zoomIntensity * currentScale);
+                newScale = Math.min(Math.max(1, newScale), 5);
+
+                if (newScale !== currentScale) {
+                    const ratio = 1 - (newScale / currentScale);
+                    translateX += (mouseX - (rect.width / 2) - translateX) * ratio;
+                    translateY += (mouseY - (rect.height / 2) - translateY) * ratio;
+                }
+                
+                currentScale = newScale;
+                
+                if (currentScale === 1) {
+                    translateX = 0;
+                    translateY = 0;
+                }
+                
+                updateTransform(false);
+            }, { passive: false });
+
+            container.addEventListener('mousedown', (e) => {
+                if (currentScale > 1) {
+                    isPanning = true;
+                    startX = e.clientX - translateX;
+                    startY = e.clientY - translateY;
+                    updateTransform(false);
+                }
+            });
+
+            window.addEventListener('mousemove', (e) => {
+                if (!isPanning) return;
+                translateX = e.clientX - startX;
+                translateY = e.clientY - startY;
+                updateTransform(false);
+            });
+
+            window.addEventListener('mouseup', () => {
+                if(isPanning) {
+                    isPanning = false;
+                    updateTransform(false);
+                }
+            });
+
+            const observer = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                        const modal = document.getElementById('haritacilikModal');
+                        if (modal && modal.classList.contains('hidden')) {
+                            resetZoom();
+                        }
+                    }
+                });
+            });
+            
+            const modalElement = document.getElementById('haritacilikModal');
+            if(modalElement) {
+                observer.observe(modalElement, { attributes: true });
             }
         });
     </script>
